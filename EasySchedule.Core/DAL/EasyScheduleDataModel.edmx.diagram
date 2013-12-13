@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1222ad4f77c8426eab991e0cdd341d45" Name="Diagram1">
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Category" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.FoodUsage" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.InsulinType" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.InsulinUsage" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.MeasurmentType" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Portion" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Product" Width="1.875" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.ProductType" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Shugar" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_CategoryProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_FoodUsagePortion" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_InsulinTypeInsulinUsage" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_MeasurmentTypeProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_ProductPortion" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_ProductTypeProduct" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

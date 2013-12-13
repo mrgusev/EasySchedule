@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.Core", "EasySchedule.Core\EasySchedule.Core.csproj", "{DFD2B356-5BE7-415A-A7F4-6EE9A99DCB7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.Client", "EasySchedule.Client\EasySchedule.Client.csproj", "{1F277F3D-E789-4514-A7F6-9947F642BEF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.Web", "EasySchedule.Web\EasySchedule.Web.csproj", "{8559DED9-0A44-45BC-9ABB-7DF1F51EAFA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFD2B356-5BE7-415A-A7F4-6EE9A99DCB7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD2B356-5BE7-415A-A7F4-6EE9A99DCB7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD2B356-5BE7-415A-A7F4-6EE9A99DCB7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD2B356-5BE7-415A-A7F4-6EE9A99DCB7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F277F3D-E789-4514-A7F6-9947F642BEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F277F3D-E789-4514-A7F6-9947F642BEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F277F3D-E789-4514-A7F6-9947F642BEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F277F3D-E789-4514-A7F6-9947F642BEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8559DED9-0A44-45BC-9ABB-7DF1F51EAFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8559DED9-0A44-45BC-9ABB-7DF1F51EAFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8559DED9-0A44-45BC-9ABB-7DF1F51EAFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8559DED9-0A44-45BC-9ABB-7DF1F51EAFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
