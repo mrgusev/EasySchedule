@@ -1,0 +1,35 @@
+<div class="page">
+        <div class="primary-column">
+            <h1 class="title">{{dictionary['confirmNewGroup']}}</h1>
+
+            <label for="group-name">{{dictionary['groupName']}}</label>
+            <input  id="group-name" type="text" placeholder="" ng-model="group.name"/>
+            <br/>
+            <br/>
+              <table class="confirm-group-members">
+                <tr ng-repeat="member in membership">
+                <td class="{'bold-font':member.type == 2}">
+                  {{member.name}}
+                </td>
+                  <td>
+                    {{member.email}}
+                  </td>
+                  <td>
+                    <input type="checkbox" ng-hide="member.type == 2" name ="members[]" ng-model="member.checked" ng-checked="member.checked"/>
+                    </td>
+                  </tr>
+                </table>
+          <br/>
+            <div class="inline-group">
+                <button ng-click="confirmGroup()" class="btn">{{dictionary['save']}}</button>
+                <div ng-click="isDeleting = true" class="btn-small">{{dictionary['cancel']}}</div>
+            </div>
+            <div ng-show="isDeleting" class="first" >
+              {{dictionary['deleteConfirm']}}
+              <div class="inline-group first">
+                    <div class="btn no" ng-click="deleteGroup()">{{dictionary['yes']}}</div>
+                    <div class="btn-small" ng-click="isDeleting = false">{{dictionary['cancel']}}</div>
+                </div>
+            </div>
+        </div>
+</div>

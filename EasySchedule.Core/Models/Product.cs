@@ -8,12 +8,12 @@ namespace EasySchedule.Core.Models
 {
     public class ProductModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public MeasurmentTypeModel MeasurmentType { get; set; }
-        public ProductTypeModel ProductType { get; set; }
-        public CategoryModel Category { get; set; }
-        public double AmountPerOne { get; set; }
-        public double ValuePerOne { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public MeasurmentTypeModel measurmentType { get; set; }
+        public ProductTypeModel productType { get; set; }
+        public CategoryModel category { get; set; }
+        public double amountPerOne { get; set; }
+        public double valuePerOne { get; set; }
     }
 }

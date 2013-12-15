@@ -1,0 +1,140 @@
+
+@mixin spond-box{
+  border: 1px solid #d5d5d5;
+  -webkit-box-shadow:
+    inset 0 0 1px  rgba(0,0,0,0.1),
+    0 0 2px rgba(0,0,0,0.1);
+  -moz-box-shadow:
+    inset 0 0 1px  rgba(0,0,0,0.1),
+    0 0 2px rgba(0,0,0,0.1);
+  box-shadow:
+    inset 0 0 1px  rgba(0,0,0,0.1),
+    0 0 2px rgba(0,0,0,0.1);
+  background: #ffffff;
+}
+
+$default-border: solid 1px #d2d2cf;
+
+@mixin default-shadow{
+  border: 1px solid #d5d5d5;
+  -webkit-box-shadow: 2px 2px 0px rgb(205, 205, 205);
+  -moz-box-shadow:    2px 2px 0px rgb(205, 205, 205);
+  box-shadow:         2px 2px 0px rgb(205, 205, 205);
+}
+
+/*
+VENDOR MIXIN
+Use:
+
+  .foo{
+  @include vendor(transition, all 0.3s ease-in-out );
+  }
+
+
+*/
+
+@mixin vendor($property, $value){
+  -webkit-#{$property}:$value;
+     -moz-#{$property}:$value;
+      -ms-#{$property}:$value;
+       -o-#{$property}:$value;
+          #{$property}:$value;
+}
+
+
+/*
+
+TRANSFORM-MIXIN
+Use:
+  .foo{
+  @include transform(0px, 100px);
+  }
+
+*/
+
+@mixin translate($value1, $value2){
+  -webkit-transform: translate($value1, $value2);
+     -moz-transform: translate($value1, $value2);
+       -o-transform: translate($value1, $value2);
+      -ms-transform: translate($value1, $value2);
+          transform: translate($value1, $value2);
+}
+
+
+
+
+// @include transition( all 0.3s ease-in-out );
+
+
+@mixin transition($value1){
+  -webkit-transition: $value1;
+     -moz-transition: $value1;
+       -o-transition: $value1;
+      -ms-transition: $value1;
+          transition: $value1;
+}
+
+
+
+/*
+KEYFRAME
+Use:
+  @include keyframe(fadeout) {
+      0% {
+          opacity: 1;
+      }
+
+      100% {
+          opacity: 0;
+      }
+  }
+*/
+
+
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+
+    @-o-keyframes $animation_name {
+        @content;
+    }
+
+    @keyframes $animation_name {
+        @content;
+    }
+}
+
+
+/*
+    ANIMATION
+    use:
+      .foo{
+      @include animation(8s, 4s, fadeout)
+      }
+ */
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}

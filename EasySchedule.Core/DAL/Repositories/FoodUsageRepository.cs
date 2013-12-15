@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasySchedule.Core
+namespace EasySchedule.Core.DAL.Repositories
 {
-    public class Class1
+    class FoodUsageRepository
     {
-
     }
 }

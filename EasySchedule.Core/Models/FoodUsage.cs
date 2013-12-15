@@ -8,9 +8,9 @@ namespace EasySchedule.Core.Models
 {
     public class FoodUsageModel
     {
-        public int Id { get; set; }
-        public DateTime Time { get; set; }
-        public double BreadUnits { get; set; }
-        public IEnumerable<PortionModel> Portions { get; set; }
+        public int id { get; set; }
+        public DateTime time { get; set; }
+        public double breadUnits { get; set; }
+        public IEnumerable<PortionModel> portions { get; set; }
     }
 }

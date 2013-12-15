@@ -8,10 +8,10 @@ namespace EasySchedule.Core.Models
 {
     public class PortionModel
     {
-        public int  Id { get; set; }
-        public ProductModel ProductModel { get; set; }
-        public double Value { get; set; }
-        public double Amount { get; set; }
-        public double BreadUnits { get; set; }
+        public int  id { get; set; }
+        public ProductModel product { get; set; }
+        public double value { get; set; }
+        public double amount { get; set; }
+        public double breadUnits { get; set; }
     }
 }

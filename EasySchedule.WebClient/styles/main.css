@@ -1,0 +1,70 @@
+@font-face {
+  font-family: gothamBook;
+  src: url("../fonts/GothamBook.eot");
+  src: url("../fonts/GothamBook.woff") format("woff"), url("../fonts/GothamBook.ttf") format("truetype"), url("../fonts/GothamBook.svg") format("svg"); }
+
+@font-face {
+  font-family: gothamMedium;
+  src: url("../fonts/GothamMedium.eot");
+  src: url("../fonts/GothamMedium.woff") format("woff"), url("../fonts/GothamMedium.ttf") format("truetype"), url("../fonts/GothamMedium.svg") format("svg"); }
+
+body {
+  font-family: "OPEN SANS";
+  color: #494949;
+  background: #e4e4e4; }
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, a, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, hr, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.center {
+  margin: 0 auto; }
+
+.page {
+  padding-top: 40px; }
+
+.clickable {
+  cursor: pointer; }
+
+textarea:focus, input:focus, button, select {
+  outline: 0; }
+
+textarea, input {
+  border: none;
+  font-size: 16px;
+  background: transparent;
+  resize: none; }
+
+/* ---------- Clearfix ------- */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }

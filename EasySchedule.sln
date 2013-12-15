@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.Core", "EasySc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.Client", "EasySchedule.Client\EasySchedule.Client.csproj", "{1F277F3D-E789-4514-A7F6-9947F642BEF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.Web", "EasySchedule.Web\EasySchedule.Web.csproj", "{8559DED9-0A44-45BC-9ABB-7DF1F51EAFA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.WebServer", "EasySchedule.Web\EasySchedule.WebServer.csproj", "{8559DED9-0A44-45BC-9ABB-7DF1F51EAFA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

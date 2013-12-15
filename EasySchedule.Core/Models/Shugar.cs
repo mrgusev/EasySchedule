@@ -8,8 +8,8 @@ namespace EasySchedule.Core.Models
 {
     public class ShugarModel
     {
-        public int Id { get; set; }
-        public DateTime Time { get; set; }
-        public double Value { get; set; }
+        public int id { get; set; }
+        public DateTime time { get; set; }
+        public double value { get; set; }
     }
 }

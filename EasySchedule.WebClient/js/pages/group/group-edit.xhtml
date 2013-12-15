@@ -1,0 +1,68 @@
+<div class="page">
+    <div class="header">
+        <div class="title">{{dictionary['GROUP']}}</div>
+        <div class="message" ng-hide="isEdit">{{dictionary['New_group']}}</div>
+        <div class="message" ng-show="isEdit">{{dictionary['Edit_group']}}</div>
+    </div>
+    <div class="spond-edit">
+        <div class="input-complex">
+            <div class="item big-title">
+                <div class="title">{{dictionary['Groupname']}}</div>
+                <input type="text" ng-model="group.name" placeholder="{{dictionary['Click_to_edit']}}"/>
+            </div>
+        </div>
+        <div class="tab-panel">
+            <div class="tab-headers">
+                <div class="tab-header" ng-class="newUserState" ng-tap ng-click="newUserState = 'active'; addressBookState=''">{{dictionary['Add_new_users']}} </div>
+                <div class="tab-header" ng-class="addressBookState" ng-tap ng-click="newUserState = ''; addressBookState='active'">{{dictionary['Address_book']}}</div>
+                <hr/>
+            </div>
+            <div class="tab-content" ng-show="newUserState">
+                <div class="input-interactive">
+                    <textarea ng-model="emails" id="emails" auto-resize placeholder="{{dictionary['Type_or_paste']}}"></textarea>
+                    <div id="button-container">
+                      <button class="btn" ng-tap="" ng-click="parseEmails()" id="add-emails">{{dictionary['ADD']}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" ng-show="addressBookState">
+                <div class="input-complex search">
+                    <div class="item">
+                        <div class="title">{{dictionary['Search']}}</div>
+                        <input type="text" ng-model="memberSearch"  ui-event="{keyup: 'searchKeypressed($event)'}" />
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="members" ng-show="contacts.length>0">
+                        <div class="item clickable" ng-class="member.activeState" ng-repeat="member in contacts"  ng-tap ng-click="addContact(member)">
+                            <div class="email">{{member.primaryEmail}}</div>
+                            <div class="name">{{member.name}}</div>
+                            <div class="action" >
+                                <span class="icon icon-check clickable" ng-show="member.addState == 'added'"></span>
+                                <span class="icon add clickable icon-plus" ng-show="member.addState == 'add'" ></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="caption" ng-show="newMembers.length>0">{{dictionary['ADDED_MEMBERS']}}</div>
+        <div class="members" ng-show="newMembers.length>0">
+            <div class="item" ng-repeat="member in newMembers">
+                <div class="email">{{member.primaryEmail}}</div>
+                <div class="name">{{member.name}}</div>
+                <div class="action"><span class="icon-x icon clickable"   ng-hide="member.isLastAdmin"  ng-tap ng-click="deleteNewMember(member)" ></span></div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="delete-group-container left" ng-show="isEdit"><a href="" class="delete" ng-click="deleteGroup()"><span ng-hide="isConfirm">{{dictionary['Delete_this_group']}}</span><span ng-show="isConfirm">{{dictionary['Cancel']}}</span></a></div>
+        <button class="btn large right" ng-hide="isConfirm" ng-tap ng-click="save()"><span ng-hide="isFromSpond">{{dictionary['SAVE']}}</span><span ng-show="isFromSpond">{{dictionary['CONTINUE']}}</span></button>
+        <button class="btn large right" ng-show="isConfirm" ng-tap ng-click="confirm()">{{dictionary['CONFIRM']}}</button>
+        <div  ng-show="isLoading" ng-include="'js/common/directives/loader.xhtml'" id="create-loader"></div>
+        <div class="clearfix"></div>
+        <span ng-show="errorMessage">{{errorMessage}}</span>
+    </div>
+</div>

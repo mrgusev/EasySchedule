@@ -1,0 +1,114 @@
+<div>
+    <div class="header">
+        <!--<div class="title">{{dictionary['GROUPS']}}</div>-->
+        <div class="message left" >{{dictionary['GROUPS']}}</div>
+        <div class="clearfix"></div>
+    </div>
+    <div>
+
+        <button class="btn centered" ng-tap ng-click="redirect('/groups/create')">{{dictionary['CREATE_NEW_GROUP']}}</button>
+        <div class="clearfix"></div>
+        <div>
+            <div class="list-caption" ng-show="adminGroups.length > 0">{{dictionary['GROUPS_ADMIN_OF']}}</div>
+            <ul class="groups-list" >
+                <li class="list-item" ng-repeat="group in adminGroups">
+                    <div class="clickable expander-head" ng-tap ng-click="toggleGroup(group)">
+                        <div class="name">{{group.name}}</div>
+                        <div class="icon-container">
+                          <span ng-hide="group.isExpanded" class="icon-down right"></span>
+                          <span ng-show="group.isExpanded" class="icon-up right"></span>
+                        </div>
+                    </div>
+                    <div class="expander" ng-show="group.isExpanded">
+                        <div class="item send-spond">
+                            <div class="title">
+                                <span class="icon icon-send right"></span>
+                            </div>
+                            <a class="container" href="/sponds/create?groupId={{group.id}}" >
+                                <span >{{dictionary['SEND_SPOND_TO_GROUP']}}</span>
+                                <span class="icon-right right"></span>
+                            </a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="item" ng-show="group.admin">
+                            <div class="title">
+                                <span class="icon icon-groups right"></span>
+                            </div>
+                            <a class="container" href="/groups/{{group.id}}/edit" >
+                                <span >{{dictionary['EDIT_GROUP']}}</span>
+                                <span class="icon-right right"></span>
+                            </a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="item">
+                            <div class="title">
+                                <span class="count info">{{group.membersCount}}</span>
+                            </div>
+                            <div class="container clickable" ng-tap ng-click="group.isMembersVisible =! group.isMembersVisible" >
+                                <span >{{dictionary['MEMBERS']}}</span>
+                                <span ng-hide="group.isMembersVisible" class="icon-down right"></span>
+                                <span ng-show="group.isMembersVisible" class="icon-up right"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="members-list" ng-if="group.isMembersVisible && group.isExpanded">
+                        <div class="member" ng-repeat="member in group.members">
+                            <div class="title"></div>
+                            <div class="container">
+                                <span ng-show="member.name">{{member.name | uppercase}}</span>
+                                <span ng-hide="member.name">{{member.email}}</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="list-caption" ng-show="memberGroups.length > 0">{{dictionary['GROUPS_MEMBER_OF']}}</div>
+            <ul class="groups-list" >
+                <li class="list-item" ng-repeat="group in memberGroups">
+                    <div class="clickable expander-head" ng-tap ng-click="toggleGroup(group)">
+                      <div class="name">{{group.name}}</div>
+                      <div class="icon-container">
+                        <span ng-hide="group.isExpanded" class="icon-down right"></span>
+                        <span ng-show="group.isExpanded" class="icon-up right"></span>
+                      </div>
+                    </div>
+                    <div class="expander" ng-show="group.isExpanded">
+                        <div class="item">
+                            <div class="title">
+                                <span class="count info">{{group.membersCount}}</span>
+                            </div>
+                            <div class="container clickable" ng-tap ng-click="group.isMembersVisible =! group.isMembersVisible" >
+                                <span >{{dictionary['MEMBERS']}}</span>
+                                <span ng-hide="group.isMembersVisible" class="icon-down right"></span>
+                                <span ng-show="group.isMembersVisible" class="icon-up right"></span>
+                            </div>
+                        </div>
+                        <div ng-if="!group.isMembersVisible"></div>
+                    </div>
+                    <div class="members-list" ng-if="group.isExpanded && group.isMembersVisible">
+                        <div class="member" ng-repeat="member in group.members">
+                            <div class="title"></div>
+                            <div class="container">
+                                <span ng-show="member.name">{{member.name | uppercase}}</span>
+                                <span ng-hide="member.name">{{member.email}}</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="expander" ng-show="group.isExpanded">
+                        <div class="item delete clickable" ng-click="leaveGroup(group)">
+                            <div class="title">
+                                 <span class="icon icon-x right"></span>
+                            </div>
+                            <div class="container"  >
+                                <span >{{dictionary['LEAVE_GROUP']}}</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

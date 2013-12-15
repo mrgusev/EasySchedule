@@ -1,0 +1,26 @@
+<div class="page">
+    <ul>
+        <li ng-repeat="date in datedCollection">
+            {{date[0].date}}
+            <ul>
+                <li ng-repeat="item in date">
+                    <div class="journal-item">
+                        <div ng-show="item.type == 1">- {{item.time | date:'dd.MM.yy HH:mm'}} Сахар: {{item.value}}</div>
+                        <div ng-show="item.type == 2">- {{item.time | date:'dd.MM.yy HH:mm'}} Инсулин {{item.insulinType.name}}: {{item.value}}</div>
+                        <div ng-show="item.type == 3" class="clickable" ng-click="item.isOpened=!item.isOpened; loadPortions(item)">
+                            - {{item.time | date:'dd.MM.yy HH:mm'}} Покушал: {{item.breadUnits}} ХЕ
+                            <div ng-show="item.isOpened">
+                                <ul style="margin-left: 50px">
+                                    <li ng-repeat="portion in item.portions">
+                                        {{portion.product.name}} {{portion.amount}} {{portion.product.measurmentType.name}} - {{portion.breadUnits}} ХЕ
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>

@@ -1,0 +1,104 @@
+<div class="page">
+    <h1 class="content-header">{{group.name}}</h1>
+    <div class="content-header free-space-bottm" ><a href="/groups/{{group.id}}">{{dictionary['BackToGroup']}}</a></div>
+    <div class="responses">
+        <h1 class="content-header" ng-show="isAdmin">{{dictionary['Membership']}}</h1>
+        <div class="clearfix"></div>
+        <div class="spond-block first" >
+            <div class="header clearfix">
+                <h4 ng-show="isAdmin" class="subtitle">{{dictionary['membership']}}</h4>
+                <h4 ng-hide="isAdmin" class="subtitle">{{dictionary['MyMembership']}}</h4>
+                <div class="right btn-small" ng-tap ng-click="isJoining = true">{{dictionary['Join']}}</div>
+            </div>
+            <ul class="list-primary">
+                <li class="item small clearfix" ng-show="isJoining">
+                    <div class="span-block">
+                        <div class="first-block">{{dictionary['OnBehalfOf']}}:</div>
+                        <div class="second-block">
+                            <input type="text" placeholder="{{profile.name}}" ng-model="requestAlias"></input>
+                        </div>
+                    </div>
+                    <div class="third-block">
+                        <div class="item-edit-block">
+                            <button class="btn" ng-tap ng-click="requestMembership()">{{dictionary['Join']}}</button>
+                            <a href="" ng-tap ng-click="isJoining=false">{{dictionary['cancel']}}</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="item small clearfix" ng-show="isAdmin">
+                    <div class="span-block">
+                        <div class="first-block ">{{dictionary['AddNewMembers']}}:</div>
+                        <div class="second-block">
+                            <input class="full" type="text" placeholder="Put emails here" ng-model="emails"></input>
+                        </div>
+                    </div>
+                    <div class="third-block">
+                        <div class="item-edit-block">
+                            <button class="btn" ng-tap ng-click="addMembers()">{{dictionary['Add']}}</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="item small clickable clearfix"  ng-repeat="member in membership | filter:searchText | orderBy:'userDefinedAlias':'name':'email'">
+                    <div class="span-block" ng-tap ng-click="showProfile(member)">
+                        <div class="first-block inline-group" >
+                            <div ng-class="{'subtitle':member.type==2}" ng-hide="member.isEdit">{{member.userDefinedAlias || member.name || member.email}}</div>
+                            <div class="info gray" ng-hide="member.isEdit" ng-show="member.userDefinedAlias">({{member.name}})</div>
+                            <input ng-show="member.isEdit" type="text" ng-model="member.userDefinedAlias" placeholder="{{member.name}}"></input>
+                        </div>
+                        <div class="second-block" ng-show="member.isEdit && isAdmin">
+                            <input type="checkbox" ng-model="member.isAdmin" />{{dictionary['IsAdmin']}}
+                        </div>
+                    </div>
+                    <div class="third-block"  >
+                        <div class="item-edit-block inline-group"  ng-show="(member.status == 3 || member.status == 2) && member.profileId == profile.id && !member.isEdit">
+                            <button class="btn" ng-tap ng-click="member.isEdit = true">{{dictionary['edit']}}</button>
+                            <div class="btn-small" ng-hide="member.isEdit" ng-tap ng-click="deleteMember(member)">{{dictionary['Leave']}}</div>
+                        </div>
+                        <div  class="item-edit-block inline-group" ng-show="member.isEdit">
+                            <button class="btn" ng-tap ng-click="save(member)">{{dictionary['save']}}</button>
+                            <div class="btn-small" ng-show="member.isEdit" ng-tap ng-click="member.isEdit = false">{{dictionary['cancel']}}</div>
+                        </div>
+                        <div  class="item-edit-block inline-group" ng-show="member.status == 1">
+                            <button class="btn" ng-tap ng-click="joinGroup(member)">{{dictionary['accept']}}</button>
+                            <div class="btn-small" ng-tap ng-click="decline(member)">{{dictionary['decline']}}</div>
+                        </div>
+                    </div>
+                    <div class="third-block" ng-show="!member.isEdit && member.profileId != profile.id">
+                        <div class="item-edit-block inline-group">
+                            <button class="btn" ng-tap ng-click="member.isEdit = true">{{dictionary['edit']}}</button>
+                            <div class="btn-small" ng-tap ng-click="deleteMember(member)">{{dictionary['delete']}}</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="spond-block" ng-show="isAdmin" >
+            <div class="header clearfix">
+                <h4 class="subtitle">{{dictionary['InvitedMembers']}}</h4>
+                <span class="info">{{invitedMembership.length}} {{dictionary['members']}}</span>
+            </div>
+            <ul class="list-primary">
+                <li class="item clickable small clearfix"  ng-repeat="member in invitedMembership | filter:searchText ">
+                    <div class="span-block" ng-tap ng-click="redirect('/profile/{{member.profileId}}')">
+                        <div class="first-block" >
+                            <div ng-hide="member.isEdit">{{member.userDefinedAlias || member.name || member.email}}</div>
+                            <input ng-show="member.isEdit" type="text" ng-model="member.userDefinedAlias" placeholder="{{member.name}}"></input>
+                        </div>
+                    </div>
+                    <div class="third-block"  >
+                        <div  class="item-edit-block inline-group" ng-show="member.isEdit">
+                            <button class="btn" ng-tap ng-click="changeAlias(member)">{{dictionary['save']}}</button>
+                            <div class="btn-small" ng-show="member.isEdit" ng-tap ng-click="member.isEdit = false">{{dictionary['cancel']}}</div>
+                        </div>
+                    </div>
+                    <div class="third-block" ng-show="!member.isEdit && member.profileId != profile.id">
+                        <div class="item-edit-block inline-group">
+                            <button class="btn" ng-tap ng-click="member.isEdit = true">{{dictionary['edit']}}</button>
+                            <div class="btn-small" ng-tap ng-click="deleteMember(member)">{{dictionary['delete']}}</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

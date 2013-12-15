@@ -1,0 +1,151 @@
+<div class="spond-item">
+    <div class="clickable" ng-tap ng-click="spond.isExpanded = !spond.isExpanded; showMap(spond)">
+        <div class="label">{{spond.startTime | smartdate}}</div>
+        <span ng-hide="spond.isExpanded" class="icon-down icon right"></span>
+        <span ng-show="spond.isExpanded" class="icon-up icon right"></span>
+        <div class="clearfix"></div>
+        <div class="info">
+            <div ng-show="profile.id == spond.creatorId" class="pie">
+                <div  id="chart_div{{spond.id}}"></div>
+                <div class="sporcle">{{spond.yes}}</div>
+            </div>
+            <div class="time">{{spond.startTime | date:'HH:mm'}}</div>
+            <div class="duration">
+                {{spond.endTime - spond.startTime  | timespan}}
+            </div>
+            <div class="clearfix"></div>
+            <div class="repeat" ng-hide="spond.repeat==0">
+                <div ng-show="spond.repeat==1">{{dictionary['Every_day']}}</div>
+                <div ng-show="spond.repeat==2">{{dictionary['Every_week']}}</div>
+                <div ng-show="spond.repeat==3">{{dictionary['Every_2_weeks']}}</div>
+                <div ng-show="spond.repeat==4">{{dictionary['Every_month']}}</div>
+                <div ng-show="spond.repeat==5">{{dictionary['Every_year']}}</div>
+            </div>
+        </div>
+        <div class="description">
+            <div class="subtitle">
+                <span ng-repeat="group in spond.recipientGroups">{{group.name}}<span ng-hide="spond.recipientGroups.indexOf(group) == spond.recipientGroups.length-1">, </span></span> -
+                <span>{{spond.creator.name}} {{dictionary['asks']}}:</span>
+            </div>
+            <div class="heading">{{spond.heading}}</div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="separator" ng-class="spond.response"></div>
+    <!--ng-show="spond.isExpanded && profile.id == spond.creatorId"-->
+    <div class="expander" ng-show="spond.isMapVisible && profile.id != spond.creatorId" >
+        <ul>
+            <li class="item" ng-show="spond.location.address">
+                <div class="title">
+                    <span class="icon right icon-pin"></span>
+                    &nbsp;
+                </div>
+                <div class="container">{{spond.location.address}}</div>
+                <div class="clearfix"></div>
+            </li>
+            <li ng-if="spond.isMapVisible && spond.location.address && spond.location.latitude && spond.location.latitude">
+                <div ui-map="spond.map" class="map" ui-options="spond.mapOptions">
+            </div>
+                <div class="clearfix"></div>
+            </li>
+            <li class="item clickable">
+                <div class="title">
+                    <span class="icon-send icon right"></span>
+                    &nbsp;
+                </div>
+                <a href="mailto:{{spond.creatorEmail}}?subject=SPOND: {{spond.heading}}" class="container"> {{dictionary['SEND_MESSAGE_TO']}} {{spond.creator.name}}
+                    <span class="icon-right right"></span>
+                </a>
+                <div class="clearfix"></div>
+            </li>
+            <li></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="expander messages" ng-show="spond.messages.length > 0">
+        <div class="message-item item"  ng-class="spond.response" ng-repeat="message in spond.messages">
+            <div class="clearfix"></div>
+            <div class="title"><div class="sign">!</div></div>
+            <div class="container">{{message.messageBody}}&nbsp</div>
+            <span class="right icon-x clickable" ng-tap ng-click="readMessage(message)"></span>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="expander buttons" ng-show="profile.id != spond.creatorId && (spond.isExpanded || spond.response=='notreplied')">
+        <div class="item" ng-repeat="response in spond.responses" >
+            <div class="title">{{dictionary['Are_you_coming']}}?</div>
+            <div class="answer-buttons container">
+                <button class="btn yes" ng-class="response.yesActive" ng-tap ng-click="spond.respond(spond, response, 1)">{{dictionary['YES']}}</button>
+                <button class="btn no" ng-class="response.noActive" ng-tap ng-click="spond.respond(spond, response, 2)">{{dictionary['NO']}}</button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+      <div  class="right" ng-show="response.isLoading" ng-include="'js/common/directives/loader.xhtml'"></div>
+    </div>
+    <div class="expander" ng-show="spond.isRepeated && profile.id != spond.creatorId && spond.response!='notreplied' && spond.isExpanded">
+        <div class="item" ng-repeat="response in spond.responses" >
+            <div class="title"></div>
+            <div class="container clickable" ng-click="spond.respondToAll(spond)">{{dictionary['Say']}}
+                <span ng-show="spond.response=='yes'">{{dictionary['YES']}}</span>
+                <span ng-show="spond.response=='no'">{{dictionary['NO']}}</span>
+                {{dictionary['to_all_repeating_sponds']}} <span class="icon-right right"></span></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="expander" ng-show="spond.isExpanded && profile.id == spond.creatorId">
+        <div class="item clickable">
+            <div class="title">
+                <span class="icon "></span>
+                &nbsp;
+            </div>
+            <a class="container" href="/sponds/{{spond.spondId}}/edit" >
+                <span ng-hide="spond.isRepeated">{{dictionary['EDIT_SPOND']}}</span>
+                <span ng-show="spond.isRepeated">{{dictionary['EDIT_ALL_SPONDS']}}</span>
+                <span class="icon-right right"></span></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="item clickable" ng-show="spond.isRepeated">
+            <div class="title">
+                <span class="icon "></span>
+                &nbsp;
+            </div>
+            <a class="container" href="/sponds/{{spond.spondId}}/instance/{{spond.id}}/edit" >{{dictionary['EDIT_ONLY_THIS_SPOND']}}
+                <span class="icon-right right"></span></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="item clickable" >
+            <div class="answer yes" ng-click="showAnswers(1)">
+                <div class="counter">{{spond.yes}}</div>
+                <div class="text">{{dictionary['Said_yes']}}</div>
+                <div class="{{spond.yesExpanded}}" ng-if="respondees.length>0"></div>
+            </div>
+            <div class="answer no" ng-click="showAnswers(2)">
+                <div class="counter">{{spond.no}}</div>
+                <div class="text">{{dictionary['Said_no']}}</div>
+                <div class="{{spond.noExpanded}}" ng-if="respondees.length>0"></div>
+            </div>
+            <div class="answer not-answered" ng-click="showAnswers(4)">
+                <div class="counter">{{spond.notReplied}}</div>
+                <div class="text">{{dictionary['Not_replied']}}</div>
+                <div class="{{spond.notRepliedExpanded}}" ng-if="respondees.length>0"></div>
+            </div>
+        </div>
+    </div>
+    <div class="members-list" ng-if="profile.id == spond.creatorId && spond.isExpanded">
+        <div class="member" ng-show="spond.notRepliedExpanded && respondees.length>0">
+            <div class="container nag clickable" ng-click="remind()">
+                <span class="icon-send"></span> Send reminder
+                <span class="icon-check right" ng-show="isReminded"></span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="member" ng-repeat="member in respondees">
+            <div class="container">
+                <span ng-show="member.name">{{member.name | uppercase}}</span>
+                <span ng-hide="member.name">{{member.email}}</span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</div>

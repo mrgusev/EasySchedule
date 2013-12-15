@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DAL\Category.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
@@ -86,8 +85,12 @@
     <Compile Include="DAL\ProductType.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Repositories\FoodUsageRepository.cs" />
+    <Compile Include="DAL\Repositories\InsulinRepositiry.cs" />
     <Compile Include="DAL\Repositories\ModelConverter.cs" />
+    <Compile Include="DAL\Repositories\PortionRepository.cs" />
     <Compile Include="DAL\Repositories\ProductRepository.cs" />
+    <Compile Include="DAL\Repositories\SugarRepository.cs" />
     <Compile Include="DAL\Shugar.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>

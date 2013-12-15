@@ -1,0 +1,100 @@
+<div class="page">
+    <div class="header">
+        <div class="title">{{dictionary['GROUPS']}}</div>
+        <div class="message">{{group.name}}</div>
+    </div>
+    <button ng-tap ng-click="redirect('/groups/'+group.id+'/edit')" ng-show="isAdmin" class="btn medium center">{{dictionary['EDIT']}}</button>
+
+    <ul class="list primary">
+        <li class="item" ng-repeat="member in membership">
+            <a href="/profile/{{member.profileId}}" class="" >
+                {{member.name || member.email}}
+                <span class="icon arrow-hor inverse right"></span>
+                <span class="clearfix"></span>
+            </a>
+        </li>
+    </ul>
+    <!--<div class="fields-list content-header" >-->
+        <!--<ul>-->
+            <!--<li class="inline-group free-space-bottm">-->
+                <!--<h1>{{group.name}}</h1>-->
+            <!--</li>-->
+            <!--<li class="inline-group" ng-show="group.description">-->
+                <!--<span>{{group.description}}</span>-->
+            <!--</li>-->
+            <!--<li ng-show="group.location.address">-->
+                <!--<div  class="inline-group">-->
+                    <!--<div>-->
+                        <!--<div ng-tap ng-click="showMap =! showMap">{{group.location.address}}<span  class="place" ></span></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div ng-show="showMap" ><div ui-map="mapService.map" class="map" ui-options="mapService.mapOptions" /></div>-->
+            <!--</li>-->
+            <!--&lt;!&ndash;<li class="inline-group" ng-show="group.link">&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="{{group.link | link}}">{{group.link}}</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--</ul>-->
+        <!--<div class=""></div>-->
+    </div>
+    <!--<div class="small-nav content-header">-->
+        <!--<a href="" ng-tap ng-click="scrollTo('members')">{{dictionary['GoToMembers']}}</a>-->
+    <!--</div>-->
+    <!--<div class="sponds-list">-->
+        <!--<h1 class="content-header">{{dictionary['Sponds']}}</h1>-->
+        <!--<div class="spond-block first">-->
+            <!--<div class="header">-->
+                <!--<h3 class="subtitle">{{dictionary['Sponds']}}</h3>-->
+                <!--<a class="right" ng-show="isAdmin" href="/sponds/create/?groupId={{group.id}}">{{dictionary['CreateNewSpond']}}</a>-->
+            <!--</div>-->
+            <!--<ul class="list-primary">-->
+                <!--<li class="item clickable" ng-repeat="spond in mySponds" ng-include="'js/common/partials/spond-item.xhtml'"/>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div class="search-box">&ndash;&gt;-->
+        <!--&lt;!&ndash;Search members:&ndash;&gt;-->
+        <!--&lt;!&ndash;<input type="text" ng-model="searchText"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<div class="responses members-list" id="members">-->
+        <!--<h1 class="left content-header">{{dictionary['Members']}}</h1>-->
+        <!--<button class="btn right" ng-show="isAdmin" ng-tap ng-click="isAdding=true">{{dictionary['add']}}</button>-->
+        <!--<div class="clearfix"></div>-->
+        <!--<div class="spond-block  first" >-->
+            <!--<div class="header clearfix">-->
+                <!--<h4 class="subtitle">{{dictionary['membership']}}</h4>-->
+                <!--<a href="/groups/{{group.id}}/members" class="right" >{{dictionary['edit']}}</a>-->
+            <!--</div>-->
+            <!--<ul class="list-primary"   >-->
+                <!--<li class="item big-input small clearfix" ng-show="isAdding">-->
+                    <!--<div class="first-block left">{{dictionary['AddNewMembers']}}:</div>-->
+                    <!--<textarea class="full" placeholder="Put emails here" ng-model="emails"></textarea>-->
+                    <!--<button class="btn" ng-tap ng-click="addMembers()">{{dictionary['AddMembers']}}</button>-->
+                <!--</li>-->
+                <!--<li class="item small clearfix clickable"  ng-repeat="member in membership | filter:searchText| orderBy:'fullName'">-->
+                    <!--<a href="/profile/{{member.profileId}}">-->
+                        <!--<div class="first-block inline-group" >-->
+                            <!--<div  ng-class="{'subtitle':member.type==2}"  >{{member.userDefinedAlias || member.name || member.email}}</div>-->
+                            <!--<div class="info gray" ng-show="member.userDefinedAlias">({{member.name}})</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="spond-block" ng-show="invitedMembership.length > 0" >-->
+            <!--<div class="header clearfix">-->
+                <!--<h4 class="subtitle">{{dictionary['InvitedMembers']}}</h4>-->
+            <!--</div>-->
+            <!--<ul class="list-primary">-->
+                <!--<li class="item small clickable clearfix"  ng-repeat="member in invitedMembership | filter:searchText | orderBy:'userDefinedAlias':'name':'email' ">-->
+                    <!--<a href="/profile/{{member.profileId}}">-->
+                        <!--<div class="first-block inline-group" >-->
+                            <!--<div  >{{member.userDefinedAlias || member.name || member.email}}</div>-->
+                            <!--<div class="info gray" ng-show="member.userDefinedAlias">({{member.name}})</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="clearfix"></div>-->
+</div>

@@ -13,8 +13,8 @@ namespace EasySchedule.Core.DAL
          {
              return new CategoryModel
                         {
-                            Id = Id,
-                            Name = Name
+                            id = Id,
+                            name = Name
                         };
 
          }
@@ -26,8 +26,8 @@ namespace EasySchedule.Core.DAL
         {
             return new MeasurmentTypeModel
             {
-                Id = Id,
-                Name = Name
+                id = Id,
+                name = Name
             };
 
         }
@@ -39,9 +39,9 @@ namespace EasySchedule.Core.DAL
         {
             return new ProductTypeModel
             {
-                Id = Id,
-                Name = Name,
-                MeasurmentUnit = MeasurmentUnit
+                id = Id,
+                name = Name,
+                measurmentUnit = MeasurmentUnit
             };
 
         }
@@ -53,13 +53,13 @@ namespace EasySchedule.Core.DAL
         {
             return new ProductModel
             {
-                Id = Id,
-                Name = Name,
-                AmountPerOne = AmountPerOne,
-                ValuePerOne = ValuePerOne,
-                ProductType = ProductType.ToModel(),
-                MeasurmentType = MeasurmentType.ToModel(),
-                Category = Category.ToModel()
+                id = Id,
+                name = Name,
+                amountPerOne = AmountPerOne,
+                valuePerOne = ValuePerOne,
+                productType = ProductType.ToModel(),
+                measurmentType = MeasurmentType.ToModel(),
+                category = Category.ToModel()
             };
 
         }
@@ -71,10 +71,9 @@ namespace EasySchedule.Core.DAL
         {
             return new FoodUsageModel
             {
-                Id = Id,
-                Time = Time,
-                BreadUnits = BreadUnits,
-                Portions = Portions.Select(p=>p.ToModel())
+                id = Id,
+                time = Time,
+                breadUnits = BreadUnits
             };
 
         }
@@ -86,11 +85,11 @@ namespace EasySchedule.Core.DAL
         {
             return new PortionModel
             {
-                Id = Id,
-                BreadUnits = BreadUnits,
-                Amount = Amount,
-                Value = Value,
-                ProductModel = Product.ToModel()
+                id = Id,
+                breadUnits = BreadUnits,
+                amount = Amount,
+                value = Value,
+                product = Product.ToModel()
             };
 
         }
@@ -102,9 +101,9 @@ namespace EasySchedule.Core.DAL
         {
             return new ShugarModel
             {
-                Id = Id,
-                Time = Time,
-                Value = Value
+                id = Id,
+                time = Time,
+                value = Value
             };
 
         }
@@ -116,8 +115,8 @@ namespace EasySchedule.Core.DAL
         {
             return new InsulinTypeModel
             {
-                Id = Id,
-                Name = Name
+                id = Id,
+                name = Name
             };
 
         }
@@ -129,10 +128,10 @@ namespace EasySchedule.Core.DAL
         {
             return new InsulinUsageModel
             {
-                Id = Id,
-                InsulinType = InsulinType.ToModel(),
-                Time = Time,
-                Value = Value
+                id = Id,
+                insulinType = InsulinType.ToModel(),
+                time = Time,
+                value = Value
             };
 
         }
