@@ -85,10 +85,12 @@ namespace EasySchedule.Client
         private void InsulinButton_Click_1(object sender, RoutedEventArgs e)
         {
             //InsulinTimePicker.Value = InsulinDatePicker.SelectedDate.Value.
+            var time = InsulinDatePicker.SelectedDate.Value.Add(InsulinTimePicker.Value.Value - InsulinTimePicker.Value.Value.Date);
+            
             context.InsulinUsages.Add(new InsulinUsage
                                           {
                                               InsulinTypeId = (int) InsulinTypeAddComboBox.SelectedValue,
-                                              Time = InsulinTimePicker.Value.Value,
+                                              Time = time,
                                               Value = double.Parse(InsulinValueTextBox.Text)
                                           });
             context.SaveChanges();

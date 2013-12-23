@@ -4,13 +4,21 @@
     <list default="true" id="caa798a0-60c7-430f-906c-e7e79f83370b" name="Default" comment="" />
     <ignored path="EasySchedule.WebClient.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/journal.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1386950344031" ignored="false" />
-    <file path="/home.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387028800626" ignored="false" />
-    <file path="/home.xhtml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387029535504" ignored="false" />
-    <file path="/index.html" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1386957181469" ignored="false" />
+    <file path="/journal.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387423526791" ignored="false" />
+    <file path="/home.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387758021382" ignored="false" />
+    <file path="/home.xhtml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387758442296" ignored="false" />
+    <file path="/index.html" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387758189819" ignored="false" />
     <file path="/main.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1386994919101" ignored="false" />
     <file path="/enums.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1386998119624" ignored="false" />
-    <file path="/dummy.xml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387029525873" ignored="false" />
+    <file path="/dummy.xml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387287150899" ignored="false" />
+    <file path="/main.css" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387122431110" ignored="false" />
+    <file path="/home.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387394991107" ignored="false" />
+    <file path="/controls.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387431312031" ignored="false" />
+    <file path="/product.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387424277759" ignored="false" />
+    <file path="/test.html" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387749273730" ignored="false" />
+    <file path="/menu.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387755299741" ignored="false" />
+    <file path="/about.xhtml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387756469346" ignored="false" />
+    <file path="/menu.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387756913129" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +41,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="72" selection-start="580" selection-end="580" vertical-scroll-proportion="21.538462">
+            <state line="9" column="62" selection-start="518" selection-end="518" vertical-scroll-proportion="-2.0784314">
               <folding />
             </state>
           </provider>
@@ -42,27 +50,18 @@
       <file leaf-file-name="home.xhtml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/pages/home/home.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="28" selection-start="105" selection-end="105" vertical-scroll-proportion="-1.9615384">
+            <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="datetimepicker.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/common/directives/datetimepicker.js">
+      <file leaf-file-name="about.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/pages/about/about.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controls.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/common/directives/controls.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="35" selection-start="6513" selection-end="6513" vertical-scroll-proportion="0.0">
+            <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1385349427540" expanded="false" signature="15831:15883" placeholder="..." />
+                <marker date="1387756586700" expanded="true" signature="453:642" placeholder="[...]" />
               </folding>
             </state>
           </provider>
@@ -71,10 +70,53 @@
       <file leaf-file-name="home.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/pages/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="35" selection-start="559" selection-end="559" vertical-scroll-proportion="0.30357143">
-              <folding>
-                <element signature="e#656#2201#0" expanded="false" />
-              </folding>
+            <state line="97" column="28" selection-start="4792" selection-end="4792" vertical-scroll-proportion="0.33271027">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/menu/menu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="37" selection-start="4916" selection-end="4916" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="20" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/pages/about/about.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loader.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/common/partials/loader.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="6" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.9230769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="1" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,16 +131,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/js/common/resources/journal.js" />
-        <option value="$PROJECT_DIR$/styles/icons.scss" />
+        <option value="$PROJECT_DIR$/js/common/directives/controls.js" />
+        <option value="$USER_HOME$/Desktop/PerspectivePageViewNavigation/css/demo.css" />
+        <option value="$USER_HOME$/Desktop/PerspectivePageViewNavigation/index3.html" />
+        <option value="$PROJECT_DIR$/styles/menu.scss" />
         <option value="$PROJECT_DIR$/styles/main.scss" />
-        <option value="$PROJECT_DIR$/styles/navigation.scss" />
-        <option value="$PROJECT_DIR$/js/common/enums.js" />
+        <option value="$PROJECT_DIR$/js/pages/about/about.xhtml" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/pages/about/about.js" />
+        <option value="$PROJECT_DIR$/js/menu/menu.js" />
+        <option value="$PROJECT_DIR$/styles/timeline.scss" />
+        <option value="$PROJECT_DIR$/styles/loader.scss" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/pages/home/home.js" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/js/common/partials/loader.xhtml" />
         <option value="$PROJECT_DIR$/js/pages/home/home.xhtml" />
-        <option value="$PROJECT_DIR$/js/common/directives/datetimepicker.js" />
+        <option value="$PROJECT_DIR$/js/pages/home/home.js" />
       </list>
     </option>
   </component>
@@ -177,21 +225,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -212,32 +246,6 @@
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -254,50 +262,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,6 +305,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasySchedule.WebClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasySchedule.WebClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -352,12 +338,13 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="settings" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="settings" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -374,8 +361,24 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\EasySchedule\EasySchedule.WebClient" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\EasySchedule\EasySchedule.WebClient\fonts\typicons" />
+      <recent name="F:\EasySchedule\EasySchedule.WebClient\fonts\codropsicons" />
+      <recent name="F:\EasySchedule\EasySchedule.WebClient\fonts" />
+      <recent name="F:\EasySchedule\EasySchedule.WebClient\js\menu" />
+      <recent name="F:\EasySchedule\EasySchedule.WebClient\styles" />
+    </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.test.html">
+    <configuration default="false" name="test.html" type="JavascriptDebugSession" factoryName="Local" singleton="true" temporary="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" value="file:///F:/EasySchedule/EasySchedule.WebClient/test.html" />
+      </JSDebuggerConfigurationSettings>
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -400,9 +403,15 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
@@ -439,17 +448,17 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24348474" sideWeight="0.67064846" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993174" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -516,119 +525,117 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/common/resources/journal.js">
+    <entry file="file://$USER_HOME$/Desktop/PerspectivePageViewNavigation/index3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="39" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0">
+        <state line="65" column="35" selection-start="3320" selection-end="3320" vertical-scroll-proportion="-40.307693">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common/partials/spond-item.xhtml">
+    <entry file="file://$PROJECT_DIR$/styles/menu.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="53" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
+        <state line="173" column="19" selection-start="3380" selection-end="3380" vertical-scroll-proportion="-8.48">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/icons.scss">
+    <entry file="file://$USER_HOME$/Desktop/PerspectivePageViewNavigation/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="1" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.9364486">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/navigation.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="1840" selection-end="1840" vertical-scroll-proportion="1.6134969">
+        <state line="20" column="35" selection-start="1095" selection-end="1095" vertical-scroll-proportion="-0.5220729">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.80674845">
+        <state line="33" column="1" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/menu/classie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="72" selection-start="580" selection-end="580" vertical-scroll-proportion="21.538462">
+        <state line="63" column="6" selection-start="1571" selection-end="1572" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common/enums.js">
+    <entry file="file://$PROJECT_DIR$/js/pages/about/about.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="15" selection-start="52" selection-end="52" vertical-scroll-proportion="0.060714286">
-          <folding />
+        <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1387756586700" expanded="true" signature="453:642" placeholder="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common/resources/journal.js">
+    <entry file="file://$PROJECT_DIR$/styles/timeline.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="39" selection-start="575" selection-end="575" vertical-scroll-proportion="0.39464286">
+        <state line="162" column="21" selection-start="3153" selection-end="3153" vertical-scroll-proportion="0.05892857">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+    <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="3" selection-start="132" selection-end="134" vertical-scroll-proportion="-5.12">
+        <state line="3" column="20" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+    <entry file="file://$PROJECT_DIR$/js/menu/menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="229" column="0" selection-start="3773" selection-end="3773" vertical-scroll-proportion="0.33214286">
+        <state line="78" column="37" selection-start="4916" selection-end="4916" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/pages/home/home.xhtml">
+    <entry file="file://$PROJECT_DIR$/styles/loader.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="28" selection-start="105" selection-end="105" vertical-scroll-proportion="-1.9615384">
+        <state line="51" column="1" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common/directives/datetimepicker.js">
+    <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common/directives/controls.js">
+    <entry file="file://$PROJECT_DIR$/js/pages/about/about.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="35" selection-start="6513" selection-end="6513" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1385349427540" expanded="false" signature="15831:15883" placeholder="..." />
-          </folding>
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/libraries/underscore.js">
+    <entry file="file://$PROJECT_DIR$/js/common/partials/loader.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1208" column="6" selection-start="41120" selection-end="41120" vertical-scroll-proportion="0.8093458">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="6" column="6" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.9230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/pages/home/home.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="62" selection-start="518" selection-end="518" vertical-scroll-proportion="-2.0784314">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/pages/home/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="35" selection-start="559" selection-end="559" vertical-scroll-proportion="0.30357143">
-          <folding>
-            <element signature="e#656#2201#0" expanded="false" />
-          </folding>
+        <state line="97" column="28" selection-start="4792" selection-end="4792" vertical-scroll-proportion="0.33271027">
+          <folding />
         </state>
       </provider>
     </entry>

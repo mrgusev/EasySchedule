@@ -2,52 +2,72 @@
 <html  xmlns:ng="http://angularjs.org" ng-app="app">
 <head>
     <base href="/">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="viewport" content="target-densitydpi=device-dpi">
     <meta name="viewport"  content="width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/loader.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/vendor/ui+ru.css">
+    <link rel="stylesheet" type="text/css" href="styles/timeline.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <link rel="stylesheet" type="text/css" href="styles/navigation.css">
+    <link rel="stylesheet" type="text/css" href="styles/menu.css">
+    <link rel="stylesheet" type="text/css" href="styles/vendor/jquery-ui-1.10.3.custom.css">
+    <link rel="stylesheet" type="text/css" href="styles/pages/home.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perspective Page View Navigation</title>
+    <meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
+    <meta name="keywords" content="3d page, menu, navigation, mobile, perspective, css transform, web development, web design" />
+    <meta name="author" content="Codrops" />
+    <!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+    <script src="js/menu/modernizr.custom.25376.js"></script>
 
 </head>
 
 <body>
-<!--<div class="circle-box" id="main-loader">-->
-    <!--<div class="circleG circleG_1">-->
-    <!--</div>-->
-    <!--<div class="circleG circleG_2">-->
-    <!--</div>-->
-    <!--<div class="circleG circleG_3 ">-->
-    <!--</div>-->
-<!--</div>-->
-<div class="main" >
+<div id="perspective" class="perspective effect-airbnb">
+    <div class="container">
+        <div class="wrapper"><!-- wrapper needed for scroll -->
+            <!-- Top Navigation -->
 
-    <div class="content">
-       <div ng-view=""></div>
-    </div>
+            <div class="main clearfix" ng-view="">
+
+            </div>
+
+            <button id="showMenu">Show Menu</button><!-- /main -->
+        </div><!-- wrapper -->
+    </div><!-- /container -->
+    <nav class="outer-nav left vertical">
+        <a href="#/" class="icon-home">Home</a>
+        <a href="#/about" class="icon-news">Statistic</a>
+        <a href="#" class="icon-image">Products</a>
+        <a href="#" class="icon-upload">Settings</a>
+        <a href="#" class="icon-star">About</a>
+        <a href="#" class="icon-mail">Logout</a>
+    </nav>
 </div>
 </body>
 
 
 
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="js/libraries/jstz.min.js"></script>
-<script type="text/javascript">
-//    var _gaq = _gaq || [];
-//    _gaq.push(['_setAccount', 'UA-45836187-1']);
-//
-//    (function() {
-//        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-//        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-//        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-//    })();
-</script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>-->
+<script type="text/javascript" src="js/libraries/jsapi"></script>
 <script>var DEBUG = true;   </script>
+
+<!--<script type="text/javascript" src="js/libraries/uds"></script>-->
+
+<script type="text/javascript" src="js/libraries/corechart.js"></script>
+<script type="text/javascript" src="js/libraries/jquery.js"></script>
 <script type="text/javascript" src="js/libraries/underscore.js"></script>
-<!--<script type="text/javascript" src="js/libraries/autoresize.jquery.js"></script>-->
+<script type="text/javascript" src="js/libraries/autoresize.jquery.js"></script>
 <script type="text/javascript" src="js/libraries/underscore-strings.js"></script>
-<!--<script type="text/javascript" src="js/libraries/jquery-ui-1.10.3.custom.js"></script>-->
+<script type="text/javascript" src="js/libraries/jquery-ui-1.10.3.custom.js"></script>
+
+<script src="js/menu/classie.js"></script>
+<script src="js/menu/menu.js"></script>
+
 <script type="text/javascript" src="js/libraries/console.js"></script>
 <script type="text/javascript" src="js/libraries/angular/angular.js"></script>
 <script type="text/javascript" src="js/libraries/angular/angular-resource.js"></script>
@@ -64,7 +84,9 @@
 <script type="text/javascript" src="js/common/services/localization.js"></script>
 <script type="text/javascript" src="js/common/services/parser.js"></script>
 <script type="text/javascript" src="js/common/resources/journal.js"></script>
+<script type="text/javascript" src="js/common/resources/product.js"></script>
 <script type="text/javascript" src="js/pages/home/home.js"></script>
+<script type="text/javascript" src="js/pages/about/about.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript">
 

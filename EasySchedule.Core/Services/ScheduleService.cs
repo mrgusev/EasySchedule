@@ -24,6 +24,14 @@ namespace EasySchedule.Core.Services
                 context.InsulinTypes.Load();
                 return context.InsulinUsages.ToList().Select(i => i.ToModel());
             }
+        }
+ 
+        public IEnumerable<InsulinTypeModel> GeInsulinTypes()
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                return context.InsulinTypes.ToList().Select(i => i.ToModel());
+            }
         } 
 
         public IEnumerable<FoodUsageModel> GetFoodUsages()

@@ -374,8 +374,8 @@
 	border: 1px solid #dddddd;
 	background: white;
 	color: #333333;
-   /*width: 391px;*/
-    width: calc(63.23076923076923% - 20px);
+    width: 270px;
+    /*width: calc(63.23076923076923% - 20px);*/
     height: 369px;
     padding-left: 10px;
     padding-right: 10px;

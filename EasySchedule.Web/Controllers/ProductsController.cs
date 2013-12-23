@@ -9,32 +9,31 @@ using EasySchedule.Core.Services;
 
 namespace EasySchedule.Web.Controllers
 {
-    public class InsulinUsagesController : ApiController
+    public class ProductsController : ApiController
     {
-        // GET api/insulinusages
-        public IEnumerable<InsulinUsageModel> Get()
+        // GET api/products
+        public IEnumerable<ProductModel> Get()
         {
-            return (new ScheduleService()).GetInsulinUsages();
+            return (new ProductService()).GetProducts();
         }
 
-        // GET api/insulinusages/5
+        // GET api/products/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/insulinusages
-        public void Post(InsulinUsageModel value)
+        // POST api/products
+        public void Post([FromBody]string value)
         {
-            (new ScheduleService()).AddInsulinUsage(value);
         }
 
-        // PUT api/insulinusages/5
+        // PUT api/products/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/insulinusages/5
+        // DELETE api/products/5
         public void Delete(int id)
         {
         }

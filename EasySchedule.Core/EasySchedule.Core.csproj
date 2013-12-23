@@ -64,6 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EasyScheduleDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\FatSecret.cs" />
     <Compile Include="DAL\FoodUsage.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
