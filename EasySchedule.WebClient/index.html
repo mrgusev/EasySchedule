@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="styles/vendor/jquery-ui-1.10.3.custom.css">
     <link rel="stylesheet" type="text/css" href="styles/pages/home.css">
 
+    <link rel="stylesheet" type="text/css" href="styles/modal.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Perspective Page View Navigation</title>
     <meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
@@ -23,6 +25,7 @@
     <meta name="author" content="Codrops" />
     <!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
     <script src="js/menu/modernizr.custom.25376.js"></script>
+    <!--<script src="js/modal/modernizr.custom.js"></script>-->
 
 </head>
 
@@ -32,25 +35,46 @@
         <div class="wrapper"><!-- wrapper needed for scroll -->
             <!-- Top Navigation -->
 
+            <button id="showMenu" class="clearfix">Show Menu</button>
+            <button class="md-trigger" data-modal="modal-9">3D Flip (vertical)</button>
             <div class="main clearfix" ng-view="">
 
             </div>
 
-            <button id="showMenu">Show Menu</button><!-- /main -->
+            <div class="md-modal md-effect-9" id="modal-9">
+                <div class="md-content">
+                    <h3>Уровень сахара</h3>
+                    <div>
+                        <p>This is a modal window. You can do the following things with it:</p>
+                        <ul>
+                            <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+                            <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+                            <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                        </ul>
+                        <button class="md-close">Close me!</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="md-overlay"></div><!-- the overlay element -->
+<!-- /main -->
         </div><!-- wrapper -->
     </div><!-- /container -->
     <nav class="outer-nav left vertical">
-        <a href="#/" class="icon-home">Home</a>
-        <a href="#/about" class="icon-news">Statistic</a>
-        <a href="#" class="icon-image">Products</a>
-        <a href="#" class="icon-upload">Settings</a>
-        <a href="#" class="icon-star">About</a>
-        <a href="#" class="icon-mail">Logout</a>
+        <a href="#/" class="icon-home">Журнал</a>
+        <a href="#/about" class="icon-news">Статистика</a>
+        <a href="#" class="icon-image">Продукты</a>
+        <a href="#" class="icon-upload">Настройки</a>
+        <a href="#" class="icon-star">О проекте</a>
+        <a href="#" class="icon-mail">Выйти</a>
     </nav>
 </div>
 </body>
 
 
+<!-- for the blur effect -->
+<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
 
 <!--<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>-->
 <script type="text/javascript" src="js/libraries/jsapi"></script>
@@ -67,6 +91,15 @@
 
 <script src="js/menu/classie.js"></script>
 <script src="js/menu/menu.js"></script>
+<script src="js/modal/modalEffects.js"></script>
+<script>
+    // this is important for IEs
+    var polyfilter_scriptpath = '/js/modal/';
+</script>
+<script src="js/modal/cssParser.js"></script>
+<script src="js/modal/css-filters-polyfill.js"></script>
+
+
 
 <script type="text/javascript" src="js/libraries/console.js"></script>
 <script type="text/javascript" src="js/libraries/angular/angular.js"></script>

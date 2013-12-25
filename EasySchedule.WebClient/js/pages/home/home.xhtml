@@ -1,10 +1,11 @@
 <div class="">
     <div ng-show="isDataLoading" ng-include="'js/common/partials/loader.xhtml'"></div>
-    <div ng-hide="isDataLoading"><button ng-click="loadJournal()">Обновить</button>
+    <div class="content {{!isDataLoading}}">
+        <button ng-click="loadJournal()">Обновить</button>
 
-        <div class="add-panel" style="width: 400px">
+        <div class="add-panel slide1" style="width: 400px">
             <div class="buttons">
-                <button ng-click="showAddPanel(1)">+ сахар</button>
+                <button class="md-trigger" data-modal="modal-9" ng-click="showAddPanel(1)">+ сахар</button>
                 <button ng-click="showAddPanel(3)">+ еда</button>
                 <button ng-click="showAddPanel(2)">+ инсулин</button>
             </div>
@@ -26,15 +27,15 @@
             <!--</div>-->
         </div>
 
-        <div id="chart_div" style="width: 600px; height: 300px;"></div>
-        <ul class="cbp_tmtimeline">
+        <!--<div id="chart_div" style="width: 600px; height: 300px;"></div>-->
+        <ul class="cbp_tmtimeline slide2">
             <li ng-repeat="item in collection">
                 <time class="cbp_tmtime" datetime="{{item.time}}"><span>{{item.time | date:'dd.MM.yy'}}</span>
                     <span>{{item.time | date:'HH:mm'}}</span></time>
                 <div class="cbp_tmicon cbp_tmicon-phone"></div>
                 <div class="cbp_tmlabel">
                     <div ng-show="item.type == 1"> {{item.value}}</div>
-                    <div ng-show="item.type == 2"> {{item.insulinType.name}}: {{item.value}}</div>
+                    <div ng-show="item.type == 2"><span style="font-size: 2.3em;"> {{item.value}}</span>ед. <span class="right">{{item.insulinType.name}}</span></div>
                     <div ng-show="item.type == 3" class="clickable" ng-click="item.isOpened=!item.isOpened; loadPortions(item)">
                         Покушал: {{item.breadUnits}} ХЕ
                         <!--<div ng-show="item.isOpened">-->

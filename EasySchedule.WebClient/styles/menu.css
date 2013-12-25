@@ -89,7 +89,7 @@ html, body, .perspective {
   transform: translateX(-50%); }
 
 .outer-nav.left {
-  left: 25%; }
+  left: 10%; }
 
 .outer-nav.right {
   right: 25%; }
@@ -171,8 +171,8 @@ html, body, .perspective {
   transform-origin: 50% 50%; }
 
 .effect-airbnb.animate .container {
-  -webkit-transform: translateZ(-1800px) translateX(50%) rotateY(-45deg);
-  transform: translateZ(-1800px) translateX(50%) rotateY(-45deg); }
+  -webkit-transform: translateZ(-1000px) translateX(20%) rotateY(-30deg);
+  transform: translateZ(-1000px) translateX(20%) rotateY(-30deg); }
 
 .no-csstransforms3d .effect-airbnb.animate .container {
   left: 75%; }

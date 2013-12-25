@@ -5,10 +5,10 @@
     <ignored path="EasySchedule.WebClient.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/journal.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387423526791" ignored="false" />
-    <file path="/home.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387758021382" ignored="false" />
-    <file path="/home.xhtml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387758442296" ignored="false" />
-    <file path="/index.html" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387758189819" ignored="false" />
-    <file path="/main.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1386994919101" ignored="false" />
+    <file path="/home.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387859272905" ignored="false" />
+    <file path="/home.xhtml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387825059288" ignored="false" />
+    <file path="/index.html" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387875724327" ignored="false" />
+    <file path="/main.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387853448802" ignored="false" />
     <file path="/enums.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1386998119624" ignored="false" />
     <file path="/dummy.xml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387287150899" ignored="false" />
     <file path="/main.css" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387122431110" ignored="false" />
@@ -16,9 +16,16 @@
     <file path="/controls.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387431312031" ignored="false" />
     <file path="/product.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387424277759" ignored="false" />
     <file path="/test.html" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387749273730" ignored="false" />
-    <file path="/menu.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387755299741" ignored="false" />
+    <file path="/menu.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387821717338" ignored="false" />
     <file path="/about.xhtml" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387756469346" ignored="false" />
     <file path="/menu.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387756913129" ignored="false" />
+    <file path="/timeline.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387806961295" ignored="false" />
+    <file path="$PROJECT_DIR$/styles/timeline.css" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387807199243" ignored="false" />
+    <file path="$PROJECT_DIR$/styles/menu.css" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387821821238" ignored="false" />
+    <file path="$PROJECT_DIR$/styles/main.css" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387825452235" ignored="false" />
+    <file path="/modalEffects.js" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387874012345" ignored="false" />
+    <file path="/modal.scss" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387875758658" ignored="false" />
+    <file path="$PROJECT_DIR$/styles/modal.css" changelist="caa798a0-60c7-430f-906c-e7e79f83370b" time="1387875911110" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +48,25 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="62" selection-start="518" selection-end="518" vertical-scroll-proportion="-2.0784314">
+            <state line="45" column="23" selection-start="2326" selection-end="2328" vertical-scroll-proportion="-10.961538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modalEffects.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/modal/modalEffects.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="15" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles/menu.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="233" column="50" selection-start="4820" selection-end="4820" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -50,7 +75,16 @@
       <file leaf-file-name="home.xhtml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/pages/home/home.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="-0.0">
+            <state line="19" column="37" selection-start="1108" selection-end="1108" vertical-scroll-proportion="-12.423077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modal.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/styles/modal.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="2" selection-start="465" selection-end="465" vertical-scroll-proportion="0.030357143">
               <folding />
             </state>
           </provider>
@@ -60,53 +94,24 @@
         <entry file="file://$PROJECT_DIR$/js/pages/about/about.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1387756586700" expanded="true" signature="453:642" placeholder="[...]" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/pages/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="28" selection-start="4792" selection-end="4792" vertical-scroll-proportion="0.33271027">
+            <state line="14" column="26" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/menu/menu.js">
+      <file leaf-file-name="timeline.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles/timeline.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="37" selection-start="4916" selection-end="4916" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="20" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/pages/about/about.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loader.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/common/partials/loader.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="6" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.9230769">
+            <state line="65" column="21" selection-start="1363" selection-end="1369" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -115,7 +120,7 @@
       <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="1" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
+            <state line="82" column="16" selection-start="1783" selection-end="1789" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,22 +136,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/common/directives/controls.js" />
-        <option value="$USER_HOME$/Desktop/PerspectivePageViewNavigation/css/demo.css" />
         <option value="$USER_HOME$/Desktop/PerspectivePageViewNavigation/index3.html" />
-        <option value="$PROJECT_DIR$/styles/menu.scss" />
-        <option value="$PROJECT_DIR$/styles/main.scss" />
         <option value="$PROJECT_DIR$/js/pages/about/about.xhtml" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/js/pages/about/about.js" />
         <option value="$PROJECT_DIR$/js/menu/menu.js" />
-        <option value="$PROJECT_DIR$/styles/timeline.scss" />
-        <option value="$PROJECT_DIR$/styles/loader.scss" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/js/common/partials/loader.xhtml" />
+        <option value="$PROJECT_DIR$/styles/loader.scss" />
+        <option value="$PROJECT_DIR$/styles/timeline.scss" />
+        <option value="$PROJECT_DIR$/styles/menu.scss" />
+        <option value="$PROJECT_DIR$/styles/main.scss" />
         <option value="$PROJECT_DIR$/js/pages/home/home.xhtml" />
+        <option value="$PROJECT_DIR$/js/modal/modalEffects.js" />
         <option value="$PROJECT_DIR$/js/pages/home/home.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/styles/modal.scss" />
       </list>
     </option>
   </component>
@@ -182,7 +187,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -225,24 +229,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -261,7 +247,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="modal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -280,71 +266,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasySchedule.WebClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="settings" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -362,11 +301,11 @@
       <recent name="F:\EasySchedule\EasySchedule.WebClient" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\EasySchedule\EasySchedule.WebClient\js\modal" />
       <recent name="F:\EasySchedule\EasySchedule.WebClient\fonts\typicons" />
       <recent name="F:\EasySchedule\EasySchedule.WebClient\fonts\codropsicons" />
       <recent name="F:\EasySchedule\EasySchedule.WebClient\fonts" />
       <recent name="F:\EasySchedule\EasySchedule.WebClient\js\menu" />
-      <recent name="F:\EasySchedule\EasySchedule.WebClient\styles" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.test.html">
@@ -444,7 +383,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -525,37 +464,39 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/PerspectivePageViewNavigation/index3.html">
+    <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="35" selection-start="3320" selection-end="3320" vertical-scroll-proportion="-40.307693">
-          <folding />
-        </state>
+        <state line="3" column="20" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/menu.scss">
+    <entry file="file://$PROJECT_DIR$/js/menu/menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="19" selection-start="3380" selection-end="3380" vertical-scroll-proportion="-8.48">
-          <folding />
-        </state>
+        <state line="78" column="37" selection-start="4916" selection-end="4916" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/PerspectivePageViewNavigation/index.html">
+    <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="35" selection-start="1095" selection-end="1095" vertical-scroll-proportion="-0.5220729">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/main.scss">
+    <entry file="file://$PROJECT_DIR$/js/pages/about/about.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="1" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/menu/classie.js">
+    <entry file="file://$PROJECT_DIR$/js/common/partials/loader.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="6" selection-start="1571" selection-end="1572" vertical-scroll-proportion="0.0">
+        <state line="6" column="6" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/loader.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="27" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/timeline.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="21" selection-start="1363" selection-end="1369" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -563,78 +504,55 @@
     <entry file="file://$PROJECT_DIR$/js/pages/about/about.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1387756586700" expanded="true" signature="453:642" placeholder="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/timeline.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="21" selection-start="3153" selection-end="3153" vertical-scroll-proportion="0.05892857">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
+    <entry file="file://$PROJECT_DIR$/js/modal/modalEffects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/menu/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="37" selection-start="4916" selection-end="4916" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/loader.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="1" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/pages/about/about.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/common/partials/loader.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.9230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/pages/home/home.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="62" selection-start="518" selection-end="518" vertical-scroll-proportion="-2.0784314">
+        <state line="57" column="15" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/pages/home/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="28" selection-start="4792" selection-end="4792" vertical-scroll-proportion="0.33271027">
+        <state line="14" column="26" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/pages/home/home.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="37" selection-start="1108" selection-end="1108" vertical-scroll-proportion="-12.423077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="23" selection-start="2326" selection-end="2328" vertical-scroll-proportion="-10.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/menu.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="233" column="50" selection-start="4820" selection-end="4820" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="16" selection-start="1783" selection-end="1789" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/modal.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="2" selection-start="465" selection-end="465" vertical-scroll-proportion="0.030357143">
           <folding />
         </state>
       </provider>

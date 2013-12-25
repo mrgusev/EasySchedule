@@ -9,10 +9,6 @@
   src: url("../fonts/GothamMedium.eot");
   src: url("../fonts/GothamMedium.woff") format("woff"), url("../fonts/GothamMedium.ttf") format("truetype"), url("../fonts/GothamMedium.svg") format("svg"); }
 
-body {
-  color: #494949;
-  background: #e4e4e4; }
-
 ul {
   list-style: none; }
 
@@ -233,6 +229,31 @@ button:active {
 
   .codrops-icon span {
     display: none; } }
+/*Content appears*/
+.content * {
+  opacity: 0;
+  -webkit-transform: translateX(-50px);
+  transform: translateX(50px);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s; }
+
+.content.true * {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+
+.content.true *:nth-child(2) {
+  -webkit-transition-delay: 0.04s;
+  transition-delay: 0.04s; }
+
+.content.true *:nth-child(3) {
+  -webkit-transition-delay: 0.08s;
+  transition-delay: 0.08s; }
+
+.content.true *:nth-child(4) {
+  -webkit-transition-delay: 0.12s;
+  transition-delay: 0.12s; }
+
 /* ---------- Clearfix ------- */
 .clearfix:after {
   visibility: hidden;

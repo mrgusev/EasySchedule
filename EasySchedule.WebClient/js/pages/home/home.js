@@ -12,6 +12,7 @@ angular.module('pages.home', [
     }])
     .controller('HomeController', ['$scope', '$routeParams', '$location', 'Journal','Product', '$rootScope', '$timeout',
         function ($scope, $routeParams,$location, Journal,Product, $rootScope, $timeout) {
+            ModalEffects();
             $scope.isDataLoading = true
             $scope.insulinTypes = [];
             $scope.newSugarModel = {time: new Date().getTime(), value: 4};
@@ -56,6 +57,7 @@ angular.module('pages.home', [
             $scope.loadInsulinTypes();
 
             $scope.loadJournal = function(){
+                $scope.isDataLoading = true;
                 $scope.newSugarModel.time = new Date($scope.newSugarModel.time - 14400000);
                 $scope.collection = [];
                 Journal.getFoodUsages(function(foodUsages){
@@ -96,7 +98,7 @@ angular.module('pages.home', [
                                     }
                                 }
                             $scope.isDataLoading = false;
-                            $timeout(drawChart,100)
+                           // $timeout(drawChart,100)
                         });
                     });
                 });

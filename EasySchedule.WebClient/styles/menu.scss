@@ -105,7 +105,7 @@ html, body, .perspective {
 }
 
 .outer-nav.left {
-  left: 25%;
+  left: 10%;
 }
 
 .outer-nav.right {
@@ -184,8 +184,8 @@ html, body, .perspective {
 }
 
 .effect-airbnb.animate .container {
-  -webkit-transform: translateZ(-1800px) translateX(50%) rotateY(-45deg);
-  transform: translateZ(-1800px) translateX(50%) rotateY(-45deg);
+  -webkit-transform: translateZ(-1000px) translateX(20%) rotateY(-30deg);
+  transform: translateZ(-1000px) translateX(20%) rotateY(-30deg);
 }
 
 .no-csstransforms3d .effect-airbnb.animate .container {
