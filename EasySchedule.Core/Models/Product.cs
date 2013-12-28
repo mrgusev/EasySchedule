@@ -10,10 +10,12 @@ namespace EasySchedule.Core.Models
     {
         public int id { get; set; }
         public string name { get; set; }
-        public MeasurmentTypeModel measurmentType { get; set; }
-        public ProductTypeModel productType { get; set; }
         public CategoryModel category { get; set; }
-        public double amountPerOne { get; set; }
-        public double valuePerOne { get; set; }
+        public double carbohydrates { get; set; }
+        public double proteins { get; set; }
+        public double fats { get; set; }
+        public double calories { get; set; }
+        public string measurementUnits { get; set; }
+        public double size { get; set; }
     }
 }

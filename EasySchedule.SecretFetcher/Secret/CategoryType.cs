@@ -7,22 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasySchedule.Core.DAL
+namespace EasySchedule.SecretFetcher.Secret
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductType
+    public partial class CategoryType
     {
-        public ProductType()
+        public CategoryType()
         {
-            this.Products = new HashSet<Product>();
+            this.Categories = new HashSet<Category>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string MeasurmentUnit { get; set; }
     
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
     }
 }

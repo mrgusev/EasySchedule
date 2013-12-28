@@ -12,7 +12,7 @@ namespace EasySchedule.Core.Services
 {
     public class ScheduleService
     {
-        public IEnumerable<ShugarModel> GetSugars()
+        public IEnumerable<SugarModel> GetSugars()
         {
             return new EasyScheduleDatabaseEntities().Shugars.ToList().Select(s => s.ToModel());
         } 
@@ -46,14 +46,12 @@ namespace EasySchedule.Core.Services
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                context.MeasurmentTypes.Load();
-                context.ProductTypes.Load();
                 context.Categories.Load();
                 return context.Portions.Include("Product").Where(p=>p.FoodUsageId == foodUsageId).ToList().Select(f => f.ToModel());
             }
         }
 
-        public void AddSugar(ShugarModel shugarModel)
+        public void AddSugar(SugarModel shugarModel)
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {

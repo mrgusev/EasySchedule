@@ -7,29 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasySchedule.Core.DAL
+namespace EasySchedule.SecretFetcher.Secret
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class ProductLink
     {
-        public Product()
-        {
-            this.Portions = new HashSet<Portion>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Link { get; set; }
         public int CategoryId { get; set; }
-        public double Carbohydrates { get; set; }
-        public double Fats { get; set; }
-        public double Proteins { get; set; }
-        public double Calories { get; set; }
-        public string MeasurementUnit { get; set; }
-        public double Size { get; set; }
+        public string Info { get; set; }
+        public bool IsFetched { get; set; }
     
         public virtual Category Category { get; set; }
-        public virtual ICollection<Portion> Portions { get; set; }
     }
 }

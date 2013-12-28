@@ -21,7 +21,10 @@ namespace EasySchedule.Core.DAL
     
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public Nullable<int> CategoryTypeId { get; set; }
     
         public virtual ICollection<Product> Products { get; set; }
+        public virtual CategoryType CategoryType { get; set; }
     }
 }

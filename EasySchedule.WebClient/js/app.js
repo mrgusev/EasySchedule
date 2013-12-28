@@ -1,7 +1,8 @@
 //Main application module
 angular.module('app', ['ngRoute',
-    'pages.home',
-        'pages.about'
+        'pages.home',
+        'pages.about',
+        'pages.products'
     ])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         //$locationProvider.html5Mode(true);

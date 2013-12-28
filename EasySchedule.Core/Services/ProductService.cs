@@ -15,11 +15,20 @@ namespace EasySchedule.Core.Services
         {
             using (var context= new EasyScheduleDatabaseEntities())
             {
-                context.MeasurmentTypes.Load();
-                context.ProductTypes.Load();
                 context.Categories.Load();
-                return context.Products.ToList().Select(p => p.ToModel());
+                return context.Products.Take(100).ToList().Select(p => p.ToModel());
             }
         }
+
+        public IEnumerable<ProductModel> SearchProduct(string query)
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                context.Categories.Load();
+                query = query.Trim();
+                return context.Products.Where(p => p.Name.Contains(query) )
+                    .Take(20).ToList().Select(p => p.ToModel());
+            }
+        } 
     }
 }

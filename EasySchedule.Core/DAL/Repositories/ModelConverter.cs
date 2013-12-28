@@ -11,6 +11,7 @@ namespace EasySchedule.Core.DAL
     {
          public CategoryModel ToModel()
          {
+             Category c;
              return new CategoryModel
                         {
                             id = Id,
@@ -18,33 +19,6 @@ namespace EasySchedule.Core.DAL
                         };
 
          }
-    }
-
-    public partial class MeasurmentType
-    {
-        public MeasurmentTypeModel ToModel()
-        {
-            return new MeasurmentTypeModel
-            {
-                id = Id,
-                name = Name
-            };
-
-        }
-    }
-
-    public partial class ProductType
-    {
-        public ProductTypeModel ToModel()
-        {
-            return new ProductTypeModel
-            {
-                id = Id,
-                name = Name,
-                measurmentUnit = MeasurmentUnit
-            };
-
-        }
     }
 
     public partial class Product
@@ -55,11 +29,13 @@ namespace EasySchedule.Core.DAL
             {
                 id = Id,
                 name = Name,
-                amountPerOne = AmountPerOne,
-                valuePerOne = ValuePerOne,
-                productType = ProductType.ToModel(),
-                measurmentType = MeasurmentType.ToModel(),
-                category = Category.ToModel()
+                category = Category.ToModel(),
+                calories = Calories,
+                carbohydrates = Carbohydrates,
+                fats = Fats,
+                proteins = Proteins,
+                size = Size,
+                measurementUnits = MeasurementUnit
             };
 
         }
@@ -97,9 +73,9 @@ namespace EasySchedule.Core.DAL
 
     public partial class Shugar
     {
-        public ShugarModel ToModel()
+        public SugarModel ToModel()
         {
-            return new ShugarModel
+            return new SugarModel
             {
                 id = Id,
                 time = Time,

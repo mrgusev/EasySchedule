@@ -49,6 +49,9 @@
     <Compile Include="DAL\Category.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\CategoryType.cs">
+      <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\EasyScheduleDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,7 +67,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EasyScheduleDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DAL\FatSecret.cs" />
     <Compile Include="DAL\FoodUsage.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
@@ -74,16 +76,10 @@
     <Compile Include="DAL\InsulinUsage.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\MeasurmentType.cs">
-      <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\Portion.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Product.cs">
-      <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\ProductType.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Repositories\FoodUsageRepository.cs" />
@@ -99,11 +95,9 @@
     <Compile Include="Models\FoodUsage.cs" />
     <Compile Include="Models\InsulinType.cs" />
     <Compile Include="Models\InsulinUsage.cs" />
-    <Compile Include="Models\MeasurmentType.cs" />
     <Compile Include="Models\Portion.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductType.cs" />
-    <Compile Include="Models\Shugar.cs" />
+    <Compile Include="Models\Sugar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CalculatorService.cs" />
     <Compile Include="Services\ProductService.cs" />
@@ -132,10 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="DAL\EasyScheduleModel.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasySchedule.Core.DAL
+namespace EasySchedule.SecretFetcher.Secret
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EasyScheduleDatabaseEntities : DbContext
+    public partial class SecretDatabaseEntities : DbContext
     {
-        public EasyScheduleDatabaseEntities()
-            : base("name=EasyScheduleDatabaseEntities")
+        public SecretDatabaseEntities()
+            : base("name=SecretDatabaseEntities")
         {
         }
     
@@ -27,11 +27,7 @@ namespace EasySchedule.Core.DAL
     
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryType> CategoryTypes { get; set; }
-        public DbSet<FoodUsage> FoodUsages { get; set; }
-        public DbSet<InsulinType> InsulinTypes { get; set; }
-        public DbSet<InsulinUsage> InsulinUsages { get; set; }
-        public DbSet<Portion> Portions { get; set; }
+        public DbSet<ProductLink> ProductLinks { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Shugar> Shugars { get; set; }
     }
 }

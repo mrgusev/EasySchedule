@@ -12,9 +12,9 @@ namespace EasySchedule.Web.Controllers
     public class ProductsController : ApiController
     {
         // GET api/products
-        public IEnumerable<ProductModel> Get()
+        public IEnumerable<ProductModel> Get(string search)
         {
-            return (new ProductService()).GetProducts();
+            return (new ProductService()).SearchProduct(search);
         }
 
         // GET api/products/5

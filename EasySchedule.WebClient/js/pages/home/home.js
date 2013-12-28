@@ -24,7 +24,7 @@ angular.module('pages.home', [
                 })
             };
 
-            loadProducts();
+            //loadProducts();
 
             $scope.showAddPanel = function(type){
                 $scope.isAddSugar = false;
