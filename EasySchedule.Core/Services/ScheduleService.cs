@@ -14,7 +14,7 @@ namespace EasySchedule.Core.Services
     {
         public IEnumerable<SugarModel> GetSugars()
         {
-            return new EasyScheduleDatabaseEntities().Shugars.ToList().Select(s => s.ToModel());
+            return new EasyScheduleDatabaseEntities().Sugars.ToList().Select(s => s.ToModel());
         } 
 
         public IEnumerable<InsulinUsageModel> GetInsulinUsages()
@@ -55,7 +55,7 @@ namespace EasySchedule.Core.Services
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                context.Shugars.Add(new Shugar
+                context.Sugars.Add(new Sugar
                                         {
                                             Time = shugarModel.time,
                                             Value = shugarModel.value

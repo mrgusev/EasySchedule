@@ -12,7 +12,7 @@ namespace EasySchedule.Core.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Shugar
+    public partial class Sugar
     {
         public int Id { get; set; }
         public double Value { get; set; }

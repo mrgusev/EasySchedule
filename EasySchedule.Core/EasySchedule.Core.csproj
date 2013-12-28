@@ -88,7 +88,7 @@
     <Compile Include="DAL\Repositories\PortionRepository.cs" />
     <Compile Include="DAL\Repositories\ProductRepository.cs" />
     <Compile Include="DAL\Repositories\SugarRepository.cs" />
-    <Compile Include="DAL\Shugar.cs">
+    <Compile Include="DAL\Sugar.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs" />
@@ -126,9 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DAL\EasyScheduleDataModel.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

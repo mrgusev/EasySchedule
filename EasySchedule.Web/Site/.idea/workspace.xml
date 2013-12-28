@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c440a47b-df6c-4ebd-8c84-234bf19580fb" name="Default" comment="">
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\EasySchedule.WebClient.iml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\watcherTasks.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\codropsicons\codropsicons.eot" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\codropsicons\codropsicons.svg" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\codropsicons\codropsicons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\codropsicons\codropsicons.woff" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\codropsicons\license.txt" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\icons\spond.eot" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\icons\spond.svg" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\icons\spond.ttf" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\icons\spond.woff" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\typicons\license.txt" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\typicons\typicons.eot" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\typicons\typicons.svg" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\typicons\typicons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\fonts\typicons\typicons.woff" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\Spond_icons_09.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\Spond_icons_20.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\check.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\delete.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\delete_small.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\guy.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\hand.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\hor_arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\hor_arrows_small.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\illustration.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\illustration.svg" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\logo-small-light.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\logo-small-ligth.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\logo-small.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\menu-icons.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\phone1.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\phone2.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\phone3.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\place.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\plus.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\send.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\squairy_light.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\ver_arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\ver_arrows_small.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\white_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\img\yes.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\index.html" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\app.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\directives\controls.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\directives\datetimepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\directives\views.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\enums.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\filters\common-filters.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\partials\loader.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\partials\spond-item.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\resources\journal.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\resources\product.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\services\interceptor.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\services\localization.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\services\map.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\services\parser.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\common\services\security.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\landing\changeLang.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\landing\helper.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\landing\login.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\landing\register.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\landing\respond.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\landing\respondInvitation.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\landing\unsubscribe.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\landing\verifyEmail.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\angular\angular-resource.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\angular\angular-route.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\angular\angular-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\angular\angular.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\angular\angular.min.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\angular\ng-infinite-scroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\autoresize.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\console.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\corechart.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\jquery-ui-1.10.3.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\jsapi" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\jstz.min.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\uds" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\underscore-strings.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\libraries\underscore.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\menu\classie.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\menu\menu.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\menu\modernizr.custom.25376.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\modal\css-filters-polyfill.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\modal\cssParser.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\modal\modalEffects.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\modal\modernizr.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\404.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\about\about.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\about\about.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\group\group-accept.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\group\group-edit-email.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\group\group-edit.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\group\group-list.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\group\group-members-edit.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\group\group.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\group\group.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\home\home.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\home\home.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\products\products.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\js\pages\products\products.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\dateTime.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\icons.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\icons.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\loader.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\loader.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\main.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\main.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\menu.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\menu.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\modal.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\modal.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\navigation.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\navigation.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\pages\home.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\pages\home.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\timeline.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\timeline.scss" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\vendor\jquery-ui-1.10.3.custom.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\vendor\jquery-ui-1.10.3.custom.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\styles\vendor\ui+ru.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.WebClient\test.html" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\Site.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.accordion.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.all.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.autocomplete.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.base.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.button.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.core.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.datepicker.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.dialog.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.progressbar.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.resizable.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.selectable.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.slider.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.tabs.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\jquery.ui.theme.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery-ui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.accordion.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.autocomplete.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.button.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.core.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.datepicker.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.dialog.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.progressbar.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.resizable.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.selectable.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.slider.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.tabs.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Content\themes\base\minified\jquery.ui.theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\accent.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\bullet.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\heroAccent.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList0.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList1.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList2.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList3.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList4.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList5.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList6.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList7.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList8.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Images\orderedList9.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\_references.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery-1.7.1.intellisense.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery-1.7.1.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery-1.7.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery-ui-1.8.20.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery-ui-1.8.20.min.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery.unobtrusive-ajax.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery.unobtrusive-ajax.min.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery.validate-vsdoc.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery.validate.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery.validate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery.validate.unobtrusive.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\jquery.validate.unobtrusive.min.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\knockout-2.1.0.debug.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\knockout-2.1.0.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\EasySchedule\EasySchedule.Web\Scripts\Vendor\modernizr-2.5.3.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EasySchedule.WebServer.csproj" afterPath="$PROJECT_DIR$/../EasySchedule.WebServer.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web.Debug.config" afterPath="$PROJECT_DIR$/../Web.Debug.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web.Release.config" afterPath="$PROJECT_DIR$/../Web.Release.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web.config" afterPath="$PROJECT_DIR$/../Web.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Properties/PublishProfiles/handyhealth - Web Deploy.pubxml" afterPath="$PROJECT_DIR$/../Properties/PublishProfiles/handyhealth - Web Deploy.pubxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../App_Start/BundleConfig.cs" afterPath="$PROJECT_DIR$/../App_Start/BundleConfig.cs" />
+    </list>
+    <ignored path="Site.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="c440a47b-df6c-4ebd-8c84-234bf19580fb" time="1388237420813" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Site" />
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="PublishConfig" serverName="EasyScheduleServer" serverId="2eb67a2f-51c5-4559-9f36-cab7ca21cc94">
+    <servers>
+      <server id="2eb67a2f-51c5-4559-9f36-cab7ca21cc94">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c440a47b-df6c-4ebd-8c84-234bf19580fb" name="Default" comment="" />
+      <created>1388237188044</created>
+      <updated>1388237188044</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24944155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+</project>
+

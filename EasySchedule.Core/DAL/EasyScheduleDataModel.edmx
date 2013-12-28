@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EasyScheduleDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EasyScheduleDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="EasyScheduleDatabaseModelStoreContainer">
           <EntitySet Name="Categories" EntityType="EasyScheduleDatabaseModel.Store.Categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CategoryTypes" EntityType="EasyScheduleDatabaseModel.Store.CategoryTypes" store:Type="Tables" Schema="dbo" />
@@ -13,7 +13,7 @@
           <EntitySet Name="InsulinUsages" EntityType="EasyScheduleDatabaseModel.Store.InsulinUsages" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Portions" EntityType="EasyScheduleDatabaseModel.Store.Portions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Products" EntityType="EasyScheduleDatabaseModel.Store.Products" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Shugars" EntityType="EasyScheduleDatabaseModel.Store.Shugars" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sugars" EntityType="EasyScheduleDatabaseModel.Store.Sugars" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_CategoryProduct" Association="EasyScheduleDatabaseModel.Store.FK_CategoryProduct">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -39,7 +39,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="CategoryTypeId" Type="int" />
@@ -100,7 +100,7 @@
           <Property Name="MeasurementUnit" Type="nvarchar" MaxLength="50" />
           <Property Name="Size" Type="float" Nullable="false" />
         </EntityType>
-        <EntityType Name="Shugars">
+        <EntityType Name="Sugars">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -168,7 +168,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EasyScheduleDatabaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -180,7 +181,7 @@
           <EntitySet Name="InsulinUsages" EntityType="EasyScheduleDatabaseModel.InsulinUsage" />
           <EntitySet Name="Portions" EntityType="EasyScheduleDatabaseModel.Portion" />
           <EntitySet Name="Products" EntityType="EasyScheduleDatabaseModel.Product" />
-          <EntitySet Name="Shugars" EntityType="EasyScheduleDatabaseModel.Shugar" />
+          <EntitySet Name="Sugars" EntityType="EasyScheduleDatabaseModel.Sugar" />
           <AssociationSet Name="FK_CategoryProduct" Association="EasyScheduleDatabaseModel.FK_CategoryProduct">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -206,7 +207,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="None" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="CategoryTypeId" Type="Int32" />
@@ -277,7 +278,7 @@
           <NavigationProperty Name="Category" Relationship="EasyScheduleDatabaseModel.FK_CategoryProduct" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="Portions" Relationship="EasyScheduleDatabaseModel.FK_ProductPortion" FromRole="Products" ToRole="Portions" />
         </EntityType>
-        <EntityType Name="Shugar">
+        <EntityType Name="Sugar">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -423,9 +424,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Shugars">
-            <EntityTypeMapping TypeName="EasyScheduleDatabaseModel.Shugar">
-              <MappingFragment StoreEntitySet="Shugars">
+          <EntitySetMapping Name="Sugars">
+            <EntityTypeMapping TypeName="EasyScheduleDatabaseModel.Sugar">
+              <MappingFragment StoreEntitySet="Sugars">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="Time" ColumnName="Time" />

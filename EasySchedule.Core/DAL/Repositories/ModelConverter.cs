@@ -71,7 +71,7 @@ namespace EasySchedule.Core.DAL
         }
     }
 
-    public partial class Shugar
+    public partial class Sugar
     {
         public SugarModel ToModel()
         {

@@ -32,6 +32,6 @@ namespace EasySchedule.Core.DAL
         public DbSet<InsulinUsage> InsulinUsages { get; set; }
         public DbSet<Portion> Portions { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Shugar> Shugars { get; set; }
+        public DbSet<Sugar> Sugars { get; set; }
     }
 }
