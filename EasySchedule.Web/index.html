@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html  xmlns:ng="http://angularjs.org" ng-app="app">
+<head>
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="target-densitydpi=device-dpi">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/loader.css">
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/vendor/ui+ru.css">
+    <link rel="stylesheet" type="text/css" href="styles/timeline.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/menu.css">
+    <link rel="stylesheet" type="text/css" href="styles/vendor/jquery-ui-1.10.3.custom.css">
+    <link rel="stylesheet" type="text/css" href="styles/pages/home.css">
+
+    <link rel="stylesheet" type="text/css" href="styles/modal.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perspective Page View Navigation</title>
+    <meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
+    <meta name="keywords" content="3d page, menu, navigation, mobile, perspective, css transform, web development, web design" />
+    <meta name="author" content="Codrops" />
+    <!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+    <script src="js/menu/modernizr.custom.25376.js"></script>
+    <!--<script src="js/modal/modernizr.custom.js"></script>-->
+
+</head>
+
+<body>
+<div id="perspective" class="perspective effect-airbnb">
+    <div class="container">
+        <div class="wrapper"><!-- wrapper needed for scroll -->
+            <!-- Top Navigation -->
+
+            <button id="showMenu" class="clearfix">Show Menu</button>
+            <button class="md-trigger" data-modal="modal-9">3D Flip (vertical)</button>
+            <div class="main clearfix" ng-view="">
+
+            </div>
+
+            <div class="md-modal md-effect-9" id="modal-9">
+                <div class="md-content">
+                    <h3>Уровень сахара</h3>
+                    <div>
+                        <p>This is a modal window. You can do the following things with it:</p>
+                        <ul>
+                            <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+                            <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+                            <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                        </ul>
+                        <button class="md-close">Close me!</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="md-overlay"></div><!-- the overlay element -->
+<!-- /main -->
+        </div><!-- wrapper -->
+    </div><!-- /container -->
+    <nav class="outer-nav left vertical">
+        <a href="#/" class="icon-home">Журнал</a>
+        <a href="#/about" class="icon-news">Статистика</a>
+        <a href="#/food" class="icon-image">Продукты</a>
+        <a href="#" class="icon-upload">Настройки</a>
+        <a href="#" class="icon-star">О проекте</a>
+        <a href="#" class="icon-mail">Выйти</a>
+    </nav>
+</div>
+</body>
+
+
+<!-- for the blur effect -->
+<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+
+<!--<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>-->
+<script type="text/javascript" src="js/libraries/jsapi"></script>
+<script>var DEBUG = true;   </script>
+
+<!--<script type="text/javascript" src="js/libraries/uds"></script>-->
+
+<script type="text/javascript" src="js/libraries/corechart.js"></script>
+<script type="text/javascript" src="js/libraries/jquery.js"></script>
+<script type="text/javascript" src="js/libraries/underscore.js"></script>
+<script type="text/javascript" src="js/libraries/autoresize.jquery.js"></script>
+<script type="text/javascript" src="js/libraries/underscore-strings.js"></script>
+<script type="text/javascript" src="js/libraries/jquery-ui-1.10.3.custom.js"></script>
+
+<script src="js/menu/classie.js"></script>
+<script src="js/menu/menu.js"></script>
+<script src="js/modal/modalEffects.js"></script>
+<script>
+    // this is important for IEs
+    var polyfilter_scriptpath = '/js/modal/';
+</script>
+<script src="js/modal/cssParser.js"></script>
+<script src="js/modal/css-filters-polyfill.js"></script>
+
+
+
+<script type="text/javascript" src="js/libraries/console.js"></script>
+<script type="text/javascript" src="js/libraries/angular/angular.js"></script>
+<script type="text/javascript" src="js/libraries/angular/angular-resource.js"></script>
+<script type="text/javascript" src="js/libraries/angular/angular-route.js"></script>
+<script type="text/javascript" src="js/libraries/angular/angular-ui.js"></script>
+<script type="text/javascript" src="js/libraries/angular/ng-infinite-scroll.min.js"></script>
+<script type="text/javascript" src="js/common/enums.js"></script>
+<script type="text/javascript" src="js/common/filters/common-filters.js"></script>
+<script type="text/javascript" src="js/common/directives/controls.js"></script>
+<script type="text/javascript" src="js/common/directives/views.js"></script>
+<script type="text/javascript" src="js/common/services/map.js"></script>
+<script type="text/javascript" src="js/common/services/security.js"></script>
+<script type="text/javascript" src="js/common/services/interceptor.js"></script>
+<script type="text/javascript" src="js/common/services/localization.js"></script>
+<script type="text/javascript" src="js/common/services/parser.js"></script>
+<script type="text/javascript" src="js/common/resources/journal.js"></script>
+<script type="text/javascript" src="js/common/resources/product.js"></script>
+<script type="text/javascript" src="js/pages/home/home.js"></script>
+<script type="text/javascript" src="js/pages/products/products.js"></script>
+<script type="text/javascript" src="js/pages/about/about.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+//    google.load('visualization', '1.0', { 'packages': ['corechart'] });
+//
+//    // Set a callback to run when the Google Visualization API is loaded.
+//    google.setOnLoadCallback(function () {
+//    });
+</script>
+
+</html>

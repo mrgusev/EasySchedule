@@ -17,7 +17,7 @@ namespace EasySchedule.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}/{search}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, search = RouteParameter.Optional }
+                defaults: new { id = UrlParameter.Optional, search = RouteParameter.Optional }
             );
         }
     }
