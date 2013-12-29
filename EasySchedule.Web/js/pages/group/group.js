@@ -8,28 +8,28 @@ angular.module('pages.group', [
         'controls'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/groups', {
-            templateUrl: 'js/pages/group/group-list.xhtml',
+            templateUrl: 'js/pages/group/group-list.html',
             controller: 'GroupListController'
         });
         $routeProvider.when('/groups/:groupId/edit', {
-            templateUrl: 'js/pages/group/group-edit.xhtml',
+            templateUrl: 'js/pages/group/group-edit.html',
             controller: 'GroupEditController'
         });
         $routeProvider.when('/confirmGroupEmail/:groupId', {
-            templateUrl: 'js/pages/group/group-edit.xhtml',
+            templateUrl: 'js/pages/group/group-edit.html',
             controller: 'GroupEditController'
         });
         $routeProvider.when('/groups/create', {
-            templateUrl: 'js/pages/group/group-edit.xhtml',
+            templateUrl: 'js/pages/group/group-edit.html',
             controller: 'GroupEditController'
         });
         $routeProvider.when('/invitation', {
-            templateUrl: 'js/pages/group/group-accept.xhtml',
+            templateUrl: 'js/pages/group/group-accept.html',
             controller: 'GroupInvitationController',
             access: 'free'
         });
         $routeProvider.when('/groups/:groupId/members', {
-            templateUrl: 'js/pages/group/group-members-edit.xhtml',
+            templateUrl: 'js/pages/group/group-members-edit.html',
             controller: 'GroupMembershipController'
         });
     } ])

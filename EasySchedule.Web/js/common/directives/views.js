@@ -122,7 +122,7 @@ angular.module('directives.views', ['controls', 'resources.profile', 'resources.
                 profile: '='
             },
             replace: true,
-            templateUrl: "/js/common/partials/spond-item.xhtml",
+            templateUrl: "/js/common/partials/spond-item.html",
             restrict: 'A',
             link: linker
         };

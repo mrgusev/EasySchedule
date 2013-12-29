@@ -6,7 +6,7 @@ angular.module('pages.home', [
     .config(['$routeProvider', function ($routeProvider) {
         console.info("Config rout provider for 'home' module.");
         $routeProvider.when('/', {
-            templateUrl:'js/pages/home/home.xhtml',
+            templateUrl:'js/pages/home/home.html',
             controller:'HomeController'
         });
     }])

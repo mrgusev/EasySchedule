@@ -6,7 +6,7 @@ angular.module('pages.about', [
     .config(['$routeProvider', function ($routeProvider) {
         console.info("Config rout provider for 'about' module.");
         $routeProvider.when('/about', {
-            templateUrl:'js/pages/about/about.xhtml',
+            templateUrl:'js/pages/about/about.html',
             controller:'AboutController'
         });
     }])

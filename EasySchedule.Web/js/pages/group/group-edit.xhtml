@@ -61,7 +61,7 @@
         <div class="delete-group-container left" ng-show="isEdit"><a href="" class="delete" ng-click="deleteGroup()"><span ng-hide="isConfirm">{{dictionary['Delete_this_group']}}</span><span ng-show="isConfirm">{{dictionary['Cancel']}}</span></a></div>
         <button class="btn large right" ng-hide="isConfirm" ng-tap ng-click="save()"><span ng-hide="isFromSpond">{{dictionary['SAVE']}}</span><span ng-show="isFromSpond">{{dictionary['CONTINUE']}}</span></button>
         <button class="btn large right" ng-show="isConfirm" ng-tap ng-click="confirm()">{{dictionary['CONFIRM']}}</button>
-        <div  ng-show="isLoading" ng-include="'js/common/directives/loader.xhtml'" id="create-loader"></div>
+        <div  ng-show="isLoading" ng-include="'js/common/directives/loader.html'" id="create-loader"></div>
         <div class="clearfix"></div>
         <span ng-show="errorMessage">{{errorMessage}}</span>
     </div>

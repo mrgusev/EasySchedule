@@ -6,7 +6,7 @@ angular.module('pages.products', [
     .config(['$routeProvider', function ($routeProvider) {
         console.info("Config rout provider for 'products' module.");
         $routeProvider.when('/food', {
-            templateUrl:'js/pages/products/products.xhtml',
+            templateUrl:'js/pages/products/products.html',
             controller:'ProductsController'
         });
     }])
