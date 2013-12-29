@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using EasySchedule.Core.DAL;
 using EasySchedule.Core.Models;
@@ -25,7 +26,11 @@ namespace EasySchedule.Core.Services
             using (var context = new EasyScheduleDatabaseEntities())
             {
                 context.Categories.Load();
-                query = query.Trim();
+                RegexOptions options = RegexOptions.None;
+                Regex regex = new Regex(@"[ ]{2,}", options);
+                query = regex.Replace(query, @" ").Trim();
+                var queryWords = query.Split(' ');
+               // if(queryWords.Count() == 1)
                 return context.Products.Where(p => p.Name.Contains(query) || p.Category.Name.Contains(query))
                     .Take(20).ToList().Select(p => p.ToModel());
             }
