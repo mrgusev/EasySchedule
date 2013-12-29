@@ -183,8 +183,12 @@
     <Content Include="js\pages\group\group-list.xhtml" />
     <Content Include="js\pages\group\group-members-edit.xhtml" />
     <Content Include="js\pages\group\group.xhtml" />
-    <Content Include="js\pages\home\home.html" />
-    <Content Include="js\pages\products\products.html" />
+    <Content Include="js\pages\home\home.html">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="js\pages\products\products.html">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="fonts\codropsicons\codropsicons.eot" />
     <Content Include="fonts\codropsicons\codropsicons.ttf" />
     <Content Include="fonts\codropsicons\codropsicons.woff" />

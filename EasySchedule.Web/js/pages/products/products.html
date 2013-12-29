@@ -1,12 +1,19 @@
 <div class="">
     <div ng-show="isDataLoading" ng-include="'js/common/partials/loader.html'"></div>
     <div class="center">
-        <input style="background-color: #ebebeb" type="text" ng-model="searchQuery"/>
-        <ul>
-            <li ng-repeat="product in products">
-                {{product.name}} - {{product.carbohydrates}} ХЕ в {{product.size}} {{product.measurementUnits}}
-            </li>
-        </ul>
+        <div id="sb-search" class="sb-search">
+            <form>
+                <input class="sb-search-input" placeholder="Enter your search term..." ng-model="searchQuery" type="text" value="" name="search" id="search">
+                <input class="sb-search-submit" type="submit" value="">
+                <span class="sb-icon-search"></span>
+            </form>
+        </div><ul>
+        <li ng-repeat="product in products">
+            {{product.name}}
+            <span ng-show="product.category.categoryTypeId==2 || product.category.categoryTypeId==3 ||product.category.categoryTypeId==4">({{product.category.name}})</span>
+            - {{product.carbohydrates}} ХЕ в {{product.size}} {{product.measurementUnits}}
+        </li>
+    </ul>
     </div>
 
 </div>

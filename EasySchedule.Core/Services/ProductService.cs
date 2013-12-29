@@ -26,7 +26,7 @@ namespace EasySchedule.Core.Services
             {
                 context.Categories.Load();
                 query = query.Trim();
-                return context.Products.Where(p => p.Name.Contains(query) )
+                return context.Products.Where(p => p.Name.Contains(query) || p.Category.Name.Contains(query))
                     .Take(20).ToList().Select(p => p.ToModel());
             }
         } 

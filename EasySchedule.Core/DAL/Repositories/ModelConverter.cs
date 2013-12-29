@@ -15,7 +15,8 @@ namespace EasySchedule.Core.DAL
              return new CategoryModel
                         {
                             id = Id,
-                            name = Name
+                            name = Name,
+                            categoryTypeId = CategoryTypeId.Value
                         };
 
          }

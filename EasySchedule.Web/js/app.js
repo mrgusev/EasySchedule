@@ -10,6 +10,7 @@ angular.module('app', ['ngRoute',
     } ])
     .run(['$rootScope', '$location', '$routeParams',
         function ($rootScope, $location, $routeParams) {
+
             $rootScope.scrollTo = function (id) {
                 $location.hash(id);
                 $anchorScroll();

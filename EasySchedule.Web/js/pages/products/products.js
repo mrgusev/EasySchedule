@@ -14,6 +14,8 @@ angular.module('pages.products', [
         function ($scope, $routeParams,$location, Journal,Product, $rootScope, $timeout) {
             ModalEffects();
            // $scope.isDataLoading = true
+
+            new UISearch( document.getElementById( 'sb-search' ) );
             var searchCounter = -1;
             var timer = false;
             $scope.searchQuery = '';
