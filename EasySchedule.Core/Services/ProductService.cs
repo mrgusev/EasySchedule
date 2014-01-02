@@ -31,7 +31,7 @@ namespace EasySchedule.Core.Services
                 query = regex.Replace(query, @" ").Trim();
                 var queryWords = query.Split(' ');
                // if(queryWords.Count() == 1)
-                return context.Products.Where(p => p.Name.Contains(query) || p.Category.Name.Contains(query))
+                return context.Products.Where(p => p.Name.Contains(query))
                     .Take(20).ToList().Select(p => p.ToModel());
             }
         } 

@@ -17,66 +17,71 @@ namespace EasySchedule.SecretFetcher
         static int ThreeWordsCount = 0;
         static int FourWordsCount = 0;
         static int StrangeWordCount = 0;
-        //static Product ConvertLinkToProduct(ProductLink link)
-        //{
-        //    Product result = new Product();
-        //    var info = "";
-        //    if (link.Info != null && link.Info.Length > 1)
-        //    {
-        //        info = link.Info.Trim();
-        //        RegexOptions options = RegexOptions.None;
-        //        Regex regex = new Regex(@"[ ]{2,}", options);
-        //        info = regex.Replace(info, @" ");
-        //        string portion = info.Split('-')[0].Trim();
-        //        string valueInfo = info.Split('-')[1].Split('&')[0].Trim();
-        //        string[] valiueInfoWords = valueInfo.Replace("Калории:", "").Replace("Углев:", "")
-        //            .Replace("Жир:", "").Replace("Белк:", "").Replace("ккал", "").Replace("г", "").Split('|');
-        //        string[] portionWords = portion.Split(' ');
-        //        string value = "";
-        //        switch (portionWords.Count())
-        //        {
-        //            case 2:
-        //                value = portionWords[1];
-        //                if(portion.Contains("в 100"))
-        //                {
-        //                    return new Product
-        //                               {
-        //                                   ProductLinkId = link.Id,
-        //                                   Name = link.Name,
-        //                                   CategoryId = link.CategoryId,
-        //                                   PortionSize = 100,
-        //                                   PortionName = portion.Replace("в 100","").Trim(),
-        //                                   Calories = double.Parse(valiueInfoWords[0].Trim()),
-        //                                   Fats = double.Parse(valiueInfoWords[1].Trim()),
-        //                                   Carbohydrates = double.Parse(valiueInfoWords[2].Trim()),
-        //                                   Proteins = double.Parse(valiueInfoWords[3].Trim())
-        //                               };
-        //                }
-        //                TwoWordsCount++;
-        //                break;
-        //            case 3:
-        //                value = portionWords[1];
-        //                ThreeWordsCount++;
-        //                break;
-        //            case 4:
-        //                value = portionWords[1];
-        //                FourWordsCount++;
-        //                break;
-        //            default:
-        //                string smth = "";
-        //             //   Console.WriteLine(link.Name + " ... "+info);
-        //                StrangeWordCount++;
-        //                break;
-        //        }
-        //    }
-        //    return null;
-        //}
+        static Product ConvertLinkToProduct(ProductLink link)
+        {
+            Product result = new Product();
+            var info = "";
+            if (link.Info != null && link.Info.Length > 1)
+            {
+                info = link.Info.Trim();
+                RegexOptions options = RegexOptions.None;
+                Regex regex = new Regex(@"[ ]{2,}", options);
+                info = regex.Replace(info, @" ");
+                string portion = info.Split('-')[0].Trim();
+                string valueInfo = info.Split('-')[1].Split('&')[0].Trim();
+                string[] valiueInfoWords = valueInfo.Replace("Калории:", "").Replace("Углев:", "")
+                    .Replace("Жир:", "").Replace("Белк:", "").Replace("ккал", "").Replace("г", "").Split('|');
+                string[] portionWords = portion.Split(' ');
+                string value = "";
+                if(portionWords.Count() == 4)
+                {
+                    double size = double.Parse(portionWords[3].Replace("(", "").Replace(")", "")
+                                                   .Replace("г", ""));
+                    return new Product
+                               {
+                                   Name = link.Name,
+                                   CategoryId = link.CategoryId,
+                                   ProductLinkId = link.Id,
+                                   PortionName = portionWords[2],
+                                   PortionSize = size,
+                                   PortionAmount = double.Parse(portionWords[1]),
+                                   Calories = double.Parse(valiueInfoWords[0]),
+                                   Fats = double.Parse(valiueInfoWords[1]),
+                                   Carbohydrates = double.Parse(valiueInfoWords[2]),
+                                   Proteins = double.Parse(valiueInfoWords[3])
+                               };
+                }
+            }
+            return null;
+        }
 
         static void Main(string[] args)
         {
           //  TransferProducts();
-           
-            //Console.ReadKey();
+            using (var context = new SecretDatabaseEntities())
+            {
+                int n = 0;
+                foreach (var productLink in context.ProductLinks.Where(p=>!p.IsFetched).ToList().Skip(60))
+                {
+                    n++;
+                    var product = ConvertLinkToProduct(productLink);
+                    if(product != null)
+                    {
+                        context.Products.Add(product);
+                        context.SaveChanges();
+                        productLink.IsFetched = true;
+                        context.SaveChanges();
+                        Console.WriteLine("{0} - Product {1} was added to database",n, product.Name);
+                    }
+                    else
+                    {
+                        //productLink.IsFetched = false;
+                        //context.SaveChanges();
+                        Console.WriteLine("Wrong product: {0}", productLink.Name);
+                    }
+                }
+            }
+            Console.ReadKey();
         }
        
         //static void LoadDatabase()
