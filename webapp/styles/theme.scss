@@ -1,0 +1,37 @@
+//$background-default: #f8f1e6;
+//$mark: #8ebd01;
+//$mark-light: #ade139;
+//$dark: #00a7c5;
+//$basic: #40bfca;
+
+//$background-default: #faeab5;
+//$mark: #ef7818;
+//$mark-light: #efa730;
+//$basic: #78bfa7;
+//$dark: #5e412f;
+@font-face {
+  font-family: 'open_sanslight';
+  src: url('../fonts/open-sans/OpenSans-Light-webfont.eot');
+  src: url('../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/open-sans/OpenSans-Light-webfont.woff') format('woff'),
+  url('../fonts/open-sans/OpenSans-Light-webfont.ttf') format('truetype'),
+  url('../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$border-default: 1px solid #ddd;
+$font-default: open_sanslight;
+
+$background-default: #dfe3cb;
+$background-default-dark: #c8cbb6;
+
+$mark-light: #f28530;
+$mark: rgb(250, 106, 2);
+$mark-dark: #df5e02;
+
+$basic-light: rgba(166, 218, 215, 0.50);
+$basic-neutral: #96c3c1;
+$basic: #69d1e6;
+$basic-dark: #5ebbce;
+//

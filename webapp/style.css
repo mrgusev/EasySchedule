@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'open_sanslight';
+  src: url("../fonts/open-sans/OpenSans-Light-webfont.eot");
+  src: url("../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/open-sans/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+body, html {
+  background: #dfe3cb;
+  height: 100%;
+  font-family: open_sanslight;
+  font-size: x-large;
+  -webkit-font-smoothing: antialiased; }
+
+a {
+  text-decoration: none; }
+
+.main {
+  max-width: 1024px;
+  min-height: 100%;
+  margin: 0 auto;
+  display: block; }
+
+ul.list {
+  padding: 0px;
+  list-style: none; }
+  ul.list li {
+    width: 300px;
+    margin-bottom: 10px; }
+    ul.list li .header {
+      height: 95px;
+      background: #69d1e6; }
+    ul.list li .footer {
+      height: 5px;
+      background: #5ebbce; }
+
+.food-item {
+  margin: 50px;
+  width: 380px;
+  height: 100px;
+  background: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  .food-item .product {
+    float: left;
+    width: 150px;
+    height: 70px;
+    padding: 10px;
+    border-right: 1px solid #dddddd; }
+    .food-item .product .name {
+      font-size: 18px; }
+  .food-item .portion {
+    float: left;
+    width: 80px;
+    padding: 10px;
+    text-align: center; }
+    .food-item .portion .unit {
+      font-size: 18px; }
+  .food-item .amount-buttons {
+    width: 50px;
+    float: left;
+    margin-top: -15px; }
+    .food-item .amount-buttons button {
+      width: 50px;
+      height: 50px;
+      border: none;
+      color: #aaaaaa; }
+    .food-item .amount-buttons button:first-child {
+      border-bottom: 1px solid #fff; }
+  .food-item .values {
+    padding-left: 10px;
+    padding-top: 21px;
+    margin-top: -15px;
+    width: 100px;
+    height: 100px;
+    float: left;
+    color: #ffffff;
+    background: #f28530; }
+    .food-item .values .size {
+      margin-left: 2px;
+      margin-right: 0px;
+      font-size: 37px;
+      display: inline-block; }
+    .food-item .values .unit {
+      display: inline-block;
+      font-size: 18px; }
+  .food-item .delete {
+    text-align: center;
+    width: 25px;
+    height: 100px;
+    background: #ffffff;
+    float: right;
+    margin-top: -15px;
+    margin-right: -25px;
+    padding-top: 6px; }
