@@ -5,8 +5,6 @@
   margin-left: 100px;
   height: 90px;
   background: white;
-  display: flex;
-
   .field{
     color: $mark-light;
     line-height: 30px;
@@ -16,17 +14,18 @@
   }
   .date-container{
     width: 150px;
+    float: left;
     .button-container, .up-button, .down-button{
       width:100%;
     }
   }
   .time-container{
+    float: left;
     width: 90px;
-    display: flex;
-    flex-flow: row wrap;
     .button-container{
       width:50%;
       @include vendor('perspective', 75px);
+      float: left;
     }
     .up-button, .down-button{
       border-left: 1px white solid;

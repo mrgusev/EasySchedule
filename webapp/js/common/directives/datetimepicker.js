@@ -13,16 +13,6 @@ angular.module('controls', [])
         templateUrl:'js/common/partials/datetimepicker.html',
         link: function (scope, element, attrs, ngModel) {
             ngModel.$setViewValue(new Date());
-            //scope.time =
-            //        element.datepicker(
-//            {
-//                onSelect: function (dateText) {
-//                    scope.$apply(function () {
-//                        ngModel.$setViewValue(dateText);
-//                    });
-//                }
-//            }
-//        );
             scope.addMinutes = function(){
                 var date = ngModel.$modelValue;
                 var minutes = date.getMinutes() + 10;

@@ -25,10 +25,10 @@ angular.module('common.filters', [])
             } else if(inputDate.getDate() == now.getDate()-1 && inputDate.getMonth() == now.getMonth() && inputDate.getYear() == now.getYear()){
                 return 'Вчера';
             } else {
-                var str = inputDate.toLocaleDateString();
-                if (inputDate.getYear() == now.getYear()) {
-                    str = shortDayNames[inputDate.getDay()] + ' ' + inputDate.toLocaleDateString().substring(0, str.length-5);
-                }
+                var str = $filter('date')(inputDate, 'dd.MM.yyyy');
+//                if (inputDate.getYear() == now.getYear()) {
+//                    str = shortDayNames[inputDate.getDay()] + ' ' + inputDate.toLocaleDateString().substring(0, str.length-5);
+//                }
                 return str;
             }
         };

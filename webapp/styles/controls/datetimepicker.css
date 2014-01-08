@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'open_sanslight';
-  src: url("../fonts/open-sans/OpenSans-Light-webfont.eot");
-  src: url("../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/open-sans/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  src: url("/../fonts/open-sans/OpenSans-Light-webfont.eot");
+  src: url("/../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/../fonts/open-sans/OpenSans-Light-webfont.woff") format("woff"), url("/../fonts/open-sans/OpenSans-Light-webfont.ttf") format("truetype"), url("/../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -48,8 +48,7 @@ Use:
   width: 250px;
   margin-left: 100px;
   height: 90px;
-  background: white;
-  display: flex; }
+  background: white; }
   .date-time-picker .field {
     color: #f28530;
     line-height: 30px;
@@ -57,19 +56,20 @@ Use:
     height: 30px;
     width: 100%; }
   .date-time-picker .date-container {
-    width: 150px; }
+    width: 150px;
+    float: left; }
     .date-time-picker .date-container .button-container, .date-time-picker .date-container .up-button, .date-time-picker .date-container .down-button {
       width: 100%; }
   .date-time-picker .time-container {
-    width: 90px;
-    display: flex;
-    flex-flow: row wrap; }
+    float: left;
+    width: 90px; }
     .date-time-picker .time-container .button-container {
       width: 50%;
       -webkit-perspective: 75px;
       -moz-perspective: 75px;
       -ms-perspective: 75px;
       -o-perspective: 75px;
-      perspective: 75px; }
+      perspective: 75px;
+      float: left; }
     .date-time-picker .time-container .up-button, .date-time-picker .time-container .down-button {
       border-left: 1px white solid; }
