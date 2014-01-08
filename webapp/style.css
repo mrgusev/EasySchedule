@@ -6,9 +6,8 @@
   font-style: normal; }
 
 body, html {
-  background: #dfe3cb;
-  height: 100%;
   font-family: open_sanslight;
+  height: 100%;
   font-size: x-large;
   -webkit-font-smoothing: antialiased; }
 

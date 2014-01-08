@@ -1,0 +1,33 @@
+@import "../theme";
+@import "../common/mixins";
+
+.button-container{
+  @include vendor(perspective, 300px);
+}
+.up-button, .down-button{
+  border:  none;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  background: $background-default;
+  height: 30px;
+  @include vendor(transform-style, preserve-3d);
+  -webkit-transition: -webkit-transform .2s;
+  -moz-transition: -moz-transform .2s;
+  -o-transition: -o-transform .2s;
+  -ms-transition: -ms-transform .2s;
+  transition: transform .2s;
+}
+
+.down-button{
+  @include vendor(transform-origin, 0% 0%);
+}
+.up-button{
+  @include vendor(transform-origin, 0% 100%);
+}
+.down-button:active{
+  @include vendor(transform, rotateX(-15deg));
+}
+.up-button:active{
+  @include vendor(transform, rotateX(15deg));
+}

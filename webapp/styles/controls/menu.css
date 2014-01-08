@@ -10,7 +10,6 @@ html, body, .perspective {
   height: 100%; }
 
 .perspective {
-  background: #aaa;
   position: relative; }
 
 .container {
@@ -160,9 +159,6 @@ html, body, .perspective {
 
 /* Individual Effects */
 /* Effect airbnb */
-.effect-airbnb {
-  background: #b8b6b4; }
-
 .effect-airbnb .container {
   -webkit-transition: -webkit-transform 0.4s;
   transition: transform 0.4s;

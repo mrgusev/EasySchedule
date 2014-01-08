@@ -1,0 +1,30 @@
+<div>
+    <div ng-hide="isFloat">
+        <div class="numeric">
+            <div class="button-container">
+                <div class="up-button" ng-click="add1()"><span class="flaticon-arrow-up"></span></div>
+            </div>
+            <div class="field">{{number}}</div>
+            <div class="button-container">
+                <div class="down-button" ng-click="remove1()"><span class="flaticon-arrow-down"></span></div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="isFloat">
+        <div class="numeric">
+            <div class="button-container">
+                <div class="up-button" ng-click="add1()"><span class="flaticon-arrow-up"></span></div>
+            </div>
+            <div class="button-container">
+                <div class="up-button" ng-click="add01()"><span class="flaticon-arrow-up"></span></div>
+            </div>
+            <div class="field">{{number}}</div>
+            <div class="button-container">
+                <div class="down-button" ng-click="remove1()"><span class="flaticon-arrow-down"></span></div>
+            </div>
+            <div class="button-container">
+                <div class="down-button" ng-click="remove01()"><span class="flaticon-arrow-down"></span></div>
+            </div>
+        </div>
+    </div>
+</div>

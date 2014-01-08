@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'open_sanslight';
+  src: url("../fonts/open-sans/OpenSans-Light-webfont.eot");
+  src: url("../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/open-sans/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*
+VENDOR MIXIN
+Use:
+
+  .foo{
+  @include vendor(transition, all 0.3s ease-in-out );
+  }
+
+
+*/
+/*
+
+TRANSFORM-MIXIN
+Use:
+  .foo{
+  @include transform(0px, 100px);
+  }
+
+*/
+/*
+KEYFRAME
+Use:
+  @include keyframe(fadeout) {
+      0% {
+          opacity: 1;
+      }
+
+      100% {
+          opacity: 0;
+      }
+  }
+*/
+/*
+    ANIMATION
+    use:
+      .foo{
+      @include animation(8s, 4s, fadeout)
+      }
+ */
+.button-container {
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  -ms-perspective: 300px;
+  -o-perspective: 300px;
+  perspective: 300px; }
+
+.up-button, .down-button {
+  border: none;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  background: #f2f3eb;
+  height: 30px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform .2s;
+  -moz-transition: -moz-transform .2s;
+  -o-transition: -o-transform .2s;
+  -ms-transition: -ms-transform .2s;
+  transition: transform .2s; }
+
+.down-button {
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -o-transform-origin: 0% 0%;
+  transform-origin: 0% 0%; }
+
+.up-button {
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+  transform-origin: 0% 100%; }
+
+.down-button:active {
+  -webkit-transform: rotateX(-15deg);
+  -moz-transform: rotateX(-15deg);
+  -ms-transform: rotateX(-15deg);
+  -o-transform: rotateX(-15deg);
+  transform: rotateX(-15deg); }
+
+.up-button:active {
+  -webkit-transform: rotateX(15deg);
+  -moz-transform: rotateX(15deg);
+  -ms-transform: rotateX(15deg);
+  -o-transform: rotateX(15deg);
+  transform: rotateX(15deg); }
