@@ -44,36 +44,34 @@ Use:
       @include animation(8s, 4s, fadeout)
       }
  */
-.date-time-picker {
-  z-index: 1000;
-  width: 240px; }
-  .date-time-picker .field {
+.numeric {
+  width: 100px;
+  margin: 0;
+  background: transparent; }
+  .numeric .field {
     background: white;
     color: #f28530;
     line-height: 50px;
+    font-size: 50px;
     text-align: center;
     height: 50px;
     width: 100%; }
-  .date-time-picker .date-container {
-    width: 150px;
-    float: left; }
-    .date-time-picker .date-container .button-container, .date-time-picker .date-container .up-button, .date-time-picker .date-container .down-button {
-      line-height: 45px;
-      height: 45px;
-      width: 100%; }
-  .date-time-picker .time-container {
+  .numeric .button-container {
+    width: 100%;
     float: left;
-    width: 90px; }
-    .date-time-picker .time-container .button-container {
-      width: 50%;
-      -webkit-perspective: 75px;
-      -moz-perspective: 75px;
-      -ms-perspective: 75px;
-      -o-perspective: 75px;
-      perspective: 75px;
-      float: left; }
-    .date-time-picker .time-container .up-button, .date-time-picker .time-container .down-button {
-      height: 45px;
-      border-left: 1px white solid; }
-  .date-time-picker .btn {
-    width: 100%; }
+    -webkit-perspective: 300px;
+    -moz-perspective: 300px;
+    -ms-perspective: 300px;
+    -o-perspective: 300px;
+    perspective: 300px; }
+  .numeric .btn {
+    width: 100px; }
+  .numeric.float .button-container {
+    width: 50%;
+    -webkit-perspective: 75px;
+    -moz-perspective: 75px;
+    -ms-perspective: 75px;
+    -o-perspective: 75px;
+    perspective: 75px; }
+  .numeric.float .button-container.first {
+    border-right: 1px white solid; }

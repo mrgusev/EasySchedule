@@ -51,16 +51,18 @@ namespace EasySchedule.Core.Services
             }
         }
 
-        public void AddSugar(SugarModel shugarModel)
+        public int AddSugar(SugarModel shugarModel)
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                context.Sugars.Add(new Sugar
-                                        {
-                                            Time = shugarModel.time,
-                                            Value = shugarModel.value
-                                        });
+                var newSugar = new Sugar
+                {
+                    Time = shugarModel.time,
+                    Value = shugarModel.value
+                };
+                context.Sugars.Add(newSugar);
                 context.SaveChanges();
+                return newSugar.Id;
             }
         }
         

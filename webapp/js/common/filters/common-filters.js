@@ -33,6 +33,26 @@ angular.module('common.filters', [])
             }
         };
     } ])
+    .filter('smartdatetime', ['$rootScope', '$filter', function ($rootScope, $filter) {
+        return function (input) {
+            var inputDate = new Date(input);
+            var now = new Date();
+            if(Math.abs(now-inputDate) < 1000*60*5){
+                return 'Сейчас';
+            }else if (inputDate.getDate() == now.getDate() && inputDate.getMonth() == now.getMonth() && inputDate.getYear() == now.getYear()){
+                return 'Сегодня в ' + $filter('date')(inputDate, 'HH:mm');
+            } else if(inputDate.getDate() == now.getDate()-1 && inputDate.getMonth() == now.getMonth() && inputDate.getYear() == now.getYear()){
+                return 'Вчера в '+ $filter('date')(inputDate, 'HH:mm');
+            } else {
+                var str = $filter('date')(inputDate, 'dd.MM.yyyy');
+                if (inputDate.getYear() == now.getYear()) {
+                    str = str.substring(0, str.length-5);
+                }
+                str+= 'в ' + $filter('date')(inputDate, 'HH:mm');
+                return str;
+            }
+        };
+    } ])
     .filter('timespan', ['$rootScope', function ($rootScope) {
         return function (input) {
             if (input < 0)
@@ -47,6 +67,15 @@ angular.module('common.filters', [])
             } else {
                 minutes = minutes - hours * 60;
                 return hours + $rootScope.dictionary['hours'] + ' ' + minutes + $rootScope.dictionary['minutes'];
+            }
+        };
+    } ])
+    .filter('floatzero', ['$rootScope', '$filter', function ($rootScope, $filter) {
+        return function (input) {
+            if(Math.round(input) == input){
+                return input.toString() + '.0'
+            } else{
+                return input;
             }
         };
     } ])

@@ -5,74 +5,75 @@
  * Time: 9:57
  * To change this template use File | Settings | File Templates.
  */
-angular.module('controls', [])
-    .directive("integerNumeric", ['$rootScope', function ($rootScope) {
+angular.module('controls')
+
+    .directive("numeric", ['$rootScope', function ($rootScope) {
+
         return {
             restrict: 'A',
+            transclude:false,
             scope:{
                 minValue:'=',
                 maxValue:'=',
-                isFloat: '='
+                isFloat:'=',
+                isopen:'=',
+                number:'='
             },
-            require: 'ngModel',
-            templateUrl:'js/common/partials/integer-numeric.html',
+            templateUrl:'js/common/partials/numeric.html',
             link: function (scope, element, attrs, ngModel) {
-                scope.add = function(){
-                    var value = ngModel.$modelValue + 1;
-                    if(value > scope.maxValue)
-                        value = scope.maxValue;
-                    ngModel.$setViewValue(value);
-                };
-                scope.remove = function(){
-                    var value = ngModel.$modelValue - 1;
-                    if(value < scope.minValue )
-                        value = scope.minValue;
-                    ngModel.$setViewValue(value);
-                };
-
-                scope.$watch(attrs.ngModel, function () {
-                    scope.number = ngModel.$modelValue;
-                });
-            }
-        };
-    } ])
-    .directive("floatNumeric", ['$rootScope', function ($rootScope) {
-        return {
-            restrict: 'A',
-            scope:{
-                minValue:'=',
-                maxValue:'='
-            },
-            require: 'ngModel',
-            templateUrl:'js/common/partials/float-numeric.html',
-            link: function (scope, element, attrs, ngModel) {
+                function round(val){
+                    if(scope.isFloat){
+                        return Math.round(val*10)/10;
+                    } else{
+                        return Math.round(val);
+                    }
+                }
+                if(!scope.number){
+                    scope.number = (round(5.8));
+                }
                 scope.add1 = function(){
-                    var value = ngModel.$modelValue + 1;
-                    if(value > scope.maxValue)
-                        value = scope.maxValue;
-                    ngModel.$setViewValue(value);
+                    var val = scope.model + 1;
+                    if(val > scope.maxValue)
+                        val = scope.maxValue;
+                    scope.model = (round(val));
                 };
                 scope.remove1 = function(){
-                    var value = ngModel.$modelValue - 1;
-                    if(value < scope.minValue )
-                        value = scope.minValue;
-                    ngModel.$setViewValue(value);
+                    var val = scope.model - 1;
+                    if(val < scope.minValue )
+                        val = scope.minValue;
+                    scope.model = (round(val));
                 };
                 scope.add01 = function(){
-                    var value = ngModel.$modelValue + 0.1;
-                    if(value > scope.maxValue)
-                        value = scope.maxValue;
-                    ngModel.$setViewValue(value);
+                    var val = scope.model + 0.1;
+                    if(round(val*10).toString().last() == '0'){
+                        val-=1;
+                    }
+                    if(val > scope.maxValue)
+                        val = scope.maxValue;
+                    scope.model = (round(val));
                 };
                 scope.remove01 = function(){
-                    var value = ngModel.$modelValue - 0.1;
-                    if(value < scope.minValue )
-                        value = scope.minValue;
-                    ngModel.$setViewValue(value);
+                    var val = scope.model - 0.1;
+                    if(round(val*10).toString().last() == '0'){
+                        val+=1;
+                    }
+                    if(val < scope.minValue )
+                        val = scope.minValue;
+                    scope.model = (round(val));
                 };
-
-                scope.$watch(attrs.ngModel, function () {
-                    element.datepicker("setDate", ngModel.$modelValue);
+                scope.close = function(){
+                    scope.isopen = false;
+                    scope.number = scope.model;
+                };
+                scope.$watch('isopen', function () {
+                    if(scope.isopen){
+                        scope.display = 'open';
+                    } else{
+                        scope.display = '';
+                    }
+                });
+                scope.$watch('number',function(){
+                    scope.model = new Object(scope.number);
                 });
             }
         };

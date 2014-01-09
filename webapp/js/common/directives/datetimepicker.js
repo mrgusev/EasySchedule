@@ -6,53 +6,89 @@
  * To change this template use File | Settings | File Templates.
  */
 angular.module('controls', [])
-.directive("dateTimePicker", ['$rootScope', function ($rootScope) {
+.directive("dateTimePicker", function () {
     return {
         restrict: 'A',
-        require: 'ngModel',
+        scope:{
+            time:'=',
+            isopen:'=',
+            minvalue:'=',
+            maxvalue:'='
+        },
         templateUrl:'js/common/partials/datetimepicker.html',
-        link: function (scope, element, attrs, ngModel) {
-            ngModel.$setViewValue(new Date());
+        link: function (scope, element, attrs) {
+               if(!scope.time){
+                   scope.model = new Date();
+               }
+            //scope.timeView = new Date();
             scope.addMinutes = function(){
-                var date = ngModel.$modelValue;
+                var date = scope.model;
                 var minutes = date.getMinutes() + 10;
                 if(minutes>50)
                     minutes = 0;
-                ngModel.$setViewValue(new Date(ngModel.$modelValue.setMinutes(minutes)));
+                scope.model =(new Date(scope.model.setMinutes(minutes)));
+                if(scope.model > scope.maxvalue){
+                    scope.model = new Date(scope.maxvalue);
+                }
             };
             scope.removeMinutes = function(){
-                var date = ngModel.$modelValue;
+                var date = scope.model;
                 var minutes = date.getMinutes() - 10;
                 if(minutes < 0)
                     minutes = 50;
-                ngModel.$setViewValue(new Date(ngModel.$modelValue.setMinutes(minutes)));
+                scope.model =(new Date(scope.model.setMinutes(minutes)));
+                if(scope.model < scope.minvalue){
+                    scope.model = new Date(scope.minvalue);
+                }
             };
             scope.addHours = function(){
-                var date = ngModel.$modelValue
+                var date = scope.model;
                 var hours = date.getHours() + 1;
                 if(hours>23)
                     hours = 0;
-                ngModel.$setViewValue(new Date(ngModel.$modelValue.setHours(hours)));
+                scope.model =(new Date(scope.model.setHours(hours)));
+                if(scope.model > scope.maxvalue){
+                    scope.model = new Date(scope.maxvalue);
+                }
             };
             scope.removeHours = function(){
-                var date = ngModel.$modelValue;
+                var date = scope.model;
                 var hours = date.getHours() - 1;
                 if(hours<0)
                     hours = 23;
-                ngModel.$setViewValue(new Date(ngModel.$modelValue.setHours(hours)));
+                scope.model =(new Date(scope.model.setHours(hours)));
+                if(scope.model < scope.minvalue){
+                    scope.model = new Date(scope.minvalue);
+                }
             };
             scope.addDays = function(){
-                var date = ngModel.$modelValue;
-                ngModel.$setViewValue(new Date(ngModel.$modelValue.setDate(date.getDate()+1)));
+                var date = scope.model;
+                scope.model= new Date(scope.model.setDate(date.getDate()+1));
+                if(scope.model > scope.maxvalue){
+                    scope.model = new Date(scope.maxvalue);
+                }
             };
             scope.removeDays = function(){
-                var date = ngModel.$modelValue;
-                ngModel.$setViewValue(new Date(ngModel.$modelValue.setDate(date.getDate()-1)));
+                var date = scope.model;
+                scope.model = new Date(scope.model.setDate(date.getDate()-1));
+                if(scope.model < scope.minvalue){
+                    scope.model = new Date(scope.minvalue);
+                }
             };
-
-            scope.$watch(attrs.ngModel, function () {
-                //element.datepicker("setDate", ngModel.$modelValue);
+            scope.close = function(){
+                scope.isopen = false;
+                scope.time = scope.model;
+            };
+            scope.$watch('isopen', function () {
+                if(scope.isopen){
+                    scope.display = 'open';
+                } else{
+                    scope.display = '';
+                }
+            });
+            scope.$watch('time',function(){
+                scope.model = new Date(scope.time);
             });
     }
     };
-} ])
+})

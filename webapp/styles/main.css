@@ -8,6 +8,7 @@
 body, html {
   background: white;
   font-family: open_sanslight;
+  color: gray;
   height: 100%;
   font-size: x-large;
   -webkit-font-smoothing: antialiased; }

@@ -13,6 +13,9 @@ angular.module('pages.home', [
     .controller('HomeController', ['$scope', '$routeParams', '$location', 'Journal','Product', '$rootScope', '$timeout',
         function ($scope, $routeParams,$location, Journal,Product, $rootScope, $timeout) {
             ModalEffects();
+            $scope.saveNewSugar = function(model){
+                console.log(JSON.stringify(model));
+            };
             $scope.isDataLoading = true
             $scope.insulinTypes = [];
             $scope.newSugarModel = {time: new Date().getTime(), value: 4};

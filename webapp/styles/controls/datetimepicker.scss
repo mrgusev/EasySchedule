@@ -1,21 +1,24 @@
 @import "../theme";
 @import "../common/mixins";
 .date-time-picker{
-  width: 250px;
-  margin-left: 100px;
-  height: 90px;
-  background: white;
+  z-index: 1000;
+  //background: transparent;
+  width: 240px;
   .field{
+    background: white;
     color: $mark-light;
-    line-height: 30px;
+    line-height: 50px;
     text-align: center;
-    height: 30px;
+    height: 50px;
     width: 100%;
   }
   .date-container{
     width: 150px;
     float: left;
     .button-container, .up-button, .down-button{
+
+      line-height: 45px;
+      height: 45px;
       width:100%;
     }
   }
@@ -28,7 +31,11 @@
       float: left;
     }
     .up-button, .down-button{
+      height: 45px;
       border-left: 1px white solid;
     }
+  }
+  .btn{
+    width: 100%;
   }
 }

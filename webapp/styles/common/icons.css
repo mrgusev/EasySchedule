@@ -183,8 +183,8 @@ Use:
   content: "\e01c"; }
 
 .flaticon-arrow-up:before {
-  line-height: 30px;
   font-size: 30px;
+  line-height: 45px;
   content: "\e01d"; }
 
 .flaticon-arrow-down:before {
@@ -194,8 +194,8 @@ Use:
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
   margin-left: 3px;
-  line-height: 30px;
   font-size: 30px;
+  line-height: 45px;
   content: "\e01d"; }
 
 .flaticon-sweet3:before {

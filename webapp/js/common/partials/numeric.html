@@ -1,30 +1,39 @@
-<div>
+<div class="appear-box-wrapper">
+<div class="appear-box {{display}}" >
     <div ng-hide="isFloat">
         <div class="numeric">
             <div class="button-container">
-                <div class="up-button" ng-click="add1()"><span class="flaticon-arrow-up"></span></div>
+                <div class="up-button" ng-tap ng-click="add1()"><span class="flaticon-arrow-up"></span></div>
             </div>
-            <div class="field">{{number}}</div>
+            <div class="clearfix"></div>
+            <div class="field">{{model}}</div>
+            <div class="clearfix"></div>
             <div class="button-container">
-                <div class="down-button" ng-click="remove1()"><span class="flaticon-arrow-down"></span></div>
+                <div class="down-button" ng-tap ng-click="remove1()"><span class="flaticon-arrow-down"></span></div>
             </div>
+            <div class="clearfix"></div>
+            <div class="btn" ng-click="close()">OK</div>
         </div>
     </div>
     <div ng-show="isFloat">
-        <div class="numeric">
-            <div class="button-container">
-                <div class="up-button" ng-click="add1()"><span class="flaticon-arrow-up"></span></div>
+        <div class="numeric float">
+            <div class="button-container first">
+                <div class="up-button" ng-tap ng-click="add1()"><span class="flaticon-arrow-up"></span></div>
             </div>
             <div class="button-container">
-                <div class="up-button" ng-click="add01()"><span class="flaticon-arrow-up"></span></div>
+                <div class="up-button" ng-tap ng-click="add01()"><span class="flaticon-arrow-up"></span></div>
             </div>
-            <div class="field">{{number}}</div>
+            <div class="clearfix"></div>
+            <div class="field">{{model | floatzero}}</div>
+            <div class="clearfix"></div>
+            <div class="button-container first">
+                <div class="down-button" ng-tap ng-click="remove1()"><span class="flaticon-arrow-down"></span></div>
+            </div>
             <div class="button-container">
-                <div class="down-button" ng-click="remove1()"><span class="flaticon-arrow-down"></span></div>
+                <div class="down-button" ng-tap ng-click="remove01()"><span class="flaticon-arrow-down"></span></div>
             </div>
-            <div class="button-container">
-                <div class="down-button" ng-click="remove01()"><span class="flaticon-arrow-down"></span></div>
-            </div>
+            <div class="clearfix"></div>
+            <div class="btn" ng-click="close()">OK</div>
         </div>
     </div>
-</div>
+</div></div>

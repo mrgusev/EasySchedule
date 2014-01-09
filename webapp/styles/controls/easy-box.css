@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'open_sanslight';
+  src: url("/../fonts/open-sans/OpenSans-Light-webfont.eot");
+  src: url("/../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/../fonts/open-sans/OpenSans-Light-webfont.woff") format("woff"), url("/../fonts/open-sans/OpenSans-Light-webfont.ttf") format("truetype"), url("/../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.easy-box {
+  margin-left: 100px;
+  width: 310px;
+  min-height: 160px;
+  background: rgba(166, 218, 215, 0.5);
+  position: relative;
+  padding: 10px; }
+  .easy-box .box-title {
+    font-size: 24px;
+    color: #5ebbce;
+    line-height: 24px;
+    margin-bottom: 10px; }
+  .easy-box .box-message {
+    font-size: 21px; }
+  .easy-box .btn.box-button {
+    position: absolute;
+    right: 15px;
+    bottom: 15px; }
+
+.appear-box-wrapper {
+  position: relative;
+  display: inline; }
+
+.appear-box {
+  position: absolute;
+  visibility: hidden;
+  z-index: 1000;
+  left: -0.5em;
+  top: 50%;
+  opacity: 0;
+  -webkit-transform: translateY(-40%) scale(0.9);
+  -moz-transform: translateY(-40%) scale(0.9);
+  transform: translateY(-40%) scale(0.9);
+  -webkit-transition: visibility 0s 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: visibility 0s 0.3s, opacity 0.3s, -moz-transform 0.3s;
+  transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s; }
+
+.appear-box.open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(-50%) scale(1);
+  -moz-transform: translateY(-50%) scale(1);
+  transform: translateY(-50%) scale(1);
+  -webkit-transition: visibility 0s 0s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: visibility 0s 0s, opacity 0.3s, -moz-transform 0.3s;
+  transition: visibility 0s 0s, opacity 0.3s, transform 0.3s; }
+
+.interactive-text {
+  color: #fa6a02;
+  cursor: pointer; }

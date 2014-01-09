@@ -1,29 +1,33 @@
-<div class="date-time-picker">
-    <div class="date-container">
-        <div class="button-container">
-            <div class="up-button" ng-click="addDays()"><span class="flaticon-arrow-up"></span></div>
+<div class="appear-box {{display}}" >
+    <div class="date-time-picker">
+        <div class="date-container">
+            <div class="button-container">
+                <div class="up-button" ng-tap ng-click="addDays()"><span class="flaticon-arrow-up"></span></div>
+            </div>
+            <div class="field">{{model | smartdate}}</div>
+            <div class="button-container">
+                <div class="down-button" ng-tap ng-click="removeDays()"><span class="flaticon-arrow-down"></span></div>
+            </div>
         </div>
-        <div class="field">{{date | smartdate}}</div>
-        <div class="button-container">
-            <div class="down-button" ng-click="removeDays()"><span class="flaticon-arrow-down"></span></div>
-        </div>
-    </div>
-    <div class="time-container">
-        <div class="button-container">
-            <div class="up-button" ng-click="addHours()"><span class="flaticon-arrow-up"></span></div>
-        </div>
-        <div class="button-container">
-            <div class="up-button" ng-click="addMinutes()"><span class="flaticon-arrow-up"></span></div>
+        <div class="time-container">
+            <div class="button-container">
+                <div class="up-button" ng-tap ng-click="addHours()"><span class="flaticon-arrow-up"></span></div>
+            </div>
+            <div class="button-container">
+                <div class="up-button" ng-tap ng-click="addMinutes()"><span class="flaticon-arrow-up"></span></div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="field">{{model | date:'HH : mm'}}</div>
+            <div class="clearfix"></div>
+            <div class="button-container">
+                <div class="down-button" ng-tap ng-click="removeHours()"><span class="flaticon-arrow-down"></span></div>
+            </div>
+            <div class="button-container">
+                <div class="down-button" ng-tap ng-click="removeMinutes()"><span class="flaticon-arrow-down"></span></div>
+            </div>
+            <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
-        <div class="field">{{date | date:'HH : mm'}}</div>
-        <div class="clearfix"></div>
-        <div class="button-container">
-            <div class="down-button" ng-click="removeHours()"><span class="flaticon-arrow-down"></span></div>
-        </div>
-        <div class="button-container">
-            <div class="down-button" ng-click="removeMinutes()"><span class="flaticon-arrow-down"></span></div>
-        </div>
+        <div class="btn" ng-click="close()">ОК</div>
     </div>
-    <div class="clearfix"></div>
 </div>

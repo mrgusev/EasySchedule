@@ -1,0 +1,19 @@
+<div class="easy-box" ng-controller="NewItemController">
+    <div date-time-picker time="model.time" isopen="isDatePickerOpen" maxvalue="maxDate"></div>
+    <div class="box-title">Уровень сахара</div>
+    <div class="box-message">
+        <span class="interactive-text" ng-click="isDatePickerOpen=true">
+            {{model.time | smartdatetime}}
+        </span>
+        у меня
+        <span ng-hide="isNow">было</span>
+        <span> <span numeric number="model.value" isopen="isNumericOpen" is-float="true" max-value="60" min-value="1"></span>
+             <span class="interactive-text" ng-click="isNumericOpen=true">{{model.value}}</span>
+        </span>
+        ммоль/л
+    </div>
+    <div class="clearfix"></div>
+    <div class="box-button btn" ng-tap ng-click="save()">Сохранить
+
+    </div>
+</div>

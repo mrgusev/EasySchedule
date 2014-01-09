@@ -1,0 +1,33 @@
+@import "../theme";
+@import "../common/mixins";
+.numeric{
+  width: 100px;
+  margin:0;
+  background: transparent;
+  .field{
+    background: white;
+    color: $mark-light;
+    line-height: 50px;
+    font-size: 50px;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+  }
+  .button-container{
+    width: 100%;
+    float: left;
+    @include vendor('perspective', 300px);
+  }
+  .btn{
+    width: 100px;
+  }
+  &.float{
+    .button-container{
+      width: 50%;
+      @include vendor('perspective', 75px);
+    }
+    .button-container.first{
+      border-right: 1px white solid;
+    }
+  }
+}

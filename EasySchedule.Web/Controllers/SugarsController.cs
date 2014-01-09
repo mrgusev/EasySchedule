@@ -24,9 +24,9 @@ namespace EasySchedule.Web.Controllers
         }
 
         // POST api/sugars
-        public void Post(SugarModel value)
+        public int Post(SugarModel value)
         {
-            (new ScheduleService()).AddSugar(value);
+            return (new ScheduleService()).AddSugar(value);
         }
 
         // PUT api/sugars/5
