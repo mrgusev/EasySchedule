@@ -1,127 +1,44 @@
 @import "common/mixins";
-.nav{
-  width: 340px;
-  height: 100%;
-  float: left;
-  overflow: auto;
-  background: #454545;
-  color: #ffffff;
-  font-family: gothamMedium;
-  position: fixed;
-  border-top: $default-border;
-  z-index: 2;
-  a{
-    color: white;
-  }
-
-  ul{
-    margin-left: 60px;
-    margin-right: 60px;
-    li{
-      border-bottom: solid 1px #323232;
-      a{
-        padding-bottom: 23px;
-        padding-top: 23px;
-        display: block;
-      }
-      span{
-        margin-left: 10px;
-        margin-right: 26px;
-        display: inline-block;
-      }
-      .home{
-        background-position: 0 0px;
-      }
-      .groups{
-        background-position: 0 -18px;
-      }
-      .archive{
-        background-position: 0 -36px;
-      }
-      .settings{
-        background-position: 0 -54px;
-      }
-      .logout{
-        background-position: 0 -72px;
-      }
-    }
-  }
-}
-
-.mobile-nav{
-  height: 60px;
-  background-color: #454545;
-  display: none;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: $default-border;
-  .menu-button{
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    float: left;
-    border-right: $default-border;
-    color: #ffffff;
-    .icon-menu{
-      margin-top: 16px;
-      display: block;
-      margin-left: 16px;
-    }
-  }
-  .mobile-logo{
-    margin: 0 auto;
-    width: 150px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    height: 30px;
-    display: block;
-    color: #ffffff;
-    background: no-repeat  url('../img/logo-small-light.png');
-    background-size: 100% 100%;
-  }
-  .new-spond-button{
-    cursor: pointer;
-    border-left: $default-border;
-    width: 60px;
-    height: 60px;
-    margin-top: -60px;
-    padding-left: 0;
-    padding-right: 0;
-    float: right;
-    color: #ffffff;
-    .icon-plus{
-      margin-top: 17px;
-      display: block;
-      margin-left: 17px;
-    }
-  }
-}
-
+@import "theme";
 
 .main{
+  height: 100%;
+  max-width: 960px;
   margin: 0 auto;
-  max-width: 1110px;
-  min-width: 320px;
 }
 
 .header{
-  padding-top: 85px;
-  font-family: gothamMedium;
-  padding-bottom: 30px;
-  .title{
-    color: #787878;
+  height: $header-height;
+  .logo{
+    padding-left: $big-space;
+    line-height: $header-height;
+    font-size: 30px;
+    color: $mark;
   }
-  .message{
-    margin-top: 10px;
-    font-size: 50px;
-    color: #454545;
-  }
-  border-bottom: solid 1px #cdcdcd;
+  border-bottom: $default-border;
+
+
 }
 
-.content{
-  margin-left: 340px;
-  padding-left: 60px;
-  padding-right: 60px;
+nav{
+  float: left;
+  width: $menu-width;
+  padding-top: $medium-space;
+  padding-left: $big-space;
+  border-right: $default-border;
+  height: calc(100% - 70px);
+  li{
+    margin-bottom: $small-space;
+    a{
+      color: $basic-dark;
+      font-size: 24px;
+    }
+  }
+}
+  .content{
+  padding-top: $medium-space;
+  padding-bottom: $big-space;
+  padding-left: $big-space;
+  padding-right: $big-space;
+  margin-left: $menu-width;
 }

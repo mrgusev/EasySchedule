@@ -20,8 +20,14 @@
   font-style: normal;
 }
 
-$border-default: 1px solid #ddd;
+$border-default: 1px solid #f2f2f2;
 $font-default: open_sanslight;
+
+$menu-width: 200px;
+$header-height: 70px;
+$big-space: 30px;
+$medium-space: 15px;
+$small-space: 5px;
 
 $default-text-color: #808080;
 $background-default: #F2F3EB;
@@ -31,7 +37,7 @@ $mark-light: #f28530;
 $mark: rgb(250, 106, 2);
 $mark-dark: #df5e02;
 
-$basic-light: rgba(166, 218, 215, 0.50);
+$basic-light: #e8f5f4;
 $basic-neutral: #96c3c1;
 $basic: #69d1e6;
 $basic-dark: #5ebbce;
