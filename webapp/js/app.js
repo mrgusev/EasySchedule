@@ -10,7 +10,7 @@ angular.module('app', ['ngRoute',
     } ])
     .run(['$rootScope', '$location', '$routeParams',
         function ($rootScope, $location, $routeParams) {
-
+            document.addEventListener("touchstart", function(){}, true);
             $rootScope.scrollTo = function (id) {
                 $location.hash(id);
                 $anchorScroll();
