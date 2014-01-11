@@ -68,22 +68,49 @@ Use:
       line-height: 40px;
       border-top: 2px solid #e8f5f4;
       border-bottom: 2px solid #e8f5f4; }
+    .timeline .date-expander .items-container {
+      -webkit-transition: max-heigh 0.3s;
+      -moz-transition: max-heigh 0.3s;
+      -ms-transition: max-heigh 0.3s;
+      -o-transition: max-heigh 0.3s;
+      transition: max-heigh 0.3s;
+      overflow: hidden;
+      max-height: 1500px; }
+    .timeline .date-expander.true {
+      margin-bottom: -2px; }
+      .timeline .date-expander.true .items-container {
+        max-height: 0; }
   .timeline .item {
     cursor: pointer;
-    padding-top: 40px;
-    height: 104px;
-    padding-bottom: 90px;
+    margin-top: 40px;
+    height: 80px;
+    -webkit-transition: margin-top 0.5s, height 0.5s;
+    -moz-transition: margin-top 0.5s, height 0.5s;
+    transition: margin-top 0.5s, height 0.5s;
     /* The triangle */ }
+    .timeline .item .item-content {
+      -webkit-transition: opacity 0.5s;
+      -moz-transition: opacity 0.5s;
+      -ms-transition: opacity 0.5s;
+      -o-transition: opacity 0.5s;
+      transition: opacity 0.5s;
+      -webkit-transition-delay: 0.3s;
+      -moz-transition-delay: 0.3s;
+      -ms-transition-delay: 0.3s;
+      -o-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+      opacity: 1; }
     .timeline .item .time {
       color: #5ebbce;
       font-size: 30px;
       width: 25%;
       padding-right: 100px;
-      position: absolute; }
+      float: left; }
     .timeline .item .icon {
-      margin-left: -25px;
+      float: left;
+      margin-left: -55px;
       margin-top: 5px;
-      position: absolute;
+      position: relative;
       width: 40px;
       height: 40px;
       line-height: 40px;
@@ -92,7 +119,7 @@ Use:
       border-radius: 50%;
       box-shadow: 0 0 0 8px #e8f5f4;
       text-align: center;
-      left: 20%; }
+      z-index: 1000; }
       .timeline .item .icon [class^="flaticon-"]:before {
         line-height: 40px;
         font-size: 28px; }
@@ -104,6 +131,11 @@ Use:
       border-left: 2px solid #e8f5f4;
       position: relative;
       padding-left: 15px; }
+      .timeline .item .info .control {
+        display: block; }
+        .timeline .item .info .control .delete {
+          color: #ff5453;
+          float: left; }
       .timeline .item .info .value {
         color: #f28530;
         font-size: 64px;
@@ -150,9 +182,22 @@ Use:
       -o-transition: -o-transform .3s;
       -ms-transition: -ms-transform .3s;
       transition: transform .3s; }
+  .timeline .item.hide {
+    margin-top: 0px;
+    height: 0px; }
+    .timeline .item.hide .item-content {
+      opacity: 0; }
   .timeline .item:hover .info:after {
     -webkit-transform: scaleX(5);
     -moz-transform: scaleX(5);
     -ms-transform: scaleX(5);
     -o-transform: scaleX(5);
     transform: scaleX(5); }
+  .timeline .item.selected .info:after {
+    -webkit-transform: scaleX(5);
+    -moz-transform: scaleX(5);
+    -ms-transform: scaleX(5);
+    -o-transform: scaleX(5);
+    transform: scaleX(5); }
+  .timeline .item.selected .info.control {
+    display: block; }

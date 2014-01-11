@@ -19,10 +19,18 @@ angular.module('pages.home' )
             };
 
             $scope.saveSugar = function(){
-                //Journal.addSugar($scope.sugarModel);
+                $rootScope.fakeSugarModel = JSON.parse(JSON.stringify($scope.sugarModel)) ;
+//                Journal.addSugar($scope.sugarModel, function(){
+                    $rootScope.hasUpdates = true;
+//                });
+                $rootScope.closeModals();
+
             };
             $scope.saveInsulin = function(){
-              //  Journal.addInsulinUsage($scope.insulinModel);
+//                Journal.addInsulinUsage($scope.insulinModel, function(){
+                    $rootScope.hasUpdates = true;
+//                });
+                $rootScope.closeModals();
             };
             $scope.$watch('sugarModel.time', function(){
                 $scope.isSugarNow = new Date() - $scope.sugarModel.time < 300000;

@@ -6,7 +6,7 @@ var enums = {
     },
     insulinTypes:{
         short:1,
-        ultraShort:2,
-        long:3
+        ultraShort:3,
+        long:2
     }
 }

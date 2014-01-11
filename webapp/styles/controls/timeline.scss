@@ -26,20 +26,42 @@
       line-height: 40px;
       border-top: 2px solid $basic-light;
       border-bottom: 2px solid $basic-light;
+
+    }
+    .items-container{
+      @include vendor(transition,  max-heigh 0.3s);
+      overflow: hidden;
+     max-height:1500px;
+    }
+    &.true{
+      margin-bottom: -2px;
+      .items-container{
+      //  display: none;
+        //visibility: hidden;
+        max-height: 0;
+      }
     }
   }
-
   .item{
     cursor: pointer;
-    padding-top: 40px;
-    height: 104px;
-    padding-bottom: 90px;
+    margin-top: 40px;
+//    margin-bottom: 20px;
+    height: 80px;
+    -webkit-transition: margin-top 0.5s, height 0.5s;
+    -moz-transition: margin-top 0.5s, height 0.5s;
+    transition: margin-top 0.5s, height 0.5s;
+
+    .item-content{
+      @include vendor(transition, opacity 0.5s);
+      @include vendor(transition-delay, 0.3s);
+      opacity: 1;
+    }
     .time{
       color: $basic-dark;
       font-size: 30px;
       width: 25%;
       padding-right: 100px;
-      position: absolute;
+      float: left;
     }
     .icon{
       [class^="flaticon-"]:before{
@@ -50,9 +72,10 @@
         font-size: 33px;
         margin-left: -7px;
       }
-      margin-left: -25px;
+      float: left;
+      margin-left: -55px;
       margin-top: 5px;
-      position: absolute;
+      position: relative;
       width: 40px;
       height: 40px;
       line-height: 40px;
@@ -61,14 +84,25 @@
       border-radius: 50%;
       box-shadow: 0 0 0 8px $basic-light;
       text-align: center;
-      left: 20%;
-     // z-index: 10000;
+     // left: 20%;
+      z-index: 1000;
     }
     .info{
       margin: 0 0 25px 27%;
       border-left: 2px solid $basic-light;
       position: relative;
       padding-left: $medium-space;
+      .control{
+        display: block;
+
+        .edit{
+
+        }
+        .delete{
+          color: #ff5453;
+          float: left;
+        }
+      }
       .value{
         color: $mark-light;
         font-size: 64px;
@@ -117,11 +151,25 @@
       transition: transform .3s;
     }
   }
-
+  .item.hide{
+    margin-top: 0px;
+    height: 0px;
+    .item-content{
+      opacity: 0;
+    }
+  }
   .item:hover{
     .info:after{
       @include vendor(transform, scaleX(5));
+    }
+  }
 
+  .item.selected{
+    .info:after{
+      @include vendor(transform, scaleX(5));
+    }
+    .info.control{
+      display: block;
     }
   }
 

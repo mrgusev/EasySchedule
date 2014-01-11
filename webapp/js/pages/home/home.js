@@ -12,62 +12,16 @@ angular.module('pages.home', [
     }])
     .controller('HomeController', ['$scope', '$routeParams', '$location', 'Journal','Product', '$rootScope', '$timeout',
         function ($scope, $routeParams,$location, Journal,Product, $rootScope, $timeout) {
-            ModalEffects();
-            $scope.saveNewSugar = function(model){
-                console.log(JSON.stringify(model));
-            };
-            $scope.isDataLoading = true
-            $scope.insulinTypes = [];
-            $scope.newSugarModel = {time: new Date().getTime(), value: 4};
-            $scope.isFromGlucometer = true;
 
-            function loadProducts(){
-                Product.getProducts(function(data){
-                    $scope.products = data;
-                })
-            };
+            $scope.isDataLoading = true;
 
-            //loadProducts();
-
-            $scope.showAddPanel = function(type){
-                $scope.isAddSugar = false;
-                $scope.isAddInsulinUsage = false;
-                $scope.isAddFoodUsage = false;
-                switch (type){
-                    case enums.journalItemTypes.foodUsage:
-                        $scope.isAddFoodUsage = true;
-                        break;
-                    case enums.journalItemTypes.insulinUsage:
-                        $scope.isAddInsulinUsage = true;
-                        break;
-                    case enums.journalItemTypes.sugar:
-                        $scope.isAddSugar = true;
-                        break;
-                }
-            };
-
-            $scope.loadInsulinTypes = function(){
-                Journal.getInsulinTypes(function(data){
-                    $scope.insulinTypes = data;
-                    $scope.newInsulinUsage = {
-                        insulinType: $scope.insulinTypes[0],
-                        value:4,
-                        time: new Date()
-                    }
-                });
-            };
-
-            $scope.loadInsulinTypes();
-
-            $scope.loadJournal = function(){
-                $scope.isDataLoading = true;
-                $scope.newSugarModel.time = new Date($scope.newSugarModel.time - 14400000);
-                $scope.collection = [];
+            $scope.updateJournal = function(){
+                $scope.collection = []
                 Journal.getFoodUsages(function(foodUsages){
                     _.each(foodUsages, function(item){
                         item.type = enums.journalItemTypes.foodUsage;
-                        item.time = new Date(item.time).getTime() - 14400000;
-                        item.date = new Date(new Date(item.time).getTime() - 14400000).toDateString();
+                        item.time = new Date(item.time).getTime();
+                        item.date = new Date(new Date(new Date(item.time).getTime()).toDateString());
                         return item;
                     });
                     $scope.foodUsages = foodUsages;
@@ -75,19 +29,19 @@ angular.module('pages.home', [
                     Journal.getSugars(function(sugar){
                         _.each(sugar,function(item){
                             item.type = enums.journalItemTypes.sugar;
-                            item.time = new Date(item.time).getTime() - 14400000;
-                            item.date = new Date(new Date(item.time).getTime() - 14400000).toDateString();
+                            item.time = new Date(item.time).getTime();
+                            item.date = new Date(new Date(new Date(item.time).getTime()).toDateString());
                             return item;
                         });
                         $scope.collection = $scope.collection.concat(sugar);
                         Journal.getInsulinUsages(function(insulinUsages){
                             _.each(insulinUsages,function(item){
                                 item.type = enums.journalItemTypes.insulinUsage;
-                                item.time = new Date(item.time).getTime() - 14400000;
-                                item.date = new Date(new Date(item.time).getTime() - 14400000).toDateString();
+                                item.time = new Date(item.time).getTime();
+                                item.date = new Date(new Date(new Date(item.time).getTime()).toDateString());
                                 return item;
                             });
-                            $scope.collection = $scope.collection.concat(insulinUsages).reverse();
+                            $scope.collection = _.sortBy($scope.collection.concat(insulinUsages), 'time').reverse();
 
 //                            $scope.collection  = _.sortBy(_.filter($scope.collection, function(item){
 //                                var result =  new Date().getTime() - item.time < 1000*60*60*24*3;
@@ -95,16 +49,22 @@ angular.module('pages.home', [
 //                            }), 'time');
                             $scope.datedCollection = [];
                             var groupedCollectionObj = _.groupBy($scope.collection, 'date');
-                                for(var prop in groupedCollectionObj) {
-                                    if(groupedCollectionObj.hasOwnProperty(prop)){
-                                        $scope.datedCollection.push({date:prop, items:groupedCollectionObj[prop]});
-                                    }
+                            for(var prop in groupedCollectionObj) {
+                                if(groupedCollectionObj.hasOwnProperty(prop)){
+                                    $scope.datedCollection.push({date: new Date(prop), items:groupedCollectionObj[prop]});
                                 }
+                            }
+                            $scope.datedCollection = _.sortBy($scope.datedCollection, 'date').reverse();
                             $scope.isDataLoading = false;
-                           // $timeout(drawChart,100)
+                            // $timeout(drawChart,100)
                         });
                     });
                 });
+            };
+
+            $scope.loadJournal = function(){
+                $scope.isDataLoading = true;
+                $scope.updateJournal();
             };
 
             function drawChart() {
@@ -139,25 +99,30 @@ angular.module('pages.home', [
                 chart.draw(joinedData, options);
             };
 
-           $scope.loadJournal();
+            $scope.loadJournal();
 
-            $scope.loadPortions = function(item){
-                if(!item.portions){
-                     Journal.getPortions(item.id, function(data){
-                        item.portions = data;
+            $rootScope.$watch('hasUpdates',function(){
+                if($rootScope.hasUpdates){
+                    $rootScope.hasUpdates = false;
+                    console.log('journal updated');
+                    var fakeSugarModel =  $rootScope.fakeSugarModel;
+                    fakeSugarModel.hidden = 'hide';
+                    fakeSugarModel.type = 1;
+                    console.log(new Date(new Date(new Date(fakeSugarModel.time).getTime()).toDateString()))
+                    _.each($scope.datedCollection, function(datedItem){
+                        console.log(datedItem.date);
+                       if(datedItem.date.toString() == new Date(new Date(new Date(fakeSugarModel.time).getTime()).toDateString()).toString()) {
+
+                           console.log('found dated item');
+                           datedItem.items.push(fakeSugarModel);
+                           datedItem.items = _.sortBy(datedItem.items, 'time').reverse();
+                           $timeout(function(){fakeSugarModel.hidden = 'show';},300)
+                           ;
+                       }
                     });
-                }
-            };
 
-            $scope.addSugar = function(){
-                if($scope.isFromGlucometer){
-                    $scope.newSugarModel.value = Math.round(($scope.newSugarModel.value/1.12)*10)/10;
-                }
-                $scope.newSugarModel.time = new Date($scope.newSugarModel.time + 14400000);
-                Journal.addSugar($scope.newSugarModel, $scope.loadJournal);
-            };
+                    //$scope.updateJournal();
 
-            $scope.addInsulinUsage = function(){
-                Journal.addInsulinUsage($scope.newInsulinUsage, $scope.loadJournal);
-            }
+                }
+            });
     }]);
