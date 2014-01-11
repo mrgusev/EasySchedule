@@ -1,0 +1,32 @@
+<div>
+    <div class="easy-box" ng-controller="NewItemController">
+        <span date-time-picker time="insulinModel.time" isopen="isDatePickerOpen"  overlayid="'insulin-overlay'" maxvalue="maxDate"></span>
+        <div class="box-title">Прием инсулина</div>
+        <div class="box-message">
+            Я принял
+            <span> <span numeric number="insulinModel.value" isopen="isNumericOpen" is-float="false"
+                         max-value="60" min-value="1" overlayid="'insulin-overlay'" ></span>
+                     <span class="interactive-text" ng-click="isNumericOpen=true">{{insulinModel.value}}</span>
+                </span>
+            ед.
+            <span>
+                <span select selected-item="insulinModel.insulinType"
+                      items="insulinTypes" isopen="isInsulinTypesOpen" overlayid="'insulin-overlay'"></span>
+                <span class="interactive-text" ng-click="isInsulinTypesOpen=true">{{insulinModel.insulinType.name}}</span>
+            </span> инсулина
+
+            <span>
+                <span class="interactive-text" ng-click="isDatePickerOpen=true">
+                    {{insulinModel.time | smartdatetime}}
+                </span>
+            </span>
+        </div>
+        <div class="clearfix"></div>
+        <div class="box-button btn" ng-tap ng-click="saveInsulin()">
+            Сохранить
+        </div>
+        <div class="close-button md-close" ng-click="closeModals()"><span class="flaticon-close-small"></span></div>
+    </div>
+
+    <div class="nl-overlay" id="insulin-overlay"></div>
+</div>

@@ -6,17 +6,21 @@
  * To change this template use File | Settings | File Templates.
  */
 angular.module('controls', [])
-.directive("dateTimePicker", function () {
+.directive("dateTimePicker", ['$rootScope', function ($rootScope) {
     return {
         restrict: 'A',
         scope:{
             time:'=',
             isopen:'=',
             minvalue:'=',
-            maxvalue:'='
+            maxvalue:'=',
+            overlayid:'='
         },
         templateUrl:'js/common/partials/datetimepicker.html',
         link: function (scope, element, attrs) {
+
+            var overlay = $( '#'+scope.overlayid );
+
                if(!scope.time){
                    scope.model = new Date();
                }
@@ -81,14 +85,19 @@ angular.module('controls', [])
             };
             scope.$watch('isopen', function () {
                 if(scope.isopen){
+                    overlay.addClass('true')
                     scope.display = 'open';
                 } else{
+                    overlay.removeClass('true')
                     scope.display = '';
                 }
             });
             scope.$watch('time',function(){
                 scope.model = new Date(scope.time);
             });
+            $rootScope.$watch('isAllModalsClosed',function(){
+                   scope.isopen = false;
+            });
     }
     };
-})
+}])

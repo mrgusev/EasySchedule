@@ -47,9 +47,8 @@ Use:
 .hi-icon-wrap {
   text-align: center;
   margin: 0 auto;
-  padding-top: 30px;
-    padding-bottom: 30px;
-}
+  padding: 2em 0 3em; }
+
 .hi-icon {
   display: inline-block;
   font-size: 0px;
@@ -127,6 +126,11 @@ Use:
   content: "\e00a"; }
 
 .flaticon-cross29:before {
+  font-size: 15px;
+  line-height: 15px;
+  content: "\e00b"; }
+
+.flaticon-close-small:before {
   font-size: 15px;
   line-height: 15px;
   content: "\e00b"; }

@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="styles/controls/numeric.css">
     <link rel="stylesheet" type="text/css" href="styles/controls/buttons.css">
     <link rel="stylesheet" type="text/css" href="styles/controls/easy-box.css">
+    <link rel="stylesheet" type="text/css" href="styles/controls/select.css">
 
     <link rel="stylesheet" type="text/css" href="styles/controls/modal.css">
 
@@ -56,8 +57,22 @@
         </ul>
     </nav>
     <div class="content true">
+        <!--<div ng-include="'js/common/partials/new-sugar.html'"></div>-->
         <div ng-view=""></div>
     </div>
+
+    <div modal-window isopen="isAddSugar">
+        <div ng-include="'js/common/partials/new-sugar.html'" ></div>
+    </div>
+    <div modal-window isopen="isAddInsulin">
+            <div ng-include="'js/common/partials/new-insulin.html'" ></div>
+    </div>
+    <div modal-window isopen="isAddFood">
+            <div ng-include="'js/common/partials/new-food.html'" ></div>
+    </div>
+    <div class="md-overlay" ng-click="closeModals()"></div>
+
+    <!-- the overlay element -->
 </div>
 </body>
 
@@ -93,7 +108,9 @@
 <script type="text/javascript" src="js/common/directives/views.js"></script>
 <script type="text/javascript" src="js/common/directives/datetimepicker.js"></script>
 <script type="text/javascript" src="js/common/directives/numeric.js"></script>
+<script type="text/javascript" src="js/common/directives/select.js"></script>
 <script type="text/javascript" src="js/common/directives/new-items.js"></script>
+<script type="text/javascript" src="js/common/directives/modal-window.js"></script>
 <!--<script type="text/javascript" src="js/common/services/map.js"></script>-->
 <!--<script type="text/javascript" src="js/common/services/security.js"></script>-->
 <!--<script type="text/javascript" src="js/common/services/interceptor.js"></script>-->

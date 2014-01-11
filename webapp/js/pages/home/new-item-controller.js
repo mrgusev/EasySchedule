@@ -3,15 +3,31 @@ angular.module('pages.home' )
         function ($scope, $routeParams,$location, Journal,Product, $rootScope, $timeout) {
             $scope.closeAfterSave = true;
             $scope.maxDate = new Date();
-            $scope.model = {
+            $scope.insulinTypes = [
+                {id:enums.insulinTypes.short, name:'короткого'},
+                {id:enums.insulinTypes.ultraShort, name:'ультракороткого'},
+                {id:enums.insulinTypes.long, name:'длинного'}
+            ];
+            $scope.sugarModel = {
                 time: new Date(),
                 value: 5.8
             };
-            $scope.save = function(){
-                Journal.addSugar($scope.model);
+            $scope.insulinModel = {
+                time: new Date(),
+                value: 4,
+                insulinType: $scope.insulinTypes[0]
             };
-            $scope.$watch('model.time', function(){
-                console.log($scope.model.time);
-                $scope.isNow = new Date() - $scope.model.time < 300000;
+
+            $scope.saveSugar = function(){
+                Journal.addSugar($scope.sugarModel);
+            };
+            $scope.saveInsulin = function(){
+                Journal.addInsulinUsage($scope.insulinModel);
+            };
+            $scope.$watch('sugarModel.time', function(){
+                $scope.isSugarNow = new Date() - $scope.sugarModel.time < 300000;
             });
-        }]);
+//            $scope.$watch('insulinModel.time', function(){
+//                $scope.isInsulinNow = new Date() - $scope.insulinModel.time < 300000;
+//            });
+}]);

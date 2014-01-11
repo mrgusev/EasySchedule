@@ -53,7 +53,7 @@ Use:
   width: 10px;
   background: #e8f5f4;
   left: 20%;
-  z-index: -1000;
+  z-index: -1;
   margin-left: -10px; }
 
 .timeline {

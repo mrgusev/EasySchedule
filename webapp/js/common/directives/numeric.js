@@ -17,10 +17,13 @@ angular.module('controls')
                 maxValue:'=',
                 isFloat:'=',
                 isopen:'=',
-                number:'='
+                number:'=',
+                overlayid:'='
             },
             templateUrl:'js/common/partials/numeric.html',
             link: function (scope, element, attrs, ngModel) {
+
+                var overlay = $( '#'+scope.overlayid );
                 function round(val){
                     if(scope.isFloat){
                         return Math.round(val*10)/10;
@@ -54,7 +57,7 @@ angular.module('controls')
                 };
                 scope.remove01 = function(){
                     var val = scope.model - 0.1;
-                    if(round(val*10).toString().last() == '0'){
+                    if(round(val*10).toString().last() == '9'){
                         val+=1;
                     }
                     if(val < scope.minValue )
@@ -67,13 +70,18 @@ angular.module('controls')
                 };
                 scope.$watch('isopen', function () {
                     if(scope.isopen){
+                        overlay.addClass('true')
                         scope.display = 'open';
                     } else{
+                        overlay.removeClass('true')
                         scope.display = '';
                     }
                 });
                 scope.$watch('number',function(){
                     scope.model = new Object(scope.number);
+                });
+                $rootScope.$watch('isAllModalsClosed',function(){
+                    scope.isopen = false;
                 });
             }
         };

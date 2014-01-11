@@ -6,10 +6,9 @@
   font-style: normal; }
 
 .easy-box {
-  margin-left: 100px;
   width: 310px;
   min-height: 160px;
-  background: #e8f5f4;
+  background: white;
   position: relative;
   padding: 10px; }
   .easy-box .box-title {
@@ -23,15 +22,43 @@
     position: absolute;
     right: 15px;
     bottom: 15px; }
+  .easy-box .close-button {
+    position: absolute;
+    color: gray;
+    top: 15px;
+    right: 15px;
+    cursor: pointer; }
+
+.nl-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(212, 203, 211, 0.58);
+  opacity: 0;
+  z-index: 3000;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.3s, opacity 0.3s;
+  -moz-transition: visibility 0s 0.3s, opacity 0.3s;
+  transition: visibility 0s 0.3s, opacity 0.3s; }
+
+.nl-overlay.true {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  transition-delay: 0s; }
 
 .appear-box-wrapper {
   position: relative;
-  display: inline; }
+  display: inline;
+  z-index: 10000; }
 
 .appear-box {
   position: absolute;
   visibility: hidden;
-  z-index: 1000;
+  z-index: 10000;
   left: -0.5em;
   top: 50%;
   opacity: 0;

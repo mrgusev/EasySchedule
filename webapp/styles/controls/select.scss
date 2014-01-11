@@ -1,0 +1,18 @@
+@import "../theme";
+
+.select{
+  padding: $medium-space;
+  background: white;
+  li{
+    margin-bottom: $small-space;
+    .item{
+      cursor: pointer;
+    }
+    .item:hover{
+      color: $mark;
+    }
+    .item.selected{
+      color: $mark;
+    }
+  }
+}

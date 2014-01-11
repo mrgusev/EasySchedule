@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'open_sanslight';
+  src: url("/../fonts/open-sans/OpenSans-Light-webfont.eot");
+  src: url("/../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/../fonts/open-sans/OpenSans-Light-webfont.woff") format("woff"), url("/../fonts/open-sans/OpenSans-Light-webfont.ttf") format("truetype"), url("/../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.select {
+  padding: 15px;
+  background: white; }
+  .select li {
+    margin-bottom: 5px; }
+    .select li .item {
+      cursor: pointer; }
+    .select li .item:hover {
+      color: #fa6a02; }
+    .select li .item.selected {
+      color: #fa6a02; }
