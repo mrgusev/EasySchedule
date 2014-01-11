@@ -47,7 +47,8 @@ Use:
 .hi-icon-wrap {
   text-align: center;
   margin: 0 auto;
-  padding: 2em 0 3em; }
+  padding-top: 30px;
+  padding-bottom: 30px; }
 
 .hi-icon {
   display: inline-block;
@@ -92,6 +93,36 @@ Use:
   text-transform: none;
   display: block; }
 
+.flaticon-cross29:before {
+  font-size: 15px;
+  line-height: 15px;
+  content: "\e00c"; }
+
+.flaticon-close-small:before {
+  font-size: 15px;
+  line-height: 15px;
+  content: "\e00c"; }
+
+.flaticon-rain14:before {
+  margin-left: -9px;
+  content: "\e01b"; }
+
+.flaticon-arrow-up:before {
+  font-size: 30px;
+  line-height: 45px;
+  content: "\e01e"; }
+
+.flaticon-arrow-down:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-left: 3px;
+  font-size: 30px;
+  line-height: 45px;
+  content: "\e01e"; }
+
 .flaticon-angle1:before {
   content: "\e000"; }
 
@@ -113,107 +144,85 @@ Use:
 .flaticon-arrow389:before {
   content: "\e006"; }
 
-.flaticon-cherries1:before {
+.flaticon-check14:before {
+  line-height: 20px;
+  font-size: 20px;
   content: "\e007"; }
 
-.flaticon-chicken:before {
+.flaticon-cherries1:before {
   content: "\e008"; }
 
-.flaticon-close12:before {
+.flaticon-chicken:before {
   content: "\e009"; }
 
-.flaticon-cooker1:before {
+.flaticon-close12:before {
   content: "\e00a"; }
 
-.flaticon-cross29:before {
-  font-size: 15px;
-  line-height: 15px;
-  content: "\e00b"; }
-
-.flaticon-close-small:before {
-  font-size: 15px;
-  line-height: 15px;
+.flaticon-cooker1:before {
   content: "\e00b"; }
 
 .flaticon-cross37:before {
-  content: "\e00c"; }
-
-.flaticon-curve21:before {
   content: "\e00d"; }
 
-.flaticon-dwelling1:before {
+.flaticon-curve21:before {
   content: "\e00e"; }
 
-.flaticon-eating:before {
+.flaticon-dwelling1:before {
   content: "\e00f"; }
 
-.flaticon-fingerprint29:before {
+.flaticon-eating:before {
   content: "\e010"; }
 
-.flaticon-food9:before {
+.flaticon-fingerprint29:before {
   content: "\e011"; }
 
-.flaticon-fresh:before {
+.flaticon-food9:before {
   content: "\e012"; }
 
-.flaticon-geolocation:before {
+.flaticon-fresh:before {
   content: "\e013"; }
 
-.flaticon-ham:before {
+.flaticon-geolocation:before {
   content: "\e014"; }
 
-.flaticon-home63:before {
+.flaticon-ham:before {
   content: "\e015"; }
 
-.flaticon-hot:before {
+.flaticon-home63:before {
   content: "\e016"; }
 
-.flaticon-location26:before {
+.flaticon-hot:before {
   content: "\e017"; }
 
-.flaticon-magicians:before {
+.flaticon-location26:before {
   content: "\e018"; }
 
-.flaticon-pizza2:before {
+.flaticon-magicians:before {
   content: "\e019"; }
 
-.flaticon-rain14:before {
-  margin-left: -9px;
+.flaticon-pizza2:before {
   content: "\e01a"; }
 
 .flaticon-restaurant1:before {
-  content: "\e01b"; }
-
-.flaticon-silver:before {
   content: "\e01c"; }
 
-.flaticon-arrow-up:before {
-  font-size: 30px;
-  line-height: 45px;
+.flaticon-silver:before {
   content: "\e01d"; }
 
-.flaticon-arrow-down:before {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-  margin-left: 3px;
-  font-size: 30px;
-  line-height: 45px;
-  content: "\e01d"; }
-
-.flaticon-sweet3:before {
+.flaticon-small68:before {
   content: "\e01e"; }
 
-.flaticon-syringe:before {
+.flaticon-sweet3:before {
   content: "\e01f"; }
 
-.flaticon-syringe1:before {
+.flaticon-syringe:before {
   content: "\e020"; }
 
-.flaticon-tea:before {
+.flaticon-syringe1:before {
   content: "\e021"; }
+
+.flaticon-tea:before {
+  content: "\e022"; }
 
 /* Effect 1 */
 .hi-icon-effect-1 .hi-icon {

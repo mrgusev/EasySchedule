@@ -9,10 +9,18 @@
   padding: 15px;
   background: white; }
   .select li {
+    padding-left: 30px;
     margin-bottom: 5px; }
     .select li .item {
       cursor: pointer; }
     .select li .item:hover {
       color: #fa6a02; }
     .select li .item.selected {
+      position: relative;
       color: #fa6a02; }
+      .select li .item.selected .icon {
+        position: absolute;
+        left: -30px;
+        top: 5px;
+        width: 20px;
+        height: 20px; }

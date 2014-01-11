@@ -19,10 +19,10 @@ angular.module('pages.home' )
             };
 
             $scope.saveSugar = function(){
-                Journal.addSugar($scope.sugarModel);
+                //Journal.addSugar($scope.sugarModel);
             };
             $scope.saveInsulin = function(){
-                Journal.addInsulinUsage($scope.insulinModel);
+              //  Journal.addInsulinUsage($scope.insulinModel);
             };
             $scope.$watch('sugarModel.time', function(){
                 $scope.isSugarNow = new Date() - $scope.sugarModel.time < 300000;

@@ -23,7 +23,6 @@ nav{
   width: $menu-width;
   padding-top: $medium-space;
   padding-left: $big-space;
-  border-right: $default-border;
  //height: calc(100% - 70px);
   li{
     margin-bottom: $small-space;
@@ -33,7 +32,8 @@ nav{
     }
   }
 }
-  .content{
+.content{
+  border-left: $default-border;
   padding-top: $medium-space;
   padding-bottom: $big-space;
   padding-left: $big-space;

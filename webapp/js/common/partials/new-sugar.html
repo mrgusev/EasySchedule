@@ -1,10 +1,12 @@
 <div>
     <div class="easy-box" ng-controller="NewItemController">
-        <div date-time-picker time="sugarModel.time" isopen="isDatePickerOpen" maxvalue="maxDate" overlayid="'sugar-overlay'"></div>
         <div class="box-title">Уровень сахара</div>
         <div class="box-message">
-            <span class="interactive-text" ng-click="isDatePickerOpen=true">
-                {{sugarModel.time | smartdatetime}}
+            <span>
+                <span date-time-picker time="sugarModel.time" isopen="isDatePickerOpen"  overlayid="'sugar-overlay'" maxvalue="maxDate"></span>
+                <span class="interactive-text" ng-click="isDatePickerOpen=true">
+                    {{sugarModel.time | smartdatetime}}
+                </span>
             </span>
             у меня
             <span ng-hide="isSugarNow">было</span>

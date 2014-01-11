@@ -1,6 +1,7 @@
 @import "../theme";
 .easy-box{
-  width: 310px;
+  max-width: 400px;
+  min-width: 310px;
   min-height: 160px;
   background: white;
   position: relative;

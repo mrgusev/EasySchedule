@@ -46,7 +46,8 @@ Use:
  */
 .date-time-picker {
   z-index: 1000;
-  width: 240px; }
+  width: 240px;
+  margin-left: -100px; }
   .date-time-picker .field {
     background: white;
     color: #f28530;

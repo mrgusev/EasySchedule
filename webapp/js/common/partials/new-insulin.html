@@ -1,6 +1,5 @@
 <div>
     <div class="easy-box" ng-controller="NewItemController">
-        <span date-time-picker time="insulinModel.time" isopen="isDatePickerOpen"  overlayid="'insulin-overlay'" maxvalue="maxDate"></span>
         <div class="box-title">Прием инсулина</div>
         <div class="box-message">
             Я принял
@@ -16,6 +15,7 @@
             </span> инсулина
 
             <span>
+                <span date-time-picker time="insulinModel.time" isopen="isDatePickerOpen"  overlayid="'insulin-overlay'" maxvalue="maxDate"></span>
                 <span class="interactive-text" ng-click="isDatePickerOpen=true">
                     {{insulinModel.time | smartdatetime}}
                 </span>

@@ -38,11 +38,11 @@ angular.module('common.filters', [])
             var inputDate = new Date(input);
             var now = new Date();
             if(Math.abs(now-inputDate) < 1000*60*5){
-                return 'Сейчас';
+                return 'сейчас';
             }else if (inputDate.getDate() == now.getDate() && inputDate.getMonth() == now.getMonth() && inputDate.getYear() == now.getYear()){
-                return 'Сегодня в ' + $filter('date')(inputDate, 'HH:mm');
+                return 'сегодня в ' + $filter('date')(inputDate, 'HH:mm');
             } else if(inputDate.getDate() == now.getDate()-1 && inputDate.getMonth() == now.getMonth() && inputDate.getYear() == now.getYear()){
-                return 'Вчера в '+ $filter('date')(inputDate, 'HH:mm');
+                return 'вчера в '+ $filter('date')(inputDate, 'HH:mm');
             } else {
                 var str = $filter('date')(inputDate, 'dd.MM.yyyy');
                 if (inputDate.getYear() == now.getYear()) {

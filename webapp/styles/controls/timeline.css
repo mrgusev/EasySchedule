@@ -53,7 +53,7 @@ Use:
   width: 10px;
   background: #e8f5f4;
   left: 20%;
-  z-index: -1;
+  z-index: 0;
   margin-left: -10px; }
 
 .timeline {
@@ -93,6 +93,12 @@ Use:
       box-shadow: 0 0 0 8px #e8f5f4;
       text-align: center;
       left: 20%; }
+      .timeline .item .icon [class^="flaticon-"]:before {
+        line-height: 40px;
+        font-size: 28px; }
+      .timeline .item .icon .flaticon-rain14:before {
+        font-size: 33px;
+        margin-left: -7px; }
     .timeline .item .info {
       margin: 0 0 25px 27%;
       border-left: 2px solid #e8f5f4;
