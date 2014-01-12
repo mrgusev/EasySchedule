@@ -4,43 +4,92 @@ angular.module('app', ['ngRoute',
         'pages.about',
         'pages.products'
     ])
-    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider ) {
         //$locationProvider.html5Mode(true);
         $routeProvider.otherwise({ redirectTo: '/' });
     } ])
-    .run(['$rootScope', '$location', '$routeParams',
-        function ($rootScope, $location, $routeParams) {
+    .run(['$rootScope', '$location', '$routeParams', 'Journal',
+        function ($rootScope, $location, $routeParams, Journal) {
             document.addEventListener("touchstart", function(){}, true);
+            $rootScope.insulinTypes = [
+                {id:enums.insulinTypes.short, name:'короткого'},
+                {id:enums.insulinTypes.ultraShort, name:'ультракороткого'},
+                {id:enums.insulinTypes.long, name:'длинного'}
+            ];
             $rootScope.isAddSugar = false;
             $rootScope.isAddInsulin = false;
             $rootScope.isAddFood = false;
-            $rootScope.scrollTo = function (id) {
-                $location.hash(id);
-                $anchorScroll();
-            }
+            $rootScope.sugarModel =  {  };
+            $rootScope.insulinModel =  {  };
+            $rootScope.foodModel =  {  };
             $rootScope.redirect = function(path) {
                 $location.path(path);
             };
+
             $rootScope.closeModals = function(){
                 $rootScope.isAllModalsClosed = !$rootScope.isAllModalsClosed;
                 $rootScope.isModalOpen = false;
                 $rootScope.isAddSugar = false;
                 $rootScope.isAddInsulin = false;
                 $rootScope.isAddFood = false;
+                if($rootScope.isModelEdit){
+                    $rootScope.isModelEdit = false;
+                }
             };
-            $rootScope.showModal = function(type){
+
+            $rootScope.showModal = function(type, model){
+                $rootScope.maxDate = new Date();
                 switch (type){
-                    case 'sugar':
+                    case enums.journalItemTypes.sugar:
+                        $rootScope.sugarModel =  model || { time: new Date(), value: 5.8 };
+                        $rootScope.sugarModel.type = enums.journalItemTypes.sugar;
+                        $rootScope.currentModel = $rootScope.sugarModel;
+                        console.log(JSON.stringify(model))
                         $rootScope.isAddSugar = true;
                         break;
-                    case 'insulin':
+                    case enums.journalItemTypes.insulinUsage:
+                        $rootScope.insulinModel = model || { time: new Date(), value: 4, insulinType: $rootScope.insulinTypes[0] };
+                        $rootScope.insulinModel.type = enums.journalItemTypes.insulinUsage;
+                        $rootScope.insulinModel.insulinType = _.where($rootScope.insulinTypes, {id:$rootScope.insulinModel.insulinType.id})[0];
+                        $rootScope.currentModel = $rootScope.insulinModel;
                         $rootScope.isAddInsulin = true;
                         break;
-                    case 'food':
+                    case enums.journalItemTypes.foodUsage:
                         $rootScope.isAddFood = true;
                         break;
                 }
                 $rootScope.isModalOpen = true;
-            }
+                $rootScope.isModelEdit = model;
+            };
+
+            $rootScope.saveSugar = function(){
+               // $rootScope.fakeSugarModel = JSON.parse(JSON.stringify($rootScope.sugarModel)) ;
+                if(!$rootScope.isModelEdit){
+                    Journal.addSugar($rootScope.sugarModel, function(){
+                    });
+                }
+
+                if($rootScope.modalCallback){
+                    $rootScope.modalCallback($rootScope.currentModel);
+
+                }
+                $rootScope.closeModals();
+
+            };
+            $rootScope.saveInsulin = function(){
+                if(!$rootScope.isModelEdit){
+                    Journal.addInsulinUsage($rootScope.insulinModel, function(){
+                    });
+                }
+
+                if($rootScope.modalCallback){
+                    $rootScope.modalCallback($rootScope.currentModel);
+                }
+                $rootScope.closeModals();
+            };
+            $rootScope.$watch('sugarModel.time', function(){
+                $rootScope.isSugarNow = new Date() - $rootScope.sugarModel.time < 300000;
+            });
+
         } ]);
 

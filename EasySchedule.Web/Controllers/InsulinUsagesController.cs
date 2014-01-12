@@ -30,13 +30,15 @@ namespace EasySchedule.Web.Controllers
         }
 
         // PUT api/insulinusages/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, InsulinUsageModel value)
         {
+            (new ScheduleService()).UpdateInsulinusage(id, value);
         }
 
         // DELETE api/insulinusages/5
         public void Delete(int id)
         {
+            (new ScheduleService()).DeleteInsulinUsage(id);
         }
     }
 }

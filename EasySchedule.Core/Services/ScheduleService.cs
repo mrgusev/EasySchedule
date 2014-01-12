@@ -101,5 +101,52 @@ namespace EasySchedule.Core.Services
                 context.SaveChanges();
             }
         }
+
+        public void DeleteSugar(int id)
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                var deleteSugar = new Sugar {Id = id};
+                context.Sugars.Attach(deleteSugar);
+                context.Sugars.Remove(deleteSugar);
+                context.SaveChanges();
+            }
+        }
+
+        public void DeleteInsulinUsage(int id)
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                var deleteInsulinusage = new InsulinUsage { Id = id };
+                context.InsulinUsages.Attach(deleteInsulinusage);
+                context.InsulinUsages.Remove(deleteInsulinusage);
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateSugar(int id, SugarModel model)
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                var editedSugar = new Sugar {Id = id};
+                context.Sugars.Attach(editedSugar);
+                editedSugar.Value = model.value;
+                editedSugar.Time = model.time;
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateInsulinusage(int id, InsulinUsageModel model)
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                var editedIsulinUsage = new InsulinUsage { Id = id };
+                context.InsulinUsages.Attach(editedIsulinUsage);
+                editedIsulinUsage.Time = model.time;
+                editedIsulinUsage.Value = model.value;
+                editedIsulinUsage.InsulinTypeId = model.insulinType.id;
+                context.SaveChanges();
+            }
+        }
     }
 }

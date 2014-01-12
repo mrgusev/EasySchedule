@@ -30,13 +30,15 @@ namespace EasySchedule.Web.Controllers
         }
 
         // PUT api/sugars/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, SugarModel value)
         {
+            (new ScheduleService()).UpdateSugar(id, value);
         }
 
         // DELETE api/sugars/5
         public void Delete(int id)
         {
+            (new ScheduleService()).DeleteSugar(id);
         }
     }
 }

@@ -6,6 +6,21 @@ angular.module('common.filters', [])
             }
             return input;
         };
+    }) .filter('insulinType', function () {
+        return function (input) {
+            switch (input){
+                case enums.insulinTypes.long:
+                    return 'Длинный';
+                    break;
+                case enums.insulinTypes.short:
+                    return 'Короткий';
+                    break;
+                case enums.insulinTypes.ultraShort:
+                    return 'Ультаркороткий';
+                    break;
+            }
+            return '';
+        };
     })
     .filter('smartdate', ['$rootScope', '$filter', function ($rootScope, $filter) {
         var shortDayNames=[

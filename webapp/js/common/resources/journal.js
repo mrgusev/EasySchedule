@@ -1,6 +1,9 @@
 angular.module('resources.journal',[])
     .factory('Journal', ['$http', function($http){
         var service = {
+            getInsulinTypes: function(callback){
+                $http.get('api/v1/insulintypes').success(callback);
+            },
             getSugars: function(callback){
                 $http.get('api/v1/sugars/').success(callback);
             },
@@ -22,8 +25,17 @@ angular.module('resources.journal',[])
             addFoodUsage: function(foodUsage, callback){
                 $http.post('api/v1/foodusages/', foodUsage).success(callback);
             },
-            getInsulinTypes: function(callback){
-                $http.get('api/v1/insulintypes').success(callback);
+            updateSugar: function(id, model, callback){
+                $http.put('api/v1/sugars/'+id, model).success(callback);
+            },
+            updateInsulinUsage: function(id, model, callback){
+                $http.put('api/v1/insulinusages/'+id, model).success(callback);
+            },
+            deleteSugar: function(id, callback){
+                $http.delete('api/v1/sugars/'+id).success(callback);
+            },
+            deleteInsulinUsage: function(id, callback){
+                $http.delete('api/v1/insulinusages/'+id).success(callback);
             }
         }
         return service;

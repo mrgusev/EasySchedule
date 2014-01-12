@@ -19,6 +19,7 @@
   margin: 0 auto;
   .date-expander{
     position: relative;
+    padding-bottom: 40px;
     .date-header{
       cursor: pointer;
       padding-left: $small-space;
@@ -31,7 +32,7 @@
     .items-container{
       @include vendor(transition,  max-heigh 0.3s);
       overflow: hidden;
-     max-height:1500px;
+      max-height:1500px;
     }
     &.true{
       margin-bottom: -2px;
@@ -41,19 +42,18 @@
         max-height: 0;
       }
     }
+
   }
   .item{
-    cursor: pointer;
     margin-top: 40px;
-//    margin-bottom: 20px;
     height: 80px;
     -webkit-transition: margin-top 0.5s, height 0.5s;
     -moz-transition: margin-top 0.5s, height 0.5s;
     transition: margin-top 0.5s, height 0.5s;
 
     .item-content{
-      @include vendor(transition, opacity 0.5s);
-      @include vendor(transition-delay, 0.3s);
+      @include vendor(transition, opacity 0.4s);
+      @include vendor(transition-delay, 0.02s);
       opacity: 1;
     }
     .time{
@@ -88,21 +88,12 @@
       z-index: 1000;
     }
     .info{
-      margin: 0 0 25px 27%;
+      margin: 0 0 0px 27%;
       border-left: 2px solid $basic-light;
       position: relative;
       padding-left: $medium-space;
-      .control{
-        display: block;
+      cursor: pointer;
 
-        .edit{
-
-        }
-        .delete{
-          color: #ff5453;
-          float: left;
-        }
-      }
       .value{
         color: $mark-light;
         font-size: 64px;
@@ -150,6 +141,30 @@
       -ms-transition: -ms-transform .3s;
       transition: transform .3s;
     }
+    .control{
+     // display: none;
+      overflow: hidden;
+      @include vendor(transition, height 0.3s);
+      height: 0;
+      margin: 0 0 0px 27%;
+      font-size: 18px;
+      .edit{
+        cursor: pointer;
+        float: left;
+        margin-left: $medium-space;
+        color: $mark-light;
+      }
+      .delete{
+        cursor: pointer;
+        color: #ff5453;
+        float: right;
+        width: 100px;
+        .flaticon-close-small:before{
+          display: inline;
+          margin-left: $small-space;
+        }
+      }
+    }
   }
   .item.hide{
     margin-top: 0px;
@@ -165,10 +180,12 @@
   }
 
   .item.selected{
+    height: 110px;
     .info:after{
       @include vendor(transform, scaleX(5));
     }
-    .info.control{
+    .control{
+      height: 24px;
       display: block;
     }
   }
