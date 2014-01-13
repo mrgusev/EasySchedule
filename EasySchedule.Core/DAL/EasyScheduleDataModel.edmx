@@ -8,12 +8,12 @@
         <EntityContainer Name="EasyScheduleDatabaseModelStoreContainer">
           <EntitySet Name="Categories" EntityType="EasyScheduleDatabaseModel.Store.Categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CategoryTypes" EntityType="EasyScheduleDatabaseModel.Store.CategoryTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FoodUsages" EntityType="EasyScheduleDatabaseModel.Store.FoodUsages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FoodUsageTypes" EntityType="EasyScheduleDatabaseModel.Store.FoodUsageTypes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="InsulinTypes" EntityType="EasyScheduleDatabaseModel.Store.InsulinTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="InsulinUsages" EntityType="EasyScheduleDatabaseModel.Store.InsulinUsages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JournalItems" EntityType="EasyScheduleDatabaseModel.Store.JournalItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JournalItemTypes" EntityType="EasyScheduleDatabaseModel.Store.JournalItemTypes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Portions" EntityType="EasyScheduleDatabaseModel.Store.Portions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Products" EntityType="EasyScheduleDatabaseModel.Store.Products" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Sugars" EntityType="EasyScheduleDatabaseModel.Store.Sugars" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_CategoryProduct" Association="EasyScheduleDatabaseModel.Store.FK_CategoryProduct">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -22,13 +22,21 @@
             <End Role="CategoryTypes" EntitySet="CategoryTypes" />
             <End Role="Categories" EntitySet="Categories" />
           </AssociationSet>
-          <AssociationSet Name="FK_FoodUsagePortion" Association="EasyScheduleDatabaseModel.Store.FK_FoodUsagePortion">
-            <End Role="FoodUsages" EntitySet="FoodUsages" />
-            <End Role="Portions" EntitySet="Portions" />
+          <AssociationSet Name="FK_JournalItemFoodUsageType" Association="EasyScheduleDatabaseModel.Store.FK_JournalItemFoodUsageType">
+            <End Role="FoodUsageTypes" EntitySet="FoodUsageTypes" />
+            <End Role="JournalItems" EntitySet="JournalItems" />
           </AssociationSet>
-          <AssociationSet Name="FK_InsulinTypeInsulinUsage" Association="EasyScheduleDatabaseModel.Store.FK_InsulinTypeInsulinUsage">
+          <AssociationSet Name="FK_JournalItemInsulinType" Association="EasyScheduleDatabaseModel.Store.FK_JournalItemInsulinType">
             <End Role="InsulinTypes" EntitySet="InsulinTypes" />
-            <End Role="InsulinUsages" EntitySet="InsulinUsages" />
+            <End Role="JournalItems" EntitySet="JournalItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JournalItemJournalItemType" Association="EasyScheduleDatabaseModel.Store.FK_JournalItemJournalItemType">
+            <End Role="JournalItemTypes" EntitySet="JournalItemTypes" />
+            <End Role="JournalItems" EntitySet="JournalItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PortionJournalItem" Association="EasyScheduleDatabaseModel.Store.FK_PortionJournalItem">
+            <End Role="JournalItems" EntitySet="JournalItems" />
+            <End Role="Portions" EntitySet="Portions" />
           </AssociationSet>
           <AssociationSet Name="FK_ProductPortion" Association="EasyScheduleDatabaseModel.Store.FK_ProductPortion">
             <End Role="Products" EntitySet="Products" />
@@ -51,13 +59,12 @@
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <EntityType Name="FoodUsages">
+        <EntityType Name="FoodUsageTypes">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Time" Type="datetime" Nullable="false" />
-          <Property Name="BreadUnits" Type="float" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="InsulinTypes">
           <Key>
@@ -66,14 +73,24 @@
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <EntityType Name="InsulinUsages">
+        <EntityType Name="JournalItems">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="float" Nullable="false" />
-          <Property Name="InsulinTypeId" Type="int" Nullable="false" />
           <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="Value" Type="float" Nullable="false" />
+          <Property Name="JournalItemTypeId" Type="int" Nullable="false" />
+          <Property Name="FoodUsageTypeId" Type="int" />
+          <Property Name="InsulinTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="JournalItemTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Units" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Portions">
           <Key>
@@ -81,10 +98,10 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ProductId" Type="int" Nullable="false" />
-          <Property Name="FoodUsageId" Type="int" Nullable="false" />
           <Property Name="Value" Type="float" Nullable="false" />
           <Property Name="Amount" Type="float" Nullable="false" />
           <Property Name="BreadUnits" Type="float" Nullable="false" />
+          <Property Name="JournalItemId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -99,14 +116,6 @@
           <Property Name="Calories" Type="float" Nullable="false" />
           <Property Name="MeasurementUnit" Type="nvarchar" MaxLength="50" />
           <Property Name="Size" Type="float" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Sugars">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="float" Nullable="false" />
-          <Property Name="Time" Type="datetime" Nullable="false" />
         </EntityType>
         <Association Name="FK_CategoryProduct">
           <End Role="Categories" Type="EasyScheduleDatabaseModel.Store.Categories" Multiplicity="1" />
@@ -132,27 +141,51 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_FoodUsagePortion">
-          <End Role="FoodUsages" Type="EasyScheduleDatabaseModel.Store.FoodUsages" Multiplicity="1" />
-          <End Role="Portions" Type="EasyScheduleDatabaseModel.Store.Portions" Multiplicity="*" />
+        <Association Name="FK_JournalItemFoodUsageType">
+          <End Role="FoodUsageTypes" Type="EasyScheduleDatabaseModel.Store.FoodUsageTypes" Multiplicity="0..1" />
+          <End Role="JournalItems" Type="EasyScheduleDatabaseModel.Store.JournalItems" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="FoodUsages">
+            <Principal Role="FoodUsageTypes">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Portions">
-              <PropertyRef Name="FoodUsageId" />
+            <Dependent Role="JournalItems">
+              <PropertyRef Name="FoodUsageTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_InsulinTypeInsulinUsage">
-          <End Role="InsulinTypes" Type="EasyScheduleDatabaseModel.Store.InsulinTypes" Multiplicity="1" />
-          <End Role="InsulinUsages" Type="EasyScheduleDatabaseModel.Store.InsulinUsages" Multiplicity="*" />
+        <Association Name="FK_JournalItemInsulinType">
+          <End Role="InsulinTypes" Type="EasyScheduleDatabaseModel.Store.InsulinTypes" Multiplicity="0..1" />
+          <End Role="JournalItems" Type="EasyScheduleDatabaseModel.Store.JournalItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="InsulinTypes">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="InsulinUsages">
+            <Dependent Role="JournalItems">
               <PropertyRef Name="InsulinTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JournalItemJournalItemType">
+          <End Role="JournalItemTypes" Type="EasyScheduleDatabaseModel.Store.JournalItemTypes" Multiplicity="1" />
+          <End Role="JournalItems" Type="EasyScheduleDatabaseModel.Store.JournalItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JournalItemTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JournalItems">
+              <PropertyRef Name="JournalItemTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PortionJournalItem">
+          <End Role="JournalItems" Type="EasyScheduleDatabaseModel.Store.JournalItems" Multiplicity="1" />
+          <End Role="Portions" Type="EasyScheduleDatabaseModel.Store.Portions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JournalItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Portions">
+              <PropertyRef Name="JournalItemId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -176,12 +209,12 @@
         <EntityContainer Name="EasyScheduleDatabaseEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="EasyScheduleDatabaseModel.Category" />
           <EntitySet Name="CategoryTypes" EntityType="EasyScheduleDatabaseModel.CategoryType" />
-          <EntitySet Name="FoodUsages" EntityType="EasyScheduleDatabaseModel.FoodUsage" />
+          <EntitySet Name="FoodUsageTypes" EntityType="EasyScheduleDatabaseModel.FoodUsageType" />
           <EntitySet Name="InsulinTypes" EntityType="EasyScheduleDatabaseModel.InsulinType" />
-          <EntitySet Name="InsulinUsages" EntityType="EasyScheduleDatabaseModel.InsulinUsage" />
+          <EntitySet Name="JournalItems" EntityType="EasyScheduleDatabaseModel.JournalItem" />
+          <EntitySet Name="JournalItemTypes" EntityType="EasyScheduleDatabaseModel.JournalItemType" />
           <EntitySet Name="Portions" EntityType="EasyScheduleDatabaseModel.Portion" />
           <EntitySet Name="Products" EntityType="EasyScheduleDatabaseModel.Product" />
-          <EntitySet Name="Sugars" EntityType="EasyScheduleDatabaseModel.Sugar" />
           <AssociationSet Name="FK_CategoryProduct" Association="EasyScheduleDatabaseModel.FK_CategoryProduct">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -190,13 +223,21 @@
             <End Role="CategoryTypes" EntitySet="CategoryTypes" />
             <End Role="Categories" EntitySet="Categories" />
           </AssociationSet>
-          <AssociationSet Name="FK_FoodUsagePortion" Association="EasyScheduleDatabaseModel.FK_FoodUsagePortion">
-            <End Role="FoodUsages" EntitySet="FoodUsages" />
-            <End Role="Portions" EntitySet="Portions" />
+          <AssociationSet Name="FK_JournalItemFoodUsageType" Association="EasyScheduleDatabaseModel.FK_JournalItemFoodUsageType">
+            <End Role="FoodUsageTypes" EntitySet="FoodUsageTypes" />
+            <End Role="JournalItems" EntitySet="JournalItems" />
           </AssociationSet>
-          <AssociationSet Name="FK_InsulinTypeInsulinUsage" Association="EasyScheduleDatabaseModel.FK_InsulinTypeInsulinUsage">
+          <AssociationSet Name="FK_JournalItemInsulinType" Association="EasyScheduleDatabaseModel.FK_JournalItemInsulinType">
             <End Role="InsulinTypes" EntitySet="InsulinTypes" />
-            <End Role="InsulinUsages" EntitySet="InsulinUsages" />
+            <End Role="JournalItems" EntitySet="JournalItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JournalItemJournalItemType" Association="EasyScheduleDatabaseModel.FK_JournalItemJournalItemType">
+            <End Role="JournalItemTypes" EntitySet="JournalItemTypes" />
+            <End Role="JournalItems" EntitySet="JournalItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PortionJournalItem" Association="EasyScheduleDatabaseModel.FK_PortionJournalItem">
+            <End Role="JournalItems" EntitySet="JournalItems" />
+            <End Role="Portions" EntitySet="Portions" />
           </AssociationSet>
           <AssociationSet Name="FK_ProductPortion" Association="EasyScheduleDatabaseModel.FK_ProductPortion">
             <End Role="Products" EntitySet="Products" />
@@ -222,14 +263,13 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Categories" Relationship="EasyScheduleDatabaseModel.FK_CategoryTypeCategory" FromRole="CategoryTypes" ToRole="Categories" />
         </EntityType>
-        <EntityType Name="FoodUsage">
+        <EntityType Name="FoodUsageType">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="BreadUnits" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Portions" Relationship="EasyScheduleDatabaseModel.FK_FoodUsagePortion" FromRole="FoodUsages" ToRole="Portions" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="JournalItems" Relationship="EasyScheduleDatabaseModel.FK_JournalItemFoodUsageType" FromRole="FoodUsageTypes" ToRole="JournalItems" />
         </EntityType>
         <EntityType Name="InsulinType">
           <Key>
@@ -237,17 +277,31 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="InsulinUsages" Relationship="EasyScheduleDatabaseModel.FK_InsulinTypeInsulinUsage" FromRole="InsulinTypes" ToRole="InsulinUsages" />
+          <NavigationProperty Name="JournalItems" Relationship="EasyScheduleDatabaseModel.FK_JournalItemInsulinType" FromRole="InsulinTypes" ToRole="JournalItems" />
         </EntityType>
-        <EntityType Name="InsulinUsage">
+        <EntityType Name="JournalItem">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="Double" Nullable="false" />
-          <Property Name="InsulinTypeId" Type="Int32" Nullable="false" />
           <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="InsulinType" Relationship="EasyScheduleDatabaseModel.FK_InsulinTypeInsulinUsage" FromRole="InsulinUsages" ToRole="InsulinTypes" />
+          <Property Name="Value" Type="Double" Nullable="false" />
+          <Property Name="JournalItemTypeId" Type="Int32" Nullable="false" />
+          <Property Name="FoodUsageTypeId" Type="Int32" />
+          <Property Name="InsulinTypeId" Type="Int32" />
+          <NavigationProperty Name="FoodUsageType" Relationship="EasyScheduleDatabaseModel.FK_JournalItemFoodUsageType" FromRole="JournalItems" ToRole="FoodUsageTypes" />
+          <NavigationProperty Name="InsulinType" Relationship="EasyScheduleDatabaseModel.FK_JournalItemInsulinType" FromRole="JournalItems" ToRole="InsulinTypes" />
+          <NavigationProperty Name="JournalItemType" Relationship="EasyScheduleDatabaseModel.FK_JournalItemJournalItemType" FromRole="JournalItems" ToRole="JournalItemTypes" />
+          <NavigationProperty Name="Portions" Relationship="EasyScheduleDatabaseModel.FK_PortionJournalItem" FromRole="JournalItems" ToRole="Portions" />
+        </EntityType>
+        <EntityType Name="JournalItemType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Units" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="JournalItems" Relationship="EasyScheduleDatabaseModel.FK_JournalItemJournalItemType" FromRole="JournalItemTypes" ToRole="JournalItems" />
         </EntityType>
         <EntityType Name="Portion">
           <Key>
@@ -255,11 +309,11 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
-          <Property Name="FoodUsageId" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="Double" Nullable="false" />
           <Property Name="Amount" Type="Double" Nullable="false" />
           <Property Name="BreadUnits" Type="Double" Nullable="false" />
-          <NavigationProperty Name="FoodUsage" Relationship="EasyScheduleDatabaseModel.FK_FoodUsagePortion" FromRole="Portions" ToRole="FoodUsages" />
+          <Property Name="JournalItemId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="JournalItem" Relationship="EasyScheduleDatabaseModel.FK_PortionJournalItem" FromRole="Portions" ToRole="JournalItems" />
           <NavigationProperty Name="Product" Relationship="EasyScheduleDatabaseModel.FK_ProductPortion" FromRole="Portions" ToRole="Products" />
         </EntityType>
         <EntityType Name="Product">
@@ -277,14 +331,6 @@
           <Property Name="Size" Type="Double" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="EasyScheduleDatabaseModel.FK_CategoryProduct" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="Portions" Relationship="EasyScheduleDatabaseModel.FK_ProductPortion" FromRole="Products" ToRole="Portions" />
-        </EntityType>
-        <EntityType Name="Sugar">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="Double" Nullable="false" />
-          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <Association Name="FK_CategoryProduct">
           <End Role="Categories" Type="EasyScheduleDatabaseModel.Category" Multiplicity="1" />
@@ -310,27 +356,51 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_FoodUsagePortion">
-          <End Role="FoodUsages" Type="EasyScheduleDatabaseModel.FoodUsage" Multiplicity="1" />
-          <End Role="Portions" Type="EasyScheduleDatabaseModel.Portion" Multiplicity="*" />
+        <Association Name="FK_JournalItemFoodUsageType">
+          <End Role="FoodUsageTypes" Type="EasyScheduleDatabaseModel.FoodUsageType" Multiplicity="0..1" />
+          <End Role="JournalItems" Type="EasyScheduleDatabaseModel.JournalItem" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="FoodUsages">
+            <Principal Role="FoodUsageTypes">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Portions">
-              <PropertyRef Name="FoodUsageId" />
+            <Dependent Role="JournalItems">
+              <PropertyRef Name="FoodUsageTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_InsulinTypeInsulinUsage">
-          <End Role="InsulinTypes" Type="EasyScheduleDatabaseModel.InsulinType" Multiplicity="1" />
-          <End Role="InsulinUsages" Type="EasyScheduleDatabaseModel.InsulinUsage" Multiplicity="*" />
+        <Association Name="FK_JournalItemInsulinType">
+          <End Role="InsulinTypes" Type="EasyScheduleDatabaseModel.InsulinType" Multiplicity="0..1" />
+          <End Role="JournalItems" Type="EasyScheduleDatabaseModel.JournalItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="InsulinTypes">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="InsulinUsages">
+            <Dependent Role="JournalItems">
               <PropertyRef Name="InsulinTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JournalItemJournalItemType">
+          <End Role="JournalItemTypes" Type="EasyScheduleDatabaseModel.JournalItemType" Multiplicity="1" />
+          <End Role="JournalItems" Type="EasyScheduleDatabaseModel.JournalItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JournalItemTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JournalItems">
+              <PropertyRef Name="JournalItemTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PortionJournalItem">
+          <End Role="JournalItems" Type="EasyScheduleDatabaseModel.JournalItem" Multiplicity="1" />
+          <End Role="Portions" Type="EasyScheduleDatabaseModel.Portion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JournalItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Portions">
+              <PropertyRef Name="JournalItemId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -370,12 +440,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FoodUsages">
-            <EntityTypeMapping TypeName="EasyScheduleDatabaseModel.FoodUsage">
-              <MappingFragment StoreEntitySet="FoodUsages">
+          <EntitySetMapping Name="FoodUsageTypes">
+            <EntityTypeMapping TypeName="EasyScheduleDatabaseModel.FoodUsageType">
+              <MappingFragment StoreEntitySet="FoodUsageTypes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="BreadUnits" ColumnName="BreadUnits" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -387,13 +456,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="InsulinUsages">
-            <EntityTypeMapping TypeName="EasyScheduleDatabaseModel.InsulinUsage">
-              <MappingFragment StoreEntitySet="InsulinUsages">
+          <EntitySetMapping Name="JournalItems">
+            <EntityTypeMapping TypeName="EasyScheduleDatabaseModel.JournalItem">
+              <MappingFragment StoreEntitySet="JournalItems">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="InsulinTypeId" ColumnName="InsulinTypeId" />
                 <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="JournalItemTypeId" ColumnName="JournalItemTypeId" />
+                <ScalarProperty Name="FoodUsageTypeId" ColumnName="FoodUsageTypeId" />
+                <ScalarProperty Name="InsulinTypeId" ColumnName="InsulinTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JournalItemTypes">
+            <EntityTypeMapping TypeName="EasyScheduleDatabaseModel.JournalItemType">
+              <MappingFragment StoreEntitySet="JournalItemTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -402,10 +482,10 @@
               <MappingFragment StoreEntitySet="Portions">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="FoodUsageId" ColumnName="FoodUsageId" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="BreadUnits" ColumnName="BreadUnits" />
+                <ScalarProperty Name="JournalItemId" ColumnName="JournalItemId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -421,15 +501,6 @@
                 <ScalarProperty Name="Calories" ColumnName="Calories" />
                 <ScalarProperty Name="MeasurementUnit" ColumnName="MeasurementUnit" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Sugars">
-            <EntityTypeMapping TypeName="EasyScheduleDatabaseModel.Sugar">
-              <MappingFragment StoreEntitySet="Sugars">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

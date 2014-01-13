@@ -42,17 +42,26 @@ namespace EasySchedule.Core.DAL
         }
     }
 
-    public partial class FoodUsage
+    public partial class JournalItem
     {
-        public FoodUsageModel ToModel()
+        public JournalItemModel ToModel()
         {
-            return new FoodUsageModel
+            var result = new JournalItemModel
             {
                 id = Id,
+                journalItemTypeId = JournalItemTypeId,
                 time = Time,
-                breadUnits = BreadUnits
+                value = Value
             };
-
+            if(JournalItemTypeId == (int)Enums.JournalItemTypes.InsulinUsage)
+            {
+                result.insulinType = InsulinType.ToModel();
+            }
+            if (JournalItemTypeId == (int)Enums.JournalItemTypes.FoodUsage)
+            {
+                result.foodUsageType = FoodUsageType.ToModel();
+            }
+            return result;
         }
     }
 
@@ -72,20 +81,6 @@ namespace EasySchedule.Core.DAL
         }
     }
 
-    public partial class Sugar
-    {
-        public SugarModel ToModel()
-        {
-            return new SugarModel
-            {
-                id = Id,
-                time = Time,
-                value = Value
-            };
-
-        }
-    }
-
     public partial class InsulinType
     {
         public InsulinTypeModel ToModel()
@@ -98,17 +93,14 @@ namespace EasySchedule.Core.DAL
 
         }
     }
-
-    public partial class InsulinUsage
+    public partial class FoodUsageType
     {
-        public InsulinUsageModel ToModel()
+        public FoodUsageTypeModel ToModel()
         {
-            return new InsulinUsageModel
+            return new FoodUsageTypeModel
             {
                 id = Id,
-                insulinType = InsulinType.ToModel(),
-                time = Time,
-                value = Value
+                name = Name
             };
 
         }

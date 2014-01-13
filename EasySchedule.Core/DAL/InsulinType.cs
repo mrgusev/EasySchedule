@@ -16,12 +16,12 @@ namespace EasySchedule.Core.DAL
     {
         public InsulinType()
         {
-            this.InsulinUsages = new HashSet<InsulinUsage>();
+            this.JournalItems = new HashSet<JournalItem>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
-        public virtual ICollection<InsulinUsage> InsulinUsages { get; set; }
+        public virtual ICollection<JournalItem> JournalItems { get; set; }
     }
 }

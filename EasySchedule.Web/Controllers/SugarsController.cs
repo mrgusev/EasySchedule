@@ -12,9 +12,9 @@ namespace EasySchedule.Web.Controllers
     public class SugarsController : ApiController
     {
         // GET api/sugars
-        public IEnumerable<SugarModel> Get()
+        public IEnumerable<JournalItemModel> Get()
         {
-            return (new ScheduleService()).GetSugars();
+            return new JournalItemModel[0];
         }
 
         // GET api/sugars/5
@@ -24,13 +24,13 @@ namespace EasySchedule.Web.Controllers
         }
 
         // POST api/sugars
-        public int Post(SugarModel value)
+        public int Post(JournalItemModel value)
         {
             return (new ScheduleService()).AddSugar(value);
         }
 
         // PUT api/sugars/5
-        public void Put(int id, SugarModel value)
+        public void Put(int id, JournalItemModel value)
         {
             (new ScheduleService()).UpdateSugar(id, value);
         }

@@ -16,8 +16,8 @@
             <div class="items-container ">
                 <div class="item {{item.hidden}} {{item.selected}}" ng-repeat="item in dateItem.items">
                     <div class="item-content">
-                        <div ng-if="item.type == 1">
-                            <div class="time">{{item.time | date:'HH:mm'}}</div>
+                        <div ng-if="item.journalItemTypeId == 1">
+                            <div class="time">{{item.time | date:'HH:mm Z'}}</div>
                             <div class="icon"><span class="flaticon-rain14 small"></span></div>
                             <div class="info" ng-click="selectItem(item)">
                                 <div>
@@ -29,7 +29,7 @@
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                        <div ng-if="item.type == 2">
+                        <div ng-if="item.journalItemTypeId == 2">
                             <div class="time">{{item.time | date:'HH:mm'}}</div>
                             <div class="icon"><span class="flaticon-syringe small"></span></div>
                             <div class="info" ng-click="selectItem(item)">
@@ -39,7 +39,7 @@
                                     <div class="addition">{{item.insulinType.id | insulinType}}</div></div>
                             </div>
                         </div>
-                        <div ng-if="item.type == 3">
+                        <div ng-if="item.journalItemTypeId == 3">
                             <div class="time">{{item.time | date:'HH:mm'}}</div>
                             <div class="icon"><span class="flaticon-silver small"></span></div>
                             <div class="info" ng-click="selectItem(item)">
@@ -61,6 +61,7 @@
             </div>
         </div>
     </div>
+    <a href="" ng-click="showMore()">Show more</a>
 </div>
     <!--<div class="content {{!isDataLoading}}">-->
         <!--<button ng-click="loadJournal()">Обновить</button>-->

@@ -70,17 +70,12 @@ Use:
       border-top: 2px solid #e8f5f4;
       border-bottom: 2px solid #e8f5f4; }
     .timeline .date-expander .items-container {
-      -webkit-transition: max-heigh 0.3s;
-      -moz-transition: max-heigh 0.3s;
-      -ms-transition: max-heigh 0.3s;
-      -o-transition: max-heigh 0.3s;
-      transition: max-heigh 0.3s;
-      overflow: hidden;
-      max-height: 1500px; }
+      display: block;
+      overflow: hidden; }
     .timeline .date-expander.true {
       margin-bottom: -2px; }
       .timeline .date-expander.true .items-container {
-        max-height: 0; }
+        display: none; }
   .timeline .item {
     margin-top: 40px;
     height: 80px;

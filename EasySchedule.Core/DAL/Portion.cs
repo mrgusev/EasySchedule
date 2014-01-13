@@ -16,12 +16,12 @@ namespace EasySchedule.Core.DAL
     {
         public int Id { get; set; }
         public int ProductId { get; set; }
-        public int FoodUsageId { get; set; }
         public double Value { get; set; }
         public double Amount { get; set; }
         public double BreadUnits { get; set; }
+        public int JournalItemId { get; set; }
     
-        public virtual FoodUsage FoodUsage { get; set; }
+        public virtual JournalItem JournalItem { get; set; }
         public virtual Product Product { get; set; }
     }
 }

@@ -4,19 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="76dd12b40966405b81b37c1ffaa14253" Name="Diagram1">
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Category" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.CategoryType" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.FoodUsage" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.InsulinType" Width="1.5" PointX="7.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.InsulinUsage" Width="1.5" PointX="10" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Portion" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Product" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Sugar" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+      <Diagram DiagramId="7faf84b8a2f840e3a233666baae3199d" Name="Diagram1">
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Category" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.CategoryType" Width="1.5" PointX="1.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.FoodUsageType" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.InsulinType" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.JournalItem" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.JournalItemType" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Portion" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Product" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_CategoryProduct" ManuallyRouted="false" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_CategoryTypeCategory" ManuallyRouted="false" />
-        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_FoodUsagePortion" ManuallyRouted="false" />
-        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_InsulinTypeInsulinUsage" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_JournalItemFoodUsageType" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_JournalItemInsulinType" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_JournalItemJournalItemType" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_PortionJournalItem" ManuallyRouted="false" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_ProductPortion" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

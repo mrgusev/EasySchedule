@@ -1,0 +1,46 @@
+<div class="food-usage">
+    <div class="easy-box" ng-controller="NewItemController">
+        <div class="box-title">Прием пищи</div>
+        <div class="box-search">
+            <!--<span>-->
+                <!--<span date-time-picker time="sugarModel.time" isopen="isDatePickerOpen"  overlayid="'sugar-overlay'" maxvalue="maxDate"></span>-->
+                <!--<span class="interactive-text" ng-click="isDatePickerOpen=true">-->
+                    <!--{{sugarModel.time | smartdatetime}}-->
+                <!--</span>-->
+            <!--</span>-->
+            <!--у меня-->
+            <!--<span ng-hide="isSugarNow">было</span>-->
+            <!--<span> <span numeric number="sugarModel.value" isopen="isNumericOpen" is-float="true"-->
+                         <!--max-value="60" min-value="1" overlayid="'sugar-overlay'"></span>-->
+                 <!--<span class="interactive-text" ng-click="isNumericOpen=true">{{sugarModel.value}}</span>-->
+            <!--</span>-->
+            <!--ммоль/л-->
+        </div>
+        <div class="food-list">
+            <div class="food-item">
+                <div class="product">
+                    <div class="name">Картофельное пюре</div>
+                    <div class="desc"></div>
+                </div>
+                <div class="portion">
+                    <div class="size">300</div>
+                    <div class="unit"><a href="">г</a></div>
+                </div>
+                <div class="amount-buttons">
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <div class="values">
+                    <div class="size">6.5 </div>
+                    <div class="unit">ХЕ</div>
+                </div>
+                <div class="delete"><a href="" class="flaticon-cross29"></a></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="box-button btn" ng-tap ng-click="saveSugar()">Сохранить </div>
+        <div class="close-button md-close" ng-click="closeModals()"><span class="flaticon-close-small"></span></div>
+    </div>
+
+    <div class="nl-overlay" id="sugar-overlay"></div>
+</div>

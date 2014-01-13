@@ -12,20 +12,6 @@ namespace EasySchedule.Core.Services
 {
     public class ScheduleService
     {
-        public IEnumerable<SugarModel> GetSugars()
-        {
-            return new EasyScheduleDatabaseEntities().Sugars.ToList().Select(s => s.ToModel());
-        } 
-
-        public IEnumerable<InsulinUsageModel> GetInsulinUsages()
-        {
-            using (var context = new EasyScheduleDatabaseEntities())
-            {
-                context.InsulinTypes.Load();
-                return context.InsulinUsages.ToList().Select(i => i.ToModel());
-            }
-        }
- 
         public IEnumerable<InsulinTypeModel> GeInsulinTypes()
         {
             using (var context = new EasyScheduleDatabaseEntities())
@@ -34,71 +20,86 @@ namespace EasySchedule.Core.Services
             }
         } 
 
-        public IEnumerable<FoodUsageModel> GetFoodUsages()
-        {
-            using (var context = new EasyScheduleDatabaseEntities())
-            {
-                return context.FoodUsages.ToList().Select(f => f.ToModel());
-            }
-        }
 
         public IEnumerable<PortionModel> GetPortions(int foodUsageId)
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
                 context.Categories.Load();
-                return context.Portions.Include("Product").Where(p=>p.FoodUsageId == foodUsageId).ToList().Select(f => f.ToModel());
+                return context.Portions.Include("Product").Where(p=>p.JournalItemId == foodUsageId).ToList().Select(f => f.ToModel());
             }
         }
 
-        public int AddSugar(SugarModel shugarModel)
+        public IEnumerable<JournalItemModel> GetJournal(int page, int pageSize)
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                var newSugar = new Sugar
+                if(page < 1)
                 {
+                    page = 1;
+                }
+                context.InsulinTypes.Load();
+                context.FoodUsageTypes.Load();
+                IEnumerable<JournalItemModel> res = context.JournalItems.OrderByDescending(i => i.Time).Skip(pageSize * (page - 1))
+                .Take(pageSize).ToList().Select(i => i.ToModel());
+                return res;
+            }
+        }
+
+
+
+        public int AddSugar(JournalItemModel shugarModel)
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                var newSugar = new JournalItem
+                {
+                    JournalItemTypeId = (int)Enums.JournalItemTypes.Sugar,
                     Time = shugarModel.time,
                     Value = shugarModel.value
                 };
-                context.Sugars.Add(newSugar);
+                context.JournalItems.Add(newSugar);
                 context.SaveChanges();
                 return newSugar.Id;
             }
         }
-        
-        public void AddInsulinUsage(InsulinUsageModel insulinUsageModel)
+
+        public int AddInsulinUsage(JournalItemModel insulinUsageModel)
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                context.InsulinUsages.Add(new InsulinUsage
-                                              {
-                                                  InsulinTypeId = insulinUsageModel.insulinType.id,
-                                                  Time = insulinUsageModel.time,
-                                                  Value = insulinUsageModel.value
-                                              });
+                var newInsulin = new JournalItem
+                {
+                    JournalItemTypeId = (int) Enums.JournalItemTypes.InsulinUsage,
+                    InsulinTypeId = insulinUsageModel.insulinType.id,
+                    Time = insulinUsageModel.time,
+                    Value = insulinUsageModel.value
+                };
+                context.JournalItems.Add(newInsulin);
                 context.SaveChanges();
+                return newInsulin.Id;
             }
         }
 
-        public void AddFoodUsage(FoodUsageModel foodUsageModel)
+        public void AddFoodUsage(JournalItemModel foodUsageModel)
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                var portions = foodUsageModel.portions.Select(portionModel => new Portion
-                {
-                    Amount = portionModel.amount, 
-                    BreadUnits = portionModel.breadUnits, 
-                    Value = portionModel.value, 
-                    ProductId = portionModel.product.id
-                }).ToList();
+                //var portions = foodUsageModel.portions.Select(portionModel => new Portion
+                //{
+                //    Amount = portionModel.amount, 
+                //    BreadUnits = portionModel.breadUnits, 
+                //    Value = portionModel.value, 
+                //    ProductId = portionModel.product.id
+                //}).ToList();
 
-                context.FoodUsages.Add(new FoodUsage
-                                           {
-                                               BreadUnits = foodUsageModel.breadUnits,
-                                               Time = foodUsageModel.time,
-                                               Portions = portions
-                                           });
-                context.SaveChanges();
+                //context.FoodUsages.Add(new FoodUsage
+                //                           {
+                //                               BreadUnits = foodUsageModel.breadUnits,
+                //                               Time = foodUsageModel.time,
+                //                               Portions = portions
+                //                           });
+                //context.SaveChanges();
             }
         }
 
@@ -106,9 +107,9 @@ namespace EasySchedule.Core.Services
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                var deleteSugar = new Sugar {Id = id};
-                context.Sugars.Attach(deleteSugar);
-                context.Sugars.Remove(deleteSugar);
+                var deletedItem = new JournalItem {Id = id};
+                context.JournalItems.Attach(deletedItem);
+                context.JournalItems.Remove(deletedItem);
                 context.SaveChanges();
             }
         }
@@ -117,31 +118,31 @@ namespace EasySchedule.Core.Services
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                var deleteInsulinusage = new InsulinUsage { Id = id };
-                context.InsulinUsages.Attach(deleteInsulinusage);
-                context.InsulinUsages.Remove(deleteInsulinusage);
+                var deletedItem = new JournalItem { Id = id };
+                context.JournalItems.Attach(deletedItem);
+                context.JournalItems.Remove(deletedItem);
                 context.SaveChanges();
             }
         }
 
-        public void UpdateSugar(int id, SugarModel model)
+        public void UpdateSugar(int id, JournalItemModel model)
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                var editedSugar = new Sugar {Id = id};
-                context.Sugars.Attach(editedSugar);
+                var editedSugar = new JournalItem {Id = id};
+                context.JournalItems.Attach(editedSugar);
                 editedSugar.Value = model.value;
                 editedSugar.Time = model.time;
                 context.SaveChanges();
             }
         }
 
-        public void UpdateInsulinusage(int id, InsulinUsageModel model)
+        public void UpdateInsulinusage(int id, JournalItemModel model)
         {
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                var editedIsulinUsage = new InsulinUsage { Id = id };
-                context.InsulinUsages.Attach(editedIsulinUsage);
+                var editedIsulinUsage = new JournalItem() { Id = id };
+                context.JournalItems.Attach(editedIsulinUsage);
                 editedIsulinUsage.Time = model.time;
                 editedIsulinUsage.Value = model.value;
                 editedIsulinUsage.InsulinTypeId = model.insulinType.id;

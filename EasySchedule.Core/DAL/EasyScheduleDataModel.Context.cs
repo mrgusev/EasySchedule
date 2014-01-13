@@ -27,11 +27,11 @@ namespace EasySchedule.Core.DAL
     
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryType> CategoryTypes { get; set; }
-        public DbSet<FoodUsage> FoodUsages { get; set; }
+        public DbSet<FoodUsageType> FoodUsageTypes { get; set; }
         public DbSet<InsulinType> InsulinTypes { get; set; }
-        public DbSet<InsulinUsage> InsulinUsages { get; set; }
+        public DbSet<JournalItem> JournalItems { get; set; }
+        public DbSet<JournalItemType> JournalItemTypes { get; set; }
         public DbSet<Portion> Portions { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Sugar> Sugars { get; set; }
     }
 }

@@ -67,13 +67,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EasyScheduleDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DAL\FoodUsage.cs">
+    <Compile Include="DAL\FoodUsageType.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\InsulinType.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\InsulinUsage.cs">
+    <Compile Include="DAL\JournalItem.cs">
+      <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\JournalItemType.cs">
       <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Portion.cs">
@@ -88,18 +91,14 @@
     <Compile Include="DAL\Repositories\PortionRepository.cs" />
     <Compile Include="DAL\Repositories\ProductRepository.cs" />
     <Compile Include="DAL\Repositories\SugarRepository.cs" />
-    <Compile Include="DAL\Sugar.cs">
-      <DependentUpon>EasyScheduleDataModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Enums\JournalItemType.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\FoodUsage.cs" />
+    <Compile Include="Models\FoodUsageType.cs" />
     <Compile Include="Models\InsulinType.cs" />
-    <Compile Include="Models\InsulinUsage.cs" />
+    <Compile Include="Models\JournalItemModel.cs" />
     <Compile Include="Models\Portion.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Sugar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CalculatorService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\ScheduleService.cs" />
   </ItemGroup>

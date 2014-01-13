@@ -12,10 +12,17 @@ namespace EasySchedule.Core.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Sugar
+    public partial class JournalItemType
     {
+        public JournalItemType()
+        {
+            this.JournalItems = new HashSet<JournalItem>();
+        }
+    
         public int Id { get; set; }
-        public double Value { get; set; }
-        public System.DateTime Time { get; set; }
+        public string Name { get; set; }
+        public string Units { get; set; }
+    
+        public virtual ICollection<JournalItem> JournalItems { get; set; }
     }
 }

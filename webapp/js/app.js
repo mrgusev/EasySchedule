@@ -42,14 +42,14 @@ angular.module('app', ['ngRoute',
                 switch (type){
                     case enums.journalItemTypes.sugar:
                         $rootScope.sugarModel =  model || { time: new Date(), value: 5.8 };
-                        $rootScope.sugarModel.type = enums.journalItemTypes.sugar;
+                        $rootScope.sugarModel.journalItemTypeId = enums.journalItemTypes.sugar;
                         $rootScope.currentModel = $rootScope.sugarModel;
                         console.log(JSON.stringify(model))
                         $rootScope.isAddSugar = true;
                         break;
                     case enums.journalItemTypes.insulinUsage:
                         $rootScope.insulinModel = model || { time: new Date(), value: 4, insulinType: $rootScope.insulinTypes[0] };
-                        $rootScope.insulinModel.type = enums.journalItemTypes.insulinUsage;
+                        $rootScope.insulinModel.journalItemTypeId = enums.journalItemTypes.insulinUsage;
                         $rootScope.insulinModel.insulinType = _.where($rootScope.insulinTypes, {id:$rootScope.insulinModel.insulinType.id})[0];
                         $rootScope.currentModel = $rootScope.insulinModel;
                         $rootScope.isAddInsulin = true;

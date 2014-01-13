@@ -4,34 +4,36 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using EasySchedule.Core.Models;
+using EasySchedule.Core.Services;
 
 namespace EasySchedule.Web.Controllers
 {
-    public class ValuesController : ApiController
+    public class JournalController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        // GET api/journal
+        public IEnumerable<JournalItemModel> Get(int? page)
         {
-            return new string[] { "value1", "value2" };
+            return (new ScheduleService()).GetJournal(page.HasValue ? page.Value : 1, 20);
         }
 
-        // GET api/values/5
+        // GET api/journal/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
+        // POST api/journal
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/values/5
+        // PUT api/journal/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE api/journal/5
         public void Delete(int id)
         {
         }

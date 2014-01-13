@@ -11,9 +11,9 @@ namespace EasySchedule.Web.Controllers
     public class FoodUsagesController : ApiController
     {
         // GET api/foodusages
-        public IEnumerable<FoodUsageModel> Get()
+        public IEnumerable<JournalItemModel> Get()
         {
-            return (new ScheduleService()).GetFoodUsages();
+            return new JournalItemModel[0];
         }
 
         // GET api/foodusages/5

@@ -12,17 +12,16 @@ namespace EasySchedule.Core.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class FoodUsage
+    public partial class FoodUsageType
     {
-        public FoodUsage()
+        public FoodUsageType()
         {
-            this.Portions = new HashSet<Portion>();
+            this.JournalItems = new HashSet<JournalItem>();
         }
     
         public int Id { get; set; }
-        public System.DateTime Time { get; set; }
-        public double BreadUnits { get; set; }
+        public string Name { get; set; }
     
-        public virtual ICollection<Portion> Portions { get; set; }
+        public virtual ICollection<JournalItem> JournalItems { get; set; }
     }
 }

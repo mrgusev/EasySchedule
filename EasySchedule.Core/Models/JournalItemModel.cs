@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace EasySchedule.Core.Models
 {
-    public class InsulinUsageModel
+    public class JournalItemModel
     {
         public int id { get; set; }
-        public DateTime time { get; set; }
-        public InsulinTypeModel insulinType { get; set; }
         public double value { get; set; }
+        public DateTime time { get; set; }
+        public int journalItemTypeId { get; set; }
+        public InsulinTypeModel insulinType { get; set; }
+        public FoodUsageTypeModel foodUsageType { get; set; }
     }
 }

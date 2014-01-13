@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasySchedule.Core.Services
+namespace EasySchedule.Core.Enums
 {
-    public class CalculatorService
+    enum JournalItemTypes
     {
-
+        Sugar = 1,
+        InsulinUsage = 2,
+        FoodUsage = 3
     }
+
 }

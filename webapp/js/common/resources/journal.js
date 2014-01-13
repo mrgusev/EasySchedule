@@ -4,14 +4,8 @@ angular.module('resources.journal',[])
             getInsulinTypes: function(callback){
                 $http.get('api/v1/insulintypes').success(callback);
             },
-            getSugars: function(callback){
-                $http.get('api/v1/sugars/').success(callback);
-            },
-            getInsulinUsages:function(callback){
-                $http.get('api/v1/insulinusages/').success(callback);
-            },
-            getFoodUsages:function(callback){
-                $http.get('api/v1/foodusages/').success(callback);
+            getJournal: function(page, callback){
+                $http.get('api/v1/journal?page='+page).success(callback);
             },
             getPortions:function(id, callback){
                 $http.get('api/v1/portions/'+id).success(callback);

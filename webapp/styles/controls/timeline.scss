@@ -30,16 +30,16 @@
 
     }
     .items-container{
-      @include vendor(transition,  max-heigh 0.3s);
+      display: block;
       overflow: hidden;
-      max-height:1500px;
+     // max-height:1500px;
     }
     &.true{
       margin-bottom: -2px;
       .items-container{
-      //  display: none;
+        display: none;
         //visibility: hidden;
-        max-height: 0;
+      //  max-height: 0;
       }
     }
 

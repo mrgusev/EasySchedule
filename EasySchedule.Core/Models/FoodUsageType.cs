@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace EasySchedule.Core.Models
 {
-    public class SugarModel
+    public class FoodUsageTypeModel
     {
         public int id { get; set; }
-        public DateTime time { get; set; }
-        public double value { get; set; }
+        public string name { get; set; }
     }
 }
