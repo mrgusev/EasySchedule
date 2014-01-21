@@ -15,7 +15,7 @@ namespace EasySchedule.Core.Models
         public double proteins { get; set; }
         public double fats { get; set; }
         public double calories { get; set; }
-        public string measurementUnits { get; set; }
-        public double size { get; set; }
+        public double defaultSize { get; set; }
+        public UnitModel defaultUnit { get; set; }
     }
 }

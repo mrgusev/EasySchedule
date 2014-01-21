@@ -43,9 +43,9 @@
                             <div class="time">{{item.time | date:'HH:mm'}}</div>
                             <div class="icon"><span class="flaticon-silver small"></span></div>
                             <div class="info" ng-click="selectItem(item)">
-                                <div class="value">{{item.breadUnits}}<span class="unit">ХЕ</span></div>
+                                <div class="value">{{item.value}}<span class="unit">ХЕ</span></div>
                                 <div class="right">
-                                    <div class="name">Завтрак</div>
+                                    <div class="name">{{item.foodUsageType.id | foodUsageType}}</div>
                                     <div class="addition">3 блюда</div></div>
                             </div>
                         </div>

@@ -4,22 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7faf84b8a2f840e3a233666baae3199d" Name="Diagram1">
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Category" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.CategoryType" Width="1.5" PointX="1.5" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.FoodUsageType" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.InsulinType" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.JournalItem" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.JournalItemType" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Portion" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Product" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+      <Diagram DiagramId="3b012b867b7a4fabb32080325bc602ec" Name="Diagram1">
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Category" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.CategoryType" Width="1.5" PointX="1.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.FoodUsageType" Width="1.5" PointX="1.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.InsulinType" Width="1.5" PointX="1.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.JournalItem" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.JournalItemType" Width="1.5" PointX="1.5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Portion" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Product" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.UnitProduct" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyScheduleDatabaseModel.Unit" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_CategoryProduct" ManuallyRouted="false" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_CategoryTypeCategory" ManuallyRouted="false" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_JournalItemFoodUsageType" ManuallyRouted="false" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_JournalItemInsulinType" ManuallyRouted="false" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_JournalItemJournalItemType" ManuallyRouted="false" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_PortionJournalItem" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_PortionUnit" ManuallyRouted="false" />
         <AssociationConnector Association="EasyScheduleDatabaseModel.FK_ProductPortion" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_ProductUnit" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_UnitProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="EasyScheduleDatabaseModel.FK_UnitProduct_Unit" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

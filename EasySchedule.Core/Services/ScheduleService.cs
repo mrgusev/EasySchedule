@@ -46,8 +46,6 @@ namespace EasySchedule.Core.Services
             }
         }
 
-
-
         public int AddSugar(JournalItemModel shugarModel)
         {
             using (var context = new EasyScheduleDatabaseEntities())
@@ -81,26 +79,30 @@ namespace EasySchedule.Core.Services
             }
         }
 
-        public void AddFoodUsage(JournalItemModel foodUsageModel)
+        public int AddFoodUsage(JournalItemModel foodUsageModel)
         {
+            var portions = foodUsageModel.portions.Select(portionModel => new Portion
+            {
+                Size = portionModel.size,
+                UnitId = portionModel.unit.id,
+                BreadUnits = portionModel.breadUnits,
+                ProductId = portionModel.product.id
+            }).ToList();
             using (var context = new EasyScheduleDatabaseEntities())
             {
-                //var portions = foodUsageModel.portions.Select(portionModel => new Portion
-                //{
-                //    Amount = portionModel.amount, 
-                //    BreadUnits = portionModel.breadUnits, 
-                //    Value = portionModel.value, 
-                //    ProductId = portionModel.product.id
-                //}).ToList();
-
-                //context.FoodUsages.Add(new FoodUsage
-                //                           {
-                //                               BreadUnits = foodUsageModel.breadUnits,
-                //                               Time = foodUsageModel.time,
-                //                               Portions = portions
-                //                           });
-                //context.SaveChanges();
+                var newFoodUsage = new JournalItem
+                {
+                    JournalItemTypeId = (int)Enums.JournalItemTypes.FoodUsage,
+                    FoodUsageTypeId = foodUsageModel.foodUsageType.id,
+                    Time = foodUsageModel.time,
+                    Value = foodUsageModel.value,
+                    Portions = portions
+                };
+                context.JournalItems.Add(newFoodUsage);
+                context.SaveChanges();
+                return newFoodUsage.Id;
             }
+           
         }
 
         public void DeleteSugar(int id)

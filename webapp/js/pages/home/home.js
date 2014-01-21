@@ -149,7 +149,7 @@ angular.module('pages.home', [
                 item.hidden = 'hide';
             };
             $rootScope.modalCallback = function(result){
-                var fakeSugarModel =  $rootScope.currentModel;;
+                var fakeSugarModel =  result;
                 if(!$rootScope.isModelEdit){
                     console.log('journal updated');
                     addNewItemToList(fakeSugarModel);

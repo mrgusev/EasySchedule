@@ -12,7 +12,8 @@
     padding-left: 30px;
     margin-bottom: 5px; }
     .select li .item {
-      cursor: pointer; }
+      cursor: pointer;
+      white-space: nowrap; }
     .select li .item:hover {
       color: #fa6a02; }
     .select li .item.selected {

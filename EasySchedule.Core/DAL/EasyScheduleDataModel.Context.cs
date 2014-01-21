@@ -33,5 +33,7 @@ namespace EasySchedule.Core.DAL
         public DbSet<JournalItemType> JournalItemTypes { get; set; }
         public DbSet<Portion> Portions { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<UnitProduct> UnitProducts { get; set; }
+        public DbSet<Unit> Units { get; set; }
     }
 }

@@ -14,5 +14,6 @@ namespace EasySchedule.Core.Models
         public int journalItemTypeId { get; set; }
         public InsulinTypeModel insulinType { get; set; }
         public FoodUsageTypeModel foodUsageType { get; set; }
+        public IEnumerable<PortionModel> portions { get; set; }
     }
 }

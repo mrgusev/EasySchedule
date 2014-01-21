@@ -62,16 +62,19 @@
         <div ng-view=""></div>
     </div>
 
-    <div modal-window isopen="isAddSugar">
-        <div ng-include="'js/common/partials/new-sugar.html'" ></div>
-    </div>
-    <div modal-window isopen="isAddInsulin">
+    <div >
+        <div modal-window isopen="isAddSugar">
+            <div ng-include="'js/common/partials/new-sugar.html'" ></div>
+        </div>
+        <div modal-window isopen="isAddInsulin">
             <div ng-include="'js/common/partials/new-insulin.html'" ></div>
-    </div>
-    <div modal-window isopen="isAddFood">
+        </div>
+        <div modal-window isopen="isAddFood">
             <div ng-include="'js/common/partials/new-food.html'" ></div>
+        </div>
+        <div class="md-overlay" ng-click="closeModals()"></div>
     </div>
-    <div class="md-overlay" ng-click="closeModals()"></div>
+
 
     <!-- the overlay element -->
 </div>
@@ -113,6 +116,8 @@
 <script type="text/javascript" src="js/common/directives/select.js"></script>
 <script type="text/javascript" src="js/common/directives/new-items.js"></script>
 <script type="text/javascript" src="js/common/directives/modal-window.js"></script>
+<script type="text/javascript" src="js/common/services/food-usage-service.js"></script>
+
 <!--<script type="text/javascript" src="js/common/services/map.js"></script>-->
 <!--<script type="text/javascript" src="js/common/services/security.js"></script>-->
 <!--<script type="text/javascript" src="js/common/services/interceptor.js"></script>-->
@@ -121,9 +126,9 @@
 <script type="text/javascript" src="js/common/resources/journal.js"></script>
 <script type="text/javascript" src="js/common/resources/product.js"></script>
 <script type="text/javascript" src="js/pages/home/home.js"></script>
-<script type="text/javascript" src="js/pages/home/new-item-controller.js"></script>
 <script type="text/javascript" src="js/pages/products/products.js"></script>
 <script type="text/javascript" src="js/pages/about/about.js"></script>
+<script type="text/javascript" src="js/new-food-controller.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript">
 </script>

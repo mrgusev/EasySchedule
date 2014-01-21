@@ -23,8 +23,9 @@ namespace EasySchedule.Web.Controllers
         }
 
         // POST api/foodusages
-        public void Post([FromBody]string value)
+        public int Post(JournalItemModel model)
         {
+            return (new ScheduleService()).AddFoodUsage(model);
         }
 
         // PUT api/foodusages/5

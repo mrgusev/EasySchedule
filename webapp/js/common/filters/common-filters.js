@@ -6,7 +6,8 @@ angular.module('common.filters', [])
             }
             return input;
         };
-    }) .filter('insulinType', function () {
+    })
+    .filter('insulinType', function () {
         return function (input) {
             switch (input){
                 case enums.insulinTypes.long:
@@ -17,6 +18,24 @@ angular.module('common.filters', [])
                     break;
                 case enums.insulinTypes.ultraShort:
                     return 'Ультаркороткий';
+                    break;
+            }
+            return '';
+        };
+    })
+    .filter('foodUsageType', function () {
+        return function (input) {
+            switch (input){
+                case enums.foodUsageTypes.breakfast:
+                    return 'Завтрак';
+                    break;
+                case enums.foodUsageTypes.lunch:
+                    return 'Обед';
+                    break;
+                case enums.foodUsageTypes.dinner:
+                    return 'Ужин';
+                case enums.foodUsageTypes.snack:
+                    return 'Перекус';
                     break;
             }
             return '';

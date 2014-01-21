@@ -17,7 +17,7 @@ namespace EasySchedule.Core.Services
             using (var context= new EasyScheduleDatabaseEntities())
             {
                 context.Categories.Load();
-                return context.Products.Take(100).ToList().Select(p => p.ToModel());
+                return context.Products.Take(20).ToList().Select(p => p.ToModel());
             }
         }
 
@@ -26,6 +26,7 @@ namespace EasySchedule.Core.Services
             using (var context = new EasyScheduleDatabaseEntities())
             {
                 context.Categories.Load();
+                context.Units.Load();
                 RegexOptions options = RegexOptions.None;
                 Regex regex = new Regex(@"[ ]{2,}", options);
                 query = regex.Replace(query, @" ").Trim();

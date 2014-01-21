@@ -2,14 +2,15 @@
 angular.module('app', ['ngRoute',
         'pages.home',
         'pages.about',
-        'pages.products'
+        'pages.products',
+        'services.foodUsage'
     ])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider ) {
         //$locationProvider.html5Mode(true);
         $routeProvider.otherwise({ redirectTo: '/' });
     } ])
-    .run(['$rootScope', '$location', '$routeParams', 'Journal',
-        function ($rootScope, $location, $routeParams, Journal) {
+    .run(['$rootScope', '$location', '$routeParams', 'Journal', 'FoodUsage',
+        function ($rootScope, $location, $routeParams, Journal, FoodUsageService) {
             document.addEventListener("touchstart", function(){}, true);
             $rootScope.insulinTypes = [
                 {id:enums.insulinTypes.short, name:'короткого'},
@@ -39,6 +40,8 @@ angular.module('app', ['ngRoute',
 
             $rootScope.showModal = function(type, model){
                 $rootScope.maxDate = new Date();
+
+                $rootScope.isModalOpen = true;
                 switch (type){
                     case enums.journalItemTypes.sugar:
                         $rootScope.sugarModel =  model || { time: new Date(), value: 5.8 };
@@ -56,9 +59,10 @@ angular.module('app', ['ngRoute',
                         break;
                     case enums.journalItemTypes.foodUsage:
                         $rootScope.isAddFood = true;
+                        FoodUsageService.init($rootScope.saveFood);
+                        $rootScope.foodService = FoodUsageService;
                         break;
                 }
-                $rootScope.isModalOpen = true;
                 $rootScope.isModelEdit = model;
             };
 
@@ -84,6 +88,14 @@ angular.module('app', ['ngRoute',
 
                 if($rootScope.modalCallback){
                     $rootScope.modalCallback($rootScope.currentModel);
+                }
+                $rootScope.closeModals();
+            };
+            $rootScope.saveFood = function(model){
+               // Journal.addFoodUsage(model);
+
+                if($rootScope.modalCallback){
+                    $rootScope.modalCallback(model);
                 }
                 $rootScope.closeModals();
             };

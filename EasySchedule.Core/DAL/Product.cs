@@ -17,6 +17,7 @@ namespace EasySchedule.Core.DAL
         public Product()
         {
             this.Portions = new HashSet<Portion>();
+            this.UnitProducts = new HashSet<UnitProduct>();
         }
     
         public int Id { get; set; }
@@ -28,8 +29,11 @@ namespace EasySchedule.Core.DAL
         public double Calories { get; set; }
         public string MeasurementUnit { get; set; }
         public double Size { get; set; }
+        public int DefaultUnitId { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual ICollection<Portion> Portions { get; set; }
+        public virtual Unit DefaultUnit { get; set; }
+        public virtual ICollection<UnitProduct> UnitProducts { get; set; }
     }
 }

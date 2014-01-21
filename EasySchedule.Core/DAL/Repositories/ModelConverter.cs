@@ -35,8 +35,8 @@ namespace EasySchedule.Core.DAL
                 carbohydrates = Carbohydrates,
                 fats = Fats,
                 proteins = Proteins,
-                size = Size,
-                measurementUnits = MeasurementUnit
+                defaultSize = Size,
+                defaultUnit = DefaultUnit.ToModel()
             };
 
         }
@@ -65,6 +65,19 @@ namespace EasySchedule.Core.DAL
         }
     }
 
+    public partial class Unit
+    {
+        public UnitModel ToModel()
+        {
+            return new UnitModel
+                       {
+                           id = Id,
+                           name = Name,
+                           shortName = ShortName
+                       };
+        }
+    }
+
     public partial class Portion
     {
         public PortionModel ToModel()
@@ -73,8 +86,7 @@ namespace EasySchedule.Core.DAL
             {
                 id = Id,
                 breadUnits = BreadUnits,
-                amount = Amount,
-                value = Value,
+                size = Size.Value,
                 product = Product.ToModel()
             };
 

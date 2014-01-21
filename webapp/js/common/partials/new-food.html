@@ -1,46 +1,52 @@
-<div class="food-usage">
-    <div class="easy-box" ng-controller="NewItemController">
+<div class="food-usage" >
+    <div class="easy-box">
         <div class="box-title">Прием пищи</div>
+        <div class="box-message">
+            <span>
+                <span date-time-picker time="foodService.model.time" isopen="isDatePickerOpen"  overlayid="'food-overlay'" maxvalue="maxDate"></span>
+                <span class="interactive-text" ng-click="isDatePickerOpen=true">
+                    {{foodService.model.time | smartdatetime}}
+                </span>
+            </span> (<span>
+                <span select selected-item="foodService.model.foodUsageType"
+                      items="foodService.foodUsageTypes" isopen="isFoodUsageTypesOpen" overlayid="'food-overlay'"></span>
+                <span class="interactive-text" ng-click="isFoodUsageTypesOpen=true">{{foodService.model.foodUsageType.name}}</span>
+            </span>) я съел:
+        </div>
         <div class="box-search">
-            <!--<span>-->
-                <!--<span date-time-picker time="sugarModel.time" isopen="isDatePickerOpen"  overlayid="'sugar-overlay'" maxvalue="maxDate"></span>-->
-                <!--<span class="interactive-text" ng-click="isDatePickerOpen=true">-->
-                    <!--{{sugarModel.time | smartdatetime}}-->
-                <!--</span>-->
-            <!--</span>-->
-            <!--у меня-->
-            <!--<span ng-hide="isSugarNow">было</span>-->
-            <!--<span> <span numeric number="sugarModel.value" isopen="isNumericOpen" is-float="true"-->
-                         <!--max-value="60" min-value="1" overlayid="'sugar-overlay'"></span>-->
-                 <!--<span class="interactive-text" ng-click="isNumericOpen=true">{{sugarModel.value}}</span>-->
-            <!--</span>-->
-            <!--ммоль/л-->
+            <input type="text" ng-model="searchQuery" ng-change="foodService.updateSearch(searchQuery)"/>
+            <ul>
+                <li ng-repeat="product in foodService.products">
+                    {{product.name}} <span ng-show="product.category.categoryTypeId == 2">({{product.category.name}})</span> <a href="" ng-click="foodService.addPortion(product)">+</a>
+                </li>
+            </ul>
         </div>
         <div class="food-list">
-            <div class="food-item">
+            <div class="food-item {{portion.hide}}" ng-repeat="portion in foodService.model.portions">
                 <div class="product">
-                    <div class="name">Картофельное пюре</div>
+                    <div class="name">{{portion.product.name}} </div>
                     <div class="desc"></div>
                 </div>
                 <div class="portion">
-                    <div class="size">300</div>
-                    <div class="unit"><a href="">г</a></div>
+                    <input type="text" class="size" ng-model="portion.size" ng-change="foodService.portionSizeUpdated(portion)" />
+                    <div class="unit"><a href="">{{portion.unit.name}}</a></div>
                 </div>
                 <div class="amount-buttons">
-                    <button>+</button>
-                    <button>-</button>
+                    <button ng-click="foodService.increasePortionSize(portion)">+</button>
+                    <button ng-click="foodService.decreasePortionSize(portion)">-</button>
                 </div>
                 <div class="values">
-                    <div class="size">6.5 </div>
+                    <div class="size">{{portion.breadUnits}}</div>
                     <div class="unit">ХЕ</div>
                 </div>
-                <div class="delete"><a href="" class="flaticon-cross29"></a></div>
+                <div class="delete" ng-click="foodService.deletePortion(portion)"><a href="" class="flaticon-cross29"></a></div>
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="box-button btn" ng-tap ng-click="saveSugar()">Сохранить </div>
+        Всего: {{foodService.model.value}} ХЕ
+        <div class="box-button btn" ng-tap ng-click="foodService.save()">Сохранить </div>
         <div class="close-button md-close" ng-click="closeModals()"><span class="flaticon-close-small"></span></div>
     </div>
 
-    <div class="nl-overlay" id="sugar-overlay"></div>
+    <div class="nl-overlay" id="food-overlay"></div>
 </div>
