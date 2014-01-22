@@ -1,50 +1,45 @@
-<div class="food-usage" >
+<div class="food-usage" ng-controller="FoodUsageController">
     <div class="easy-box">
         <div class="box-title">Прием пищи</div>
         <div class="box-message">
             <span>
-                <span date-time-picker time="foodService.model.time" isopen="isDatePickerOpen"  overlayid="'food-overlay'" maxvalue="maxDate"></span>
+                <span date-time-picker time="model.time" isopen="isDatePickerOpen"  overlayid="'food-overlay'" maxvalue="maxDate"></span>
                 <span class="interactive-text" ng-click="isDatePickerOpen=true">
-                    {{foodService.model.time | smartdatetime}}
+                    {{model.time | smartdatetime}}
                 </span>
             </span> (<span>
-                <span select selected-item="foodService.model.foodUsageType"
-                      items="foodService.foodUsageTypes" isopen="isFoodUsageTypesOpen" overlayid="'food-overlay'"></span>
-                <span class="interactive-text" ng-click="isFoodUsageTypesOpen=true">{{foodService.model.foodUsageType.name}}</span>
+                <span select selected-item="model.foodUsageType"
+                      items="foodUsageTypes" isopen="isFoodUsageTypesOpen" overlayid="'food-overlay'"></span>
+                <span class="interactive-text" ng-click="isFoodUsageTypesOpen=true">{{model.foodUsageType.name}}</span>
             </span>) я съел:
         </div>
-        <div class="box-search">
-            <input type="text" ng-model="searchQuery" ng-change="foodService.updateSearch(searchQuery)"/>
-            <ul>
-                <li ng-repeat="product in foodService.products">
-                    {{product.name}} <span ng-show="product.category.categoryTypeId == 2">({{product.category.name}})</span> <a href="" ng-click="foodService.addPortion(product)">+</a>
-                </li>
-            </ul>
-        </div>
+        <div search-box items="products" selected-item="newProduct"
+             query="searchQuery" is-focused="isSearchFocused" callback="addPortion(item)"> </div>
+
         <div class="food-list">
-            <div class="food-item {{portion.hide}}" ng-repeat="portion in foodService.model.portions">
+            <div class="food-item {{portion.hide}}" ng-repeat="portion in model.portions">
                 <div class="product">
                     <div class="name">{{portion.product.name}} </div>
                     <div class="desc"></div>
                 </div>
                 <div class="portion">
-                    <input type="text" class="size" ng-model="portion.size" ng-change="foodService.portionSizeUpdated(portion)" />
+                    <input type="text" class="size" ng-model="portion.size" ng-change="portionSizeUpdated(portion)" />
                     <div class="unit"><a href="">{{portion.unit.name}}</a></div>
                 </div>
                 <div class="amount-buttons">
-                    <button ng-click="foodService.increasePortionSize(portion)">+</button>
-                    <button ng-click="foodService.decreasePortionSize(portion)">-</button>
+                    <button ng-click="increasePortionSize(portion)">+</button>
+                    <button ng-click="decreasePortionSize(portion)">-</button>
                 </div>
                 <div class="values">
                     <div class="size">{{portion.breadUnits}}</div>
                     <div class="unit">ХЕ</div>
                 </div>
-                <div class="delete" ng-click="foodService.deletePortion(portion)"><a href="" class="flaticon-cross29"></a></div>
+                <div class="delete" ng-click="deletePortion(portion)"><a href="" class="flaticon-cross29"></a></div>
             </div>
         </div>
         <div class="clearfix"></div>
-        Всего: {{foodService.model.value}} ХЕ
-        <div class="box-button btn" ng-tap ng-click="foodService.save()">Сохранить </div>
+        Всего: {{model.value}} ХЕ
+        <div class="box-button btn" ng-tap ng-click="save()">Сохранить </div>
         <div class="close-button md-close" ng-click="closeModals()"><span class="flaticon-close-small"></span></div>
     </div>
 

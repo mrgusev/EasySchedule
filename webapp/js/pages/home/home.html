@@ -17,7 +17,7 @@
                 <div class="item {{item.hidden}} {{item.selected}}" ng-repeat="item in dateItem.items">
                     <div class="item-content">
                         <div ng-if="item.journalItemTypeId == 1">
-                            <div class="time">{{item.time | date:'HH:mm Z'}}</div>
+                            <div class="time">{{item.time | date:'HH:mm'}}</div>
                             <div class="icon"><span class="flaticon-rain14 small"></span></div>
                             <div class="info" ng-click="selectItem(item)">
                                 <div>
@@ -63,78 +63,3 @@
     </div>
     <a href="" ng-click="showMore()">Show more</a>
 </div>
-    <!--<div class="content {{!isDataLoading}}">-->
-        <!--<button ng-click="loadJournal()">Обновить</button>-->
-
-        <!--<div class="add-panel slide1" style="width: 400px">-->
-            <!--<div class="buttons">-->
-                <!--<button class="md-trigger" data-modal="modal-9" ng-click="showAddPanel(1)">+ сахар</button>-->
-                <!--<button ng-click="showAddPanel(3)">+ еда</button>-->
-                <!--<button ng-click="showAddPanel(2)">+ инсулин</button>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;<div ng-show="isAddSugar">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div date-time-picker ng-model="newSugarModel.time"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;<input type="text" ng-model="newSugarModel.value"/> ммоль/л&ndash;&gt;-->
-            <!--&lt;!&ndash;<input type="checkbox" ng-model="isFromGlucometer">Показания с глюкометра</input>&ndash;&gt;-->
-            <!--&lt;!&ndash;<button ng-click="addSugar()">+</button>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div ng-show="isAddFoodUsage">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div date-time-picker ng-model="newFoodUsage.time"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;<select ng-model="newPortion.product" ng-options="product.name for product in products"></select>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div ng-show="isAddInsulinUsage">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div date-time-picker ng-model="newInsulinUsage.time"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;<input type="text" ng-model="newInsulinUsage.value"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;<select ng-model="newInsulinUsage.insulinType" ng-options="insulinType.name for insulinType in insulinTypes" ></select>&ndash;&gt;-->
-            <!--&lt;!&ndash;<button ng-click="addInsulinUsage()">+</button>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash;<div id="chart_div" style="width: 600px; height: 300px;"></div>&ndash;&gt;-->
-        <!--<ul class="cbp_tmtimeline slide2">-->
-            <!--<li ng-repeat="item in collection">-->
-                <!--<time class="cbp_tmtime" datetime="{{item.time}}"><span>{{item.time | date:'dd.MM.yy'}}</span>-->
-                    <!--<span>{{item.time | date:'HH:mm'}}</span></time>-->
-                <!--<div class="cbp_tmicon cbp_tmicon-phone"></div>-->
-                <!--<div class="cbp_tmlabel">-->
-                    <!--<div ng-show="item.type == 1"> {{item.value}}</div>-->
-                    <!--<div ng-show="item.type == 2"><span style="font-size: 2.3em;"> {{item.value}}</span>ед. <span class="right">{{item.insulinType.name}}</span></div>-->
-                    <!--<div ng-show="item.type == 3" class="clickable" ng-click="item.isOpened=!item.isOpened; loadPortions(item)">-->
-                        <!--Покушал: {{item.breadUnits}} ХЕ-->
-                        <!--&lt;!&ndash;<div ng-show="item.isOpened">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<ul style="margin-left: 50px">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li ng-repeat="portion in item.portions">&ndash;&gt;-->
-                        <!--&lt;!&ndash;{{portion.product.name}} {{portion.amount}} {{portion.product.measurmentType.name}} - {{portion.breadUnits}} ХЕ&ndash;&gt;-->
-                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-        <!--</ul>-->
-        <!--<ul>-->
-        <!--<li ng-repeat="date in datedCollection" style="margin-bottom: 15px;">-->
-        <!--{{date.date}}-->
-        <!--<ul style="margin-top: 5px">-->
-        <!--<li ng-repeat="item in date.items" style="margin-bottom: 2px">-->
-        <!--<div class="journal-item">-->
-        <!--<div ng-show="item.type == 1"> &nbsp{{item.time | date:'HH:mm'}} Сахар: {{item.value}}</div>-->
-        <!--<div ng-show="item.type == 2"> &nbsp{{item.time | date:'HH:mm'}} Инсулин {{item.insulinType.name}}: {{item.value}}</div>-->
-        <!--<div ng-show="item.type == 3" class="clickable" ng-click="item.isOpened=!item.isOpened; loadPortions(item)">-->
-        <!--&nbsp{{item.time | date:'HH:mm'}} Покушал: {{item.breadUnits}} ХЕ-->
-        <!--<div ng-show="item.isOpened">-->
-        <!--<ul style="margin-left: 50px">-->
-        <!--<li ng-repeat="portion in item.portions">-->
-        <!--{{portion.product.name}} {{portion.amount}} {{portion.product.measurmentType.name}} - {{portion.breadUnits}} ХЕ-->
-        <!--</li>-->
-        <!--</ul>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</li>-->
-        <!--</ul>-->
-        <!--</li>-->
-        <!--&lt;!&ndash;</ul>&ndash;&gt;</div>-->
-
-
-<!--</div>-->

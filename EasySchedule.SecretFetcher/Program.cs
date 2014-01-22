@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -57,21 +58,35 @@ namespace EasySchedule.SecretFetcher
 
         static void Main(string[] args)
         {
-          //  TransferProducts();
+            using (var context = new Core.DAL.EasyScheduleDatabaseEntities())
+            {
+                var products = context.Products;
+                context.Categories.Load();
+                foreach (var product in products)
+                {
+                    product.FullName = product.Name + " [ " + product.Category.Name + " ]";
+                }
+                context.SaveChanges();
+            }
+           // Console.ReadKey();
+        }
+
+        private static void TransferProducts()
+        {
             using (var context = new SecretDatabaseEntities())
             {
                 int n = 0;
-                foreach (var productLink in context.ProductLinks.Where(p=>!p.IsFetched).ToList().Skip(60))
+                foreach (var productLink in context.ProductLinks.Where(p => !p.IsFetched).ToList().Skip(60))
                 {
                     n++;
                     var product = ConvertLinkToProduct(productLink);
-                    if(product != null)
+                    if (product != null)
                     {
                         context.Products.Add(product);
                         context.SaveChanges();
                         productLink.IsFetched = true;
                         context.SaveChanges();
-                        Console.WriteLine("{0} - Product {1} was added to database",n, product.Name);
+                        Console.WriteLine("{0} - Product {1} was added to database", n, product.Name);
                     }
                     else
                     {
@@ -81,9 +96,8 @@ namespace EasySchedule.SecretFetcher
                     }
                 }
             }
-            Console.ReadKey();
         }
-       
+
         //static void LoadDatabase()
         //{
         //    using (var context = new SecretDatabaseEntities())
@@ -238,29 +252,29 @@ namespace EasySchedule.SecretFetcher
         }
 
 
-        static void TransferProducts()
-        {
-            var secretContext = new Secret.SecretDatabaseEntities();
-            var scheduleContext = new Core.DAL.EasyScheduleDatabaseEntities();
-            foreach (var product in secretContext.Products.Where(p=>!p.IsTransported))
-            {
-                scheduleContext.Products.Add(new Core.DAL.Product
-                {
-                    Name = product.Name,
-                    CategoryId = product.CategoryId,
-                    Calories = product.Calories,
-                    Carbohydrates = product.Carbohydrates,
-                    Fats = product.Fats,
-                    Proteins = product.Proteins,
-                    MeasurementUnit = product.PortionName,
-                    Size = product.PortionSize.Value
-                });
-              //  product.IsTransported = true;
-             //   secretContext.SaveChanges();
-            }
-            scheduleContext.SaveChanges();
-            secretContext.Dispose();
-            scheduleContext.Dispose();
-        }
+        //static void TransferProducts()
+        //{
+        //    var secretContext = new Secret.SecretDatabaseEntities();
+        //    var scheduleContext = new Core.DAL.EasyScheduleDatabaseEntities();
+        //    foreach (var product in secretContext.Products.Where(p=>!p.IsTransported))
+        //    {
+        //        scheduleContext.Products.Add(new Core.DAL.Product
+        //        {
+        //            Name = product.Name,
+        //            CategoryId = product.CategoryId,
+        //            Calories = product.Calories,
+        //            Carbohydrates = product.Carbohydrates,
+        //            Fats = product.Fats,
+        //            Proteins = product.Proteins,
+        //            MeasurementUnit = product.PortionName,
+        //            Size = product.PortionSize.Value
+        //        });
+        //      //  product.IsTransported = true;
+        //     //   secretContext.SaveChanges();
+        //    }
+        //    scheduleContext.SaveChanges();
+        //    secretContext.Dispose();
+        //    scheduleContext.Dispose();
+        //}
     }
 }

@@ -1,0 +1,8 @@
+<div class="box-search">
+    <input type="text" id="input-search" ng-model="query" ui-keyup="{'enter up down':'searchKeypressed($event)'}"/>
+    <ul>
+        <li ng-repeat="item in items" class="{{item.selected}}">
+            {{item.name}} <span ng-show="product.category.categoryTypeId == 2">({{item.category.name}})</span> <a href="" ng-click="select(item)">+</a>
+        </li>
+    </ul>
+</div>

@@ -12,29 +12,21 @@ namespace EasySchedule.Core.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Unit
     {
-        public Product()
+        public Unit()
         {
             this.Portions = new HashSet<Portion>();
+            this.Products = new HashSet<Product>();
             this.UnitProducts = new HashSet<UnitProduct>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public int CategoryId { get; set; }
-        public double Carbohydrates { get; set; }
-        public double Fats { get; set; }
-        public double Proteins { get; set; }
-        public double Calories { get; set; }
-        public string MeasurementUnit { get; set; }
-        public double Size { get; set; }
-        public string FullName { get; set; }
-        public int DefaultUnitId { get; set; }
+        public string ShortName { get; set; }
     
-        public virtual Category Category { get; set; }
         public virtual ICollection<Portion> Portions { get; set; }
-        public virtual Unit DefaultUnit { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
         public virtual ICollection<UnitProduct> UnitProducts { get; set; }
     }
 }

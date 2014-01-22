@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="styles/controls/buttons.css">
     <link rel="stylesheet" type="text/css" href="styles/controls/easy-box.css">
     <link rel="stylesheet" type="text/css" href="styles/controls/select.css">
+    <link rel="stylesheet" type="text/css" href="styles/controls/input.css">
 
     <link rel="stylesheet" type="text/css" href="styles/controls/modal.css">
 
@@ -46,7 +47,7 @@
             <li>
                 <a href="#/" class="icon-home">Журнал</a></li>
             <li>
-                <a href="#/about" class="icon-news">Статистика</a></li>
+                <a href="#/statistic" class="icon-news">Статистика</a></li>
             <li>
                 <a href="#/food" class="icon-image">Продукты</a></li>
             <li>
@@ -81,7 +82,6 @@
 </body>
 
 
-<script>var DEBUG = true;   </script>
 <script type="text/javascript" src="js/libraries/jquery.js"></script>
 <script type="text/javascript" src="js/libraries/underscore.js"></script>
 <script type="text/javascript" src="js/libraries/underscore-strings.js"></script>
@@ -95,6 +95,9 @@
 <script src="js/modal/cssParser.js"></script>
 <script src="js/modal/css-filters-polyfill.js"></script>
 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script>var DEBUG = true;   </script>
 
 
 <script type="text/javascript" src="js/common/extensions.js"></script>
@@ -102,10 +105,12 @@
 <script type="text/javascript" src="js/libraries/angular/angular.js"></script>
 <script type="text/javascript" src="js/libraries/angular/angular-resource.js"></script>
 <script type="text/javascript" src="js/libraries/angular/angular-route.js"></script>
+<script type="text/javascript" src="js/libraries/angular/ui-keypress.js"></script>
 <!--<script type="text/javascript" src="js/libraries/angular/angular-ui.js"></script>-->
-<!--<script type="text/javascript" src="js/libraries/angular/ng-infinite-scroll.min.js"></script>-->
+<script type="text/javascript" src="js/libraries/angular/ng-infinite-scroll.min.js"></script>
 <!--<script type="text/javascript" src="js/libraries/jquery.dropdown.js"></script>-->
 <script type="text/javascript" src="js/libraries/uisearch.js"></script>
+<script type="text/javascript" src="js/libraries/angular/ng-google-chart.js"></script>
 <script type="text/javascript" src="js/common/enums.js"></script>
 <script type="text/javascript" src="js/common/filters/common-filters.js"></script>
 <script type="text/javascript" src="js/common/filters/project-filters.js"></script>
@@ -117,6 +122,9 @@
 <script type="text/javascript" src="js/common/directives/new-items.js"></script>
 <script type="text/javascript" src="js/common/directives/modal-window.js"></script>
 <script type="text/javascript" src="js/common/services/food-usage-service.js"></script>
+<script type="text/javascript" src="js/common/controllers/food-usage-controller.js"></script>
+<script type="text/javascript" src="js/common/controllers/insulin-usage-controller.js"></script>
+<script type="text/javascript" src="js/common/controllers/sugar-controller.js"></script>
 
 <!--<script type="text/javascript" src="js/common/services/map.js"></script>-->
 <!--<script type="text/javascript" src="js/common/services/security.js"></script>-->
@@ -126,6 +134,7 @@
 <script type="text/javascript" src="js/common/resources/journal.js"></script>
 <script type="text/javascript" src="js/common/resources/product.js"></script>
 <script type="text/javascript" src="js/pages/home/home.js"></script>
+<script type="text/javascript" src="js/pages/statistic/statistic.js"></script>
 <script type="text/javascript" src="js/pages/products/products.js"></script>
 <script type="text/javascript" src="js/pages/about/about.js"></script>
 <script type="text/javascript" src="js/new-food-controller.js"></script>

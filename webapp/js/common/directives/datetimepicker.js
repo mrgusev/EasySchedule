@@ -5,7 +5,7 @@
  * Time: 9:57
  * To change this template use File | Settings | File Templates.
  */
-angular.module('controls', [])
+angular.module('controls')
 .directive("dateTimePicker", ['$rootScope', function ($rootScope) {
     return {
         restrict: 'A',

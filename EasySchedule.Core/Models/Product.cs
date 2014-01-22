@@ -17,5 +17,6 @@ namespace EasySchedule.Core.Models
         public double calories { get; set; }
         public double defaultSize { get; set; }
         public UnitModel defaultUnit { get; set; }
+        //public IEnumerable<UnitModel> units { get; set; }
     }
 }

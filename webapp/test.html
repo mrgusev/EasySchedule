@@ -1,81 +1,54 @@
-<!DOCTYPE html>
-<html  xmlns:ng="http://angularjs.org" ng-app="app">
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <base href="/">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="viewport" content="target-densitydpi=device-dpi">
-    <meta name="viewport"  content="width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0">
-    <script type="text/javascript" src="js/libraries/modernizr.custom.js"></script>
-    <script type="text/javascript" src="js/libraries/component.js"></script>
-    <link rel="stylesheet" href="styles/normalize.css"/>
-    <link rel="stylesheet" href="styles/main.css"/>
-    <link rel="stylesheet" href="styles/common/icons.css"/>
-    <link rel="stylesheet" href="styles/controls/timeline.css"/>
-    <link rel="stylesheet" href="style.css"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+        Google Visualization API Sample
+    </title>
 
+    <script>var DEBUG = true;   </script>
+    <script type="text/javascript" src="js/libraries/console.js"></script>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load('visualization', '1', {packages: ['charteditor']});
+    </script>
+    <script type="text/javascript">
+        var wrapper;
+
+        function init() {
+            wrapper = new google.visualization.ChartWrapper({
+                dataSourceUrl: 'https://spreadsheets.google.com/spreadsheet/tq?key=tnxuU73jT7eIL-aZke85e3A&pub=1&range=A1:E13',
+                containerId: 'visualization',
+                chartType: 'LineChart'
+            });
+            wrapper.draw();
+        }
+
+        function openEditor() {
+            // Handler for the "Open Editor" button.
+            var editor = new google.visualization.ChartEditor();
+            google.visualization.events.addListener(editor, 'ok',
+                    function() {
+                        wrapper = editor.getChartWrapper();
+                        console.log(JSON.stringify(wrapper))
+                        wrapper.draw(document.getElementById('visualization'));
+                    });
+            editor.openDialog(wrapper);
+        }
+
+
+        google.setOnLoadCallback(init);
+
+    </script>
 </head>
-<body>
-<div class="main">
-    <div class="header"></div>
-    <div class="content true">
-
-        <div class="food-item">
-            <div class="product">
-                <div class="name">Картофельное пюре</div>
-                <div class="desc"></div>
-            </div>
-            <div class="portion">
-                <div class="size">300</div>
-                <div class="unit"><a href="">г</a></div>
-            </div>
-            <div class="amount-buttons">
-                <button>+</button>
-                <button>-</button>
-            </div>
-            <div class="values">
-                <div class="size">6.5 </div>
-                <div class="unit">ХЕ</div>
-            </div>
-            <div class="delete"><a href="" class="flaticon-cross29"></a></div>
-        </div>
-        <ul class="cbp_tmtimeline slide2">
-            <li ng-repeat="item in collection">
-                <time class="cbp_tmtime" datetime="{{item.time}}"><span>07.01</span>
-                    <span>13:45</span></time>
-                <div class="cbp_tmicon cbp_tmicon-phone"></div>
-                <div class="cbp_tmlabel">
-                    <div ng-show="item.type == 1"> {{item.value}}</div>
-                    <div ng-show="item.type == 2"><span style="font-size: 2.3em;"> {{item.value}}</span>ед. <span class="right">{{item.insulinType.name}}</span></div>
-                    <div ng-show="item.type == 3" class="clickable" ng-click="item.isOpened=!item.isOpened; loadPortions(item)">
-                        Покушал: {{item.breadUnits}} ХЕ
-                        <!--<div ng-show="item.isOpened">-->
-                        <!--<ul style="margin-left: 50px">-->
-                        <!--<li ng-repeat="portion in item.portions">-->
-                        <!--{{portion.product.name}} {{portion.amount}} {{portion.product.measurmentType.name}} - {{portion.breadUnits}} ХЕ-->
-                        <!--</li>-->
-                        <!--</ul>-->
-                        <!--</div>-->
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div style="background: white; width: 500px; height: 400px;" class="add-sugar">
-            <div class="caption">
-                Уровень сахара
-            </div>
-            <div> У меня <a href="">сейчас</a> <span style="color: #5fbbce">5.8</span> ммоль/л</div>
-        </div>
-
-        <section id="set-1">
-            <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
-                <a class="hi-icon flaticon-rain14"></a>
-                <a  class="hi-icon flaticon-syringe"></a>
-                <a  class="hi-icon flaticon-silver"></a>
-            </div>
-        </section>
-    </div>
-</div>
+<body style="font-family: Arial;border: 0 none;">
+<input type='button' onclick='openEditor()' value='Open Editor'>
+<div id='visualization' style="width:600px;height:400px">
 </body>
 </html>
+​

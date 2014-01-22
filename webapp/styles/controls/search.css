@@ -1,10 +1,22 @@
 /* Search icon by IcoMoon, made with http://icomoon.io/app/ */
 @font-face {
+  font-family: 'open_sanslight';
+  src: url("/../fonts/open-sans/OpenSans-Light-webfont.eot");
+  src: url("/../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/../fonts/open-sans/OpenSans-Light-webfont.woff") format("woff"), url("/../fonts/open-sans/OpenSans-Light-webfont.ttf") format("truetype"), url("/../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
   font-family: 'icomoon';
   src: url("../../fonts/icomoon/icomoon.eot");
   src: url("../../fonts/icomoon/icomoon.eot?#iefix") format("embedded-opentype"), url("../../fonts/icomoon/icomoon.woff") format("woff"), url("../../fonts/icomoon/icomoon.ttf") format("truetype"), url("../../fonts/icomoon/icomoon.svg#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+.box-search input {
+  border: 1px solid #f2f2f2; }
+.box-search li.selected {
+  background: #f2f3eb; }
 
 .sb-search {
   position: relative;

@@ -53,37 +53,6 @@ angular.module('pages.home', [
                 $scope.updateJournal();
             };
 
-            function drawChart() {
-                var data1 = [ ['Время', 'Сахар']];
-                var data2 =[['Время','Инсулин']] ;
-                var data3 = [['ID','Время','ХЕ']];
-                _.each($scope.collection,function(item){
-                    if(item.journalItemTypeId == enums.journalItemTypes.sugar){
-                        data1.push([new Date(item.time), item.value]);
-                    }
-                    if(item.journalItemTypeId == enums.journalItemTypes.insulinUsage && (item.insulinType.id == 3 || item.insulinType.id == 1)){
-                        data2.push([new Date(item.time), item.value]);
-                    }
-                    if(item.type == enums.journalItemTypes.foodUsage){
-                        data3.push(['', new Date(item.time), item.breadUnits])
-                    }
-                });
-                data1 = google.visualization.arrayToDataTable(data1);
-                data2 = google.visualization.arrayToDataTable(data2);
-              //  data3 = google.visualization.arrayToDataTable(data3);
-                var joinedData = google.visualization.data.join(data2, data1, 'full',[[0,0]],[1],[1]);
-
-                var options = {
-                    seriesType: "bars",
-                    series: {1: {type: "line"}},
-                    curveType: 'function',
-                    legend: { position: 'bottom' },
-                    interpolateNulls: true
-                };
-
-                var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-                chart.draw(joinedData, options);
-            };
 
             $scope.loadJournal();
 
@@ -148,7 +117,7 @@ angular.module('pages.home', [
                 }
                 item.hidden = 'hide';
             };
-            $rootScope.modalCallback = function(result){
+            $rootScope.onModalSave = function(result){
                 var fakeSugarModel =  result;
                 if(!$rootScope.isModelEdit){
                     console.log('journal updated');

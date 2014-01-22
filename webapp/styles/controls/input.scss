@@ -1,0 +1,8 @@
+@import "../theme";
+@import "../common/mixins";
+
+.input-primary{
+  padding: $small-space;
+  border: $default-border;
+  width: 100%;
+}

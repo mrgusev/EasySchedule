@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,12 +13,21 @@ namespace EasySchedule.Core.Services
 {
     public class ProductService
     {
-        public IEnumerable<ProductModel> GetProducts()
+        public IEnumerable<ProductModel> GetProducts(int page, int pageSize = 20)
         {
             using (var context= new EasyScheduleDatabaseEntities())
             {
                 context.Categories.Load();
-                return context.Products.Take(20).ToList().Select(p => p.ToModel());
+                context.Units.Load();
+                return context.Products.OrderBy(p=>p.Name).Skip(pageSize * (page - 1)).Take(pageSize).ToList().Select(p => p.ToModel());
+            }
+        }
+
+        public ProductModel GetProduct(int id)
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                return context.Products.SingleOrDefault(p => p.Id == id).ToModel();
             }
         }
 
@@ -27,11 +37,9 @@ namespace EasySchedule.Core.Services
             {
                 context.Categories.Load();
                 context.Units.Load();
-                RegexOptions options = RegexOptions.None;
-                Regex regex = new Regex(@"[ ]{2,}", options);
-                query = regex.Replace(query, @" ").Trim();
-                var queryWords = query.Split(' ');
-               // if(queryWords.Count() == 1)
+                //var objectContext = (context as IObjectContextAdapter).ObjectContext;
+                //objectContext
+                //    .ExecuteStoreQuery<Product>("SELECT * FROM Products WHERE FREETEXT(Name, {0})", query);
                 return context.Products.Where(p => p.Name.Contains(query))
                     .Take(20).ToList().Select(p => p.ToModel());
             }

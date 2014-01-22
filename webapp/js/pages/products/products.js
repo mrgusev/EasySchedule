@@ -9,36 +9,74 @@ angular.module('pages.products', [
             templateUrl:'js/pages/products/products.html',
             controller:'ProductsController'
         });
+        $routeProvider.when('/food/:productId', {
+            templateUrl:'js/pages/products/product-view.html',
+            controller:'ProductController'
+        });
+        $routeProvider.when('/food/:productId/edit', {
+            templateUrl:'js/pages/products/product-edit.html',
+            controller:'ProductEditController'
+        });
     }])
     .controller('ProductsController', ['$scope', '$routeParams', '$location', 'Journal','Product', '$rootScope', '$timeout',
         function ($scope, $routeParams,$location, Journal,Product, $rootScope, $timeout) {
-            ModalEffects();
-           // $scope.isDataLoading = true
+            $scope.isDataLoading = true;
 
-            new UISearch( document.getElementById( 'sb-search' ) );
-            var searchCounter = -1;
             var timer = false;
             $scope.searchQuery = '';
+            $scope.page = 1;
+            $scope.products = [];
             $scope.$watch('searchQuery', function () {
                 if (timer) {
                     $timeout.cancel(timer);
                 }
                 timer = $timeout(function () {
                     if ($scope.searchQuery.length > 2) {
-                        console.log($scope.searchQuery);
-                        updateProducts();
+                        $scope.page = 1;
+                        searchProducts();
+                    } else if($scope.searchQuery.length == 0){
+                        $scope.products = [];
+                        getProducts();
                     }
                 }, 100);
             });
 
-            function updateProducts(){
+            function searchProducts(){
                 Product.searchProducts($scope.searchQuery, function(data){
-                    _.each(data,function(item){
-                        item.carbohydrates = Math.round(item.carbohydrates*10/13)/10;
-                        return item;
-                    })
                     $scope.products = data;
-                    searchCounter = -1;
+                    $scope.isDataLoading = false;
                 });
+            };
+
+            function getProducts(){
+                Product.getProducts($scope.page, function(data){
+
+                    $scope.products = $scope.products.concat( data);
+                    $scope.isDataLoading = false;
+                });
+            };
+
+            $scope.showMore = function(){
+                $scope.page++;
+                $scope.isDataLoading = true;
+                getProducts();
+            };
+
+        }])
+    .controller('ProductController', ['$scope', '$routeParams', '$location', 'Journal','Product', '$rootScope', '$timeout',
+        function ($scope, $routeParams,$location, Journal,Product, $rootScope, $timeout) {
+            $scope.isDataLoading = true;
+            if($routeParams.productId){
+
+                Product.getProduct($routeParams.productId, function(data){
+                    $scope.product = data;
+                    $scope.isDataLoading = false;
+                })
             }
-        }]);
+        }
+    ])
+    .controller('ProductEditController', ['$scope', '$routeParams', '$location', 'Journal','Product', '$rootScope', '$timeout',
+        function ($scope, $routeParams,$location, Journal,Product, $rootScope, $timeout) {
+
+        }
+    ]);

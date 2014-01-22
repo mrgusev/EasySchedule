@@ -1,0 +1,8 @@
+<div>
+
+    <div ng-show="isDataLoading" ng-include="'js/common/partials/loader.html'"></div>
+    <div ng-hide="isDataLoading">
+        <div google-chart chart="chart" style="{{chart.cssStyle}}"/>
+
+    </div>
+</div>

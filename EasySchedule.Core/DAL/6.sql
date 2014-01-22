@@ -1,0 +1,14 @@
+﻿SET QUOTED_IDENTIFIER OFF;
+GO
+USE [EasyScheduleDatabase];
+
+GO
+--CREATE FULLTEXT CATALOG ProductFT
+--CREATE INDEX FullProductNamePK
+--ON [dbo].[Products]
+--    (FullName);
+--GO
+CREATE FULLTEXT INDEX ON dbo.Products(FullName)
+	KEY INDEX UQ__Products__89C60F115D7354A3 ON ProductFT
+	WITH CHANGE_TRACKING AUTO
+GO

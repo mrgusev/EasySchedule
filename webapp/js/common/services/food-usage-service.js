@@ -1,5 +1,5 @@
 angular.module('services.foodUsage', [])
-    .service('FoodUsage', ['$timeout','Product', function ($timeout, Product) {
+    .service('FoodUsage', ['$timeout', '$rootScope', 'Product', function ($timeout, $rootScope, Product) {
         var service = {};
 
         var filterText = '';
@@ -21,11 +21,10 @@ angular.module('services.foodUsage', [])
                 service.model = {
                     journalItemTypeId: enums.journalItemTypes.foodUsage,
                     time: new Date(),
-                    foodUsageType:{id:1},
                     portions:[],
                     value: 0
                 };
-                service.defineFoodUsageType(service.model.time);
+         //       service.defineFoodUsageType(service.model.time);
             }
         }
 
@@ -50,13 +49,13 @@ angular.module('services.foodUsage', [])
         };
 
         service.defineFoodUsageType = function(date){
-            var breakfastStart = new Date(new Date(new Date((new Date()).setHours(7)).setMinutes(0)).toTimeString());
-            var breakfastEnd = new Date(new Date(new Date((new Date()).setHours(10)).setMinutes(30)).toTimeString());
-            var lunchStart = new Date(new Date(new Date((new Date()).setHours(12)).setMinutes(30)).toTimeString());
-            var lunchEnd = new Date(new Date(new Date((new Date()).setHours(14)).setMinutes(30)).toTimeString());
-            var dinnerStart = new Date(new Date(new Date((new Date()).setHours(17)).setMinutes(0)).toTimeString());
-            var dinnerEnd = new Date(new Date(new Date((new Date()).setHours(20)).setMinutes(0)).toTimeString());
-            date = new Date(date.toTimeString());
+            var breakfastStart = new Date(0,0,0,7,0,0,0).getTime();
+            var breakfastEnd = new Date(0,0,0,10,30,0,0).getTime();
+            var lunchStart = new Date(0,0,0,12,30,0,0).getTime();
+            var lunchEnd = new Date(0,0,0,14,30,0,0).getTime();
+            var dinnerStart = new Date(0,0,0,17,0,0,0).getTime();
+            var dinnerEnd = new Date(0,0,0,20,0,0,0).getTime();
+            date = new Date(0,0,0, date.getHours(), date.getMinutes(),0,0,0).getTime();
             if(date > breakfastStart && date < breakfastEnd){
                 service.model.foodUsageType = service.foodUsageTypes[0];
             } else if(date > lunchStart && date < lunchEnd){
@@ -66,6 +65,8 @@ angular.module('services.foodUsage', [])
             } else{
                 service.model.foodUsageType = service.foodUsageTypes[3];
             }
+            console.log(date);
+            console.log(breakfastStart);
 
         };
         service.increasePortionSize = function(portion){
@@ -101,7 +102,7 @@ angular.module('services.foodUsage', [])
         service.save = function(){
             service.callback(service.model);
         };
-        service.updateSearch = function(val){
+        $rootScope.$watch('searchQuery',function(val){
             if (val.length > 2) {
                 if (filterTextTimeout) $timeout.cancel(filterTextTimeout);
                 tempFilterText = val;
@@ -112,8 +113,8 @@ angular.module('services.foodUsage', [])
             } else{
                 service.products= [];
             }
-        };
-
+        });
+        $rootScope.$watch('foodService.model.time', service.defineFoodUsageType)
 
         return service;
     }]);

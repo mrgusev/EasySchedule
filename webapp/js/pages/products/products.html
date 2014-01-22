@@ -1,19 +1,15 @@
 <div class="">
-    <div ng-show="isDataLoading" ng-include="'js/common/partials/loader.html'"></div>
-    <div class="center">
-        <div id="sb-search" class="sb-search">
-            <form>
-                <input class="sb-search-input" placeholder="Enter your search term..." ng-model="searchQuery" type="text" value="" name="search" id="search">
-                <input class="sb-search-submit" type="submit" value="">
-                <span class="sb-icon-search"></span>
-            </form>
-        </div><ul>
+    <a href="#/food/create/">+ Добавить</a>
+    <input type="text" ng-model="searchQuery" class="input-primary"/>
+    <ul style="list-style: inherit" class="center" infinite-scroll="showMore()" infinite-scroll-distance="0.7"
+        infinite-scroll-disabled='isDataLoading || searchQuery'>
         <li ng-repeat="product in products">
+            <a href="#/food/{{product.id}}">
             {{product.name}}
-            <span ng-show="product.category.categoryTypeId==2 || product.category.categoryTypeId==3 ||product.category.categoryTypeId==4">({{product.category.name}})</span>
-            - {{product.carbohydrates}} ХЕ в {{product.size}} {{product.measurementUnits}}
+            <span ng-show="product.category.categoryTypeId==2 || product.category.categoryTypeId==3 ||product.category.categoryTypeId==4">
+                ({{product.category.name}})</span>
+            </a>
         </li>
     </ul>
-    </div>
-
+    <div ng-show="isDataLoading" ng-include="'js/common/partials/loader.html'"></div>
 </div>

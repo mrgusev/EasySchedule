@@ -1,23 +1,23 @@
-<div>
+<div ng-controller="SugarController">
     <div class="easy-box">
         <div class="box-title">Уровень сахара</div>
         <div class="box-message">
             <span>
-                <span date-time-picker time="sugarModel.time" isopen="isDatePickerOpen"  overlayid="'sugar-overlay'" maxvalue="maxDate"></span>
+                <span date-time-picker time="model.time" isopen="isDatePickerOpen"  overlayid="'sugar-overlay'" maxvalue="maxDate"></span>
                 <span class="interactive-text" ng-click="isDatePickerOpen=true">
-                    {{sugarModel.time | smartdatetime}}
+                    {{model.time | smartdatetime}}
                 </span>
             </span>
             у меня
             <span ng-hide="isSugarNow">было</span>
-            <span> <span numeric number="sugarModel.value" isopen="isNumericOpen" is-float="true"
+            <span> <span numeric number="model.value" isopen="isNumericOpen" is-float="true"
                          max-value="60" min-value="1" overlayid="'sugar-overlay'"></span>
-                 <span class="interactive-text" ng-click="isNumericOpen=true">{{sugarModel.value}}</span>
+                 <span class="interactive-text" ng-click="isNumericOpen=true">{{model.value}}</span>
             </span>
             ммоль/л
         </div>
         <div class="clearfix"></div>
-        <div class="box-button btn" ng-tap ng-click="saveSugar()">Сохранить </div>
+        <div class="box-button btn" ng-tap ng-click="save()">Сохранить </div>
         <div class="close-button md-close" ng-click="closeModals()"><span class="flaticon-close-small"></span></div>
     </div>
 
