@@ -135,7 +135,7 @@
           <Property Name="MeasurementUnit" Type="nvarchar" MaxLength="50" />
           <Property Name="Size" Type="float" Nullable="false" />
           <Property Name="DefaultUnitId" Type="int" Nullable="false" />
-          <Property Name="FullName" Type="nvarchar(max)" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="300" />
         </EntityType>
         <EntityType Name="UnitProduct">
           <Key>
@@ -437,7 +437,7 @@
           <NavigationProperty Name="Portions" Relationship="EasyScheduleDatabaseModel.FK_ProductPortion" FromRole="Products" ToRole="Portions" />
           <NavigationProperty Name="DefaultUnit" Relationship="EasyScheduleDatabaseModel.FK_ProductUnit" FromRole="Products" ToRole="Units" />
           <NavigationProperty Name="UnitProducts" Relationship="EasyScheduleDatabaseModel.FK_UnitProduct_Product" FromRole="Products" ToRole="UnitProduct" />
-          <Property Type="String" Name="FullName" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FullName" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="UnitProduct">
           <Key>

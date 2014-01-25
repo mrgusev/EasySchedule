@@ -40,3 +40,25 @@ nav{
   padding-right: $big-space;
   margin-left: $menu-width;
 }
+@media only screen and (max-width : 480px) {
+  .timeline .item .info .value {
+    font-size: 30%;
+  }
+  .header{
+    height: 50px ;
+    .logo{
+      padding-left: $medium-space;
+      line-height: 50px;
+      font-size: 24px;
+    }
+  }
+  nav{
+    display: none;
+  }
+  .content{
+    margin-left: 0;
+    padding: $small-space;
+    border-left: none;
+  }
+}
+

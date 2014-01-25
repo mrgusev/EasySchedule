@@ -44,5 +44,27 @@ namespace EasySchedule.Core.Services
                     .Take(20).ToList().Select(p => p.ToModel());
             }
         } 
+
+        public int AddProduct(ProductModel productModel)
+        {
+            using (var context = new EasyScheduleDatabaseEntities())
+            {
+                var newProduct = new Product
+                {
+                    Name = productModel.name,
+                    CategoryId = productModel.category.id,
+                    Carbohydrates = productModel.carbohydrates,
+                    Fats = productModel.fats,
+                    Proteins = productModel.proteins,
+                    Calories = productModel.calories,
+                    FullName = productModel.name + " [ " + productModel.category.name + " ]",
+                    DefaultUnitId = productModel.defaultUnit.id,
+                    Size = productModel.defaultSize
+                };
+                context.Products.Add(newProduct);
+                context.SaveChanges();
+                return newProduct.Id;
+            }
+        }
     }
 }

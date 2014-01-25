@@ -75,3 +75,22 @@ nav {
   padding-left: 30px;
   padding-right: 30px;
   margin-left: 200px; }
+
+@media only screen and (max-width: 480px) {
+  .timeline .item .info .value {
+    font-size: 30%; }
+
+  .header {
+    height: 50px; }
+    .header .logo {
+      padding-left: 15px;
+      line-height: 50px;
+      font-size: 24px; }
+
+  nav {
+    display: none; }
+
+  .content {
+    margin-left: 0;
+    padding: 5px;
+    border-left: none; } }

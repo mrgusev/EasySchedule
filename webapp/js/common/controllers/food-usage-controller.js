@@ -54,7 +54,7 @@ angular.module('controllers',[])
                 var koef = portion.size/100;
                 portion.breadUnits = Math.round(portion.product.carbohydrates*koef/13*10)/10;
                 $scope.model.value += portion.breadUnits;
-
+                $scope.model.value = Math.round($scope.model.value*10)/10;
             };
 
             $scope.defineFoodUsageType = function(date){

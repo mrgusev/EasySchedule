@@ -1,0 +1,82 @@
+@import "../theme";
+@import "../common/mixins";
+.search{
+  max-width: 576px;
+  margin: 0 auto;
+  input{
+    height: 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+    vertical-align: middle;
+    font-size: 21px;
+    border: $border-default;;
+    border-right: none;
+    font-family: $font-default;
+    margin: 0;
+    width: calc(100% - 64px);
+    float: left;
+    display: block;
+  }
+  .search-button{
+    width: 64px;
+    height: 64px;
+    background-color: $mark-light;
+    float: right;
+  }
+  .search-results{
+    @include transition(all 0.2s linear 0s);
+    max-height: 0;
+    overflow: hidden;
+    li{
+      @include transition(all 0.05s linear 0s);
+      opacity: 0;
+      cursor: pointer;
+      position: relative;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 16px;
+      padding-right: 16px;
+      border-bottom: $border-default;
+      .name{
+        color: $text-color-dark;
+        font-size: 24px;
+      }
+      .brand{
+        font-size: 16px;
+        color: #CECECE;
+      }
+      .value{
+        font-size: 16px;
+        .unit{
+          font-size: 10px;
+        }
+      }
+      .add-button{
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background-color: $mark-light;
+        right: 16px;
+        top: 16px;
+      }
+    }
+    li.selected, li:hover{
+      background-color: $background-default;
+    }
+    li:last-child{
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+  .search-results.open{
+    max-height: 500px;
+
+    border: $border-default;
+    border-top: none;
+
+
+  }
+  li.visible{
+    opacity: 1;
+  }
+}

@@ -50,6 +50,11 @@
                             </div>
                         </div>
                         <div class="control">
+                            <ul>
+                                <li ng-repeat="portion in item.portions">
+                                    {{portion.product.name}} {{portion.size}} {{portion.unit.shortName}}
+                                </li>
+                            </ul>
                             <div class="edit" ng-click="editItem(item)"><span></span>Редактировать</div>
                             <div class="delete" ng-click="deleteItem(item)">Удалить<span class="flaticon-close-small"></span></div>
                             <div class="clearfix"></div>

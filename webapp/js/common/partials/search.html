@@ -1,8 +1,17 @@
-<div class="box-search">
-    <input type="text" id="input-search" ng-model="query" ui-keyup="{'enter up down':'searchKeypressed($event)'}"/>
-    <ul>
-        <li ng-repeat="item in items" class="{{item.selected}}">
-            {{item.name}} <span ng-show="product.category.categoryTypeId == 2">({{item.category.name}})</span> <a href="" ng-click="select(item)">+</a>
-        </li>
-    </ul>
+<div class="search-box">
+    <input type="text" placeholder="Введите название продукта или бренда"
+           id="input-search" ng-model="query" ui-keyup="{'enter up down':'searchKeypressed($event)'}"/>
+    <div class="search-button clickable"></div>
 </div>
+<div class="clearfix"></div>
+<ul class="search-results {{openResults}}" >
+    <li class="{{itemVisible}} {{product.selected}}" ng-repeat="product in products"  ng-click="select(product)">
+        <div class="name">{{product.name}}</div>
+        <div class="brand" ng-hide="product.category.categoryTypeId == 1">{{product.category.name}}</div>
+        <div class="value">
+            <span class="important">{{product.breadUnits}} <span class="unit">ХЕ</span></span> в {{product.defaultSize}}
+            <span class="unit">{{product.defaultUnit.shortName}}</span>
+        </div>
+        <div class="add-button"></div>
+    </li>
+</ul>

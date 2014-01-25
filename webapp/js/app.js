@@ -54,15 +54,15 @@ angular.module('app', ['ngRoute',
                 $rootScope.currentModel = model;
             };
 
-            $rootScope.saveSugar = function(){
+            $rootScope.saveSugar = function(model){
                // $rootScope.fakeSugarModel = JSON.parse(JSON.stringify($rootScope.sugarModel)) ;
                 if(!$rootScope.isModelEdit){
-                    Journal.addSugar($rootScope.sugarModel, function(){
+                    Journal.addSugar(model, function(){
                     });
                 }
 
                 if($rootScope.onModalSave){
-                    $rootScope.onModalSave($rootScope.currentModel);
+                    $rootScope.onModalSave(model);
 
                 }
                 $rootScope.closeModals();
@@ -70,8 +70,8 @@ angular.module('app', ['ngRoute',
             };
             $rootScope.saveInsulin = function(model){
                 if(!$rootScope.isModelEdit){
-//                    Journal.addInsulinUsage(model, function(){
-//                    });
+                    Journal.addInsulinUsage(model, function(){
+                    });
                 }
 
                 if($rootScope.onModalSave){
@@ -80,7 +80,7 @@ angular.module('app', ['ngRoute',
                 $rootScope.closeModals();
             };
             $rootScope.saveFood = function(model){
-               // Journal.addFoodUsage(model);
+               Journal.addFoodUsage(model);
 
                 if($rootScope.onModalSave){
                     $rootScope.onModalSave(model);

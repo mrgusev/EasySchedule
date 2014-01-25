@@ -57,6 +57,12 @@ angular.module('pages.home', [
             $scope.loadJournal();
 
             $scope.selectItem = function(item){
+
+                if(item.journalItemTypeId == enums.journalItemTypes.foodUsage){
+                    Journal.getPortions(item.id, function(data){
+                        item.portions = data;
+                    })
+                }
                 $scope.selectedItem.selected = '';
                 if($scope.selectedItem == item){
                     $scope.selectedItem = {};

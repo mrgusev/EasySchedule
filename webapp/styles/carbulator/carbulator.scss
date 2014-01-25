@@ -1,0 +1,32 @@
+@import "../theme";
+.main{
+  max-width: 1024px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+.important{
+  color: $basic;
+}
+.header{
+  font-size: 48px;
+  color: $mark;
+  padding-top: 80px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+.info-sections{
+  margin-top: 64px;
+  .info-section1{
+    height: 288px;
+    background-color: $basic;
+  }
+  .info-section2{
+    height: 288px;
+    background-color: white;
+  }
+  .info-section3{
+    height: 288px;
+    background-color: $background-default;
+
+  }
+}

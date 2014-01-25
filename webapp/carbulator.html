@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html  xmlns:ng="http://angularjs.org" ng-app="app">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+        КАРБУЛЯТОР
+    </title>
+
+    <script>var DEBUG = true;   </script>
+    <script type="text/javascript" src="js/libraries/console.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/carbulator/search.css">
+    <link rel="stylesheet" type="text/css" href="styles/carbulator/carbulator.css">
+    <link rel="stylesheet" type="text/css" href="styles/controls/food-usage.css">
+    <link rel="stylesheet" type="text/css" href="styles/common/icons.css">
+</head>
+
+<body style="">
+
+<div class="main">
+    <div class="header">
+        HANDY HEALTH
+    </div>
+    <div class="search">
+        <div search-box items="products" selected-item="newProduct"
+             query="searchQuery" is-focused="isSearchFocused" callback="addPortion(item)"> </div>
+    </div>
+    <div class="food-list">
+        <div class="food-item {{portion.hide}}" ng-repeat="portion in model.portions">
+            <div class="product">
+                <div class="name">{{portion.product.name}} </div>
+                <div class="desc" ng-hide="portion.product.category.categoryTypeId == 1">{{portion.product.category.name}}</div>
+            </div>
+            <div class="delete" ng-click="deletePortion(portion)"><a href="" class="flaticon-cross29"></a></div>
+            <div class="values">
+                <div class="size">{{portion.breadUnits}}</div>
+                <div class="unit">ХЕ</div>
+            </div>
+            <div class="amount-buttons">
+                <button ng-click="increasePortionSize(portion)">+</button>
+                <button ng-click="decreasePortionSize(portion)">-</button>
+            </div>
+            <div class="portion">
+                <input type="text" class="size" ng-model="portion.size" ng-change="portionSizeUpdated(portion)" />
+                <div class="unit"><a href="">{{portion.unit.name}}</a></div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="info-sections">-->
+        <!--<div class="info-section1"></div>-->
+        <!--<div class="info-section2"></div>-->
+        <!--<div class="info-section3"></div>-->
+    <!--</div>-->
+</div>
+<div class="info"></div>
+
+<script type="text/javascript" src="js/libraries/jquery.js"></script>
+<script type="text/javascript" src="js/libraries/underscore.js"></script>
+<script type="text/javascript" src="js/libraries/underscore-strings.js"></script>
+<script type="text/javascript" src="js/libraries/console.js"></script>
+<script type="text/javascript" src="js/libraries/angular/angular.js"></script>
+<script type="text/javascript" src="js/libraries/angular/angular-resource.js"></script>
+<script type="text/javascript" src="js/libraries/angular/ui-keypress.js"></script>
+<script type="text/javascript" src="js/common/enums.js"></script>
+<script type="text/javascript" src="js/common/filters/common-filters.js"></script>
+<script type="text/javascript" src="js/common/filters/project-filters.js"></script>
+<script type="text/javascript" src="js/common/directives/controls.js"></script>
+<script type="text/javascript" src="js/common/directives/select.js"></script>
+<script type="text/javascript" src="js/common/directives/modal-window.js"></script>
+<script type="text/javascript" src="js/common/resources/product.js"></script>
+<script type="text/javascript" src="js/carbulator.js"></script>
+</body>
+</html>
+​

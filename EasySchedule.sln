@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.WebServer", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySchedule.SecretFetcher", "EasySchedule.SecretFetcher\EasySchedule.SecretFetcher.csproj", "{0BA24421-CC59-4525-9209-54E64C5357DF}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database1", "Database1\Database1.sqlproj", "{F9074663-7BAC-4427-ABB5-CA657BBEFBDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,12 @@ Global
 		{0BA24421-CC59-4525-9209-54E64C5357DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BA24421-CC59-4525-9209-54E64C5357DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BA24421-CC59-4525-9209-54E64C5357DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9074663-7BAC-4427-ABB5-CA657BBEFBDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9074663-7BAC-4427-ABB5-CA657BBEFBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9074663-7BAC-4427-ABB5-CA657BBEFBDD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F9074663-7BAC-4427-ABB5-CA657BBEFBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9074663-7BAC-4427-ABB5-CA657BBEFBDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9074663-7BAC-4427-ABB5-CA657BBEFBDD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,25 +17,25 @@ angular.module('controls', [])
                     },500)
                     console.log('focus input');
                 };
-                var searchCounter = 0;
+                var searchCounter = -1;
                 scope.searchKeypressed = function ($event) {
-                    console.log('search...')
-                    if(scope.items.length > 0){
-                        if (scope.items[searchCounter]) {
-                            scope.items[searchCounter].selected = '';
+                    console.log('search123')
+                    if(scope.products.length > 0){
+                        if (scope.products[searchCounter]) {
+                            scope.products[searchCounter].selected = '';
                         }
-                        if ($event.which == 38 && scope.items[searchCounter - 1]) {
+                        if ($event.which == 38 && scope.products[searchCounter - 1]) {
                             searchCounter--;
                         }
-                        if ($event.which == 40 && scope.items[searchCounter + 1]) {
+                        if ($event.which == 40 && scope.products[searchCounter + 1]) {
                             searchCounter++;
                         }
-                        if ($event.which == 13 && scope.items[searchCounter]) {
-                            scope.select(scope.items[searchCounter]);
+                        if ($event.which == 13 && scope.products[searchCounter]) {
+                            scope.select(scope.products[searchCounter]);
                         }
-                        scope.items[searchCounter].selected = 'selected';
+                        scope.products[searchCounter].selected = 'selected';
                     } else{
-                        searchCounter = 0;
+                        searchCounter = -1;
                     }
                 };
                 scope.query = '';
@@ -53,8 +53,20 @@ angular.module('controls', [])
                 });
 
                 scope.$watch('items', function(){
+
                     if(scope.items.length > 0){
-                        scope.items[0].selected = 'selected';
+                        scope.itemVisible = '';
+                        $timeout(function(){
+                            scope.products = scope.items;
+                        }, 100);
+
+                        $timeout(function(){
+                            scope.itemVisible = 'visible';
+                        }, 200);
+                        scope.openResults = 'open';
+                    } else{
+                        scope.openResults = '';
+
                     }
                 });
             }
